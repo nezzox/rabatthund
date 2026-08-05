@@ -6,7 +6,7 @@ const databasePath = path.join(process.cwd(), "public", "data", "offers.json");
 
 const providers = [
   { chain: "ICA", sourceUrl: "https://www.ica.se/erbjudanden/", status: "pending-fetcher" },
-  { chain: "Coop", sourceUrl: "https://www.coop.se/butiker-erbjudanden/", status: "pending-fetcher" },
+  { chain: "Coop", sourceUrl: "https://www.coop.se/butiker-erbjudanden/", status: "live" },
   { chain: "Willys", sourceUrl: "https://www.willys.se/erbjudanden", status: "live" },
   { chain: "Hemköp", sourceUrl: "https://www.hemkop.se/erbjudanden", status: "live" },
   { chain: "Lidl", sourceUrl: "https://www.lidl.se/c/reklamblad/s10018018", status: "pending-fetcher" },
@@ -25,6 +25,14 @@ const axfoodChains = [
     apiPrefix: "/axfood/rest/v1",
   },
 ];
+
+const coopApi = {
+  chain: "Coop",
+  storeMapUrl: "https://proxy.api.coop.se/external/store/stores/map?conceptIds=12,6,95&invertFilter=true&api-version=v2",
+  promotionsUrl: "https://external.api.coop.se/personalization/search/products/promotions",
+  storeSubscriptionKey: "990520e65cc44eef89e9e9045b57f4e9",
+  promotionsSubscriptionKey: "3becf0ce306f41a1ae94077c16798187",
+};
 
 const citiesToSample = [
   "Stockholm",
@@ -57,8 +65,14 @@ const requestHeaders = {
   "user-agent": "RabattHund/0.2 (+https://nezzox.github.io/rabatthund/)",
 };
 
-async function fetchJson(url) {
-  const response = await fetch(url, { headers: requestHeaders });
+async function fetchJson(url, options = {}) {
+  const response = await fetch(url, {
+    ...options,
+    headers: {
+      ...requestHeaders,
+      ...(options.headers ?? {}),
+    },
+  });
   if (!response.ok) {
     throw new Error(`${response.status} ${response.statusText} från ${url}`);
   }
@@ -216,6 +230,163 @@ async function fetchAxfoodChain(chain) {
   };
 }
 
+async function fetchCoopStoreMap() {
+  return fetchJson(coopApi.storeMapUrl, {
+    headers: {
+      "Ocp-Apim-Subscription-Key": coopApi.storeSubscriptionKey,
+    },
+  });
+}
+
+async function getCoopStoreForCity(stores, city) {
+  const candidates = stores
+    .filter((store) => normalizeCity(store.city) === normalizeCity(city) || normalizeCity(store.name).includes(normalizeCity(city)))
+    .sort((a, b) => scoreCoopStoreCandidate(b, city) - scoreCoopStoreCandidate(a, city));
+
+  for (const candidate of candidates) {
+    const store = {
+      id: candidate.ledgerAccountNumber,
+      city: candidate.city || city,
+      name: candidate.name || `Coop ${city}`,
+    };
+    const count = await fetchCoopOfferCount(store);
+    if (count > 0) return { ...store, count };
+  }
+
+  return null;
+}
+
+function scoreCoopStoreCandidate(store, city) {
+  let score = 0;
+  if (normalizeCity(store.city) === normalizeCity(city)) score += 100;
+  if (normalizeCity(store.name).includes("stora coop")) score += 25;
+  if (normalizeCity(store.name).includes(normalizeCity(city))) score += 10;
+  return score;
+}
+
+async function fetchCoopOfferCount(store) {
+  const data = await fetchCoopPromotions(store, 1);
+  return data.results?.count ?? 0;
+}
+
+async function fetchCoopOffersForStore(store, size = 120) {
+  const data = await fetchCoopPromotions(store, size);
+  return (data.results?.items ?? [])
+    .map((product) => mapCoopProduct(store, product))
+    .filter(Boolean);
+}
+
+async function fetchCoopPromotions(store, size) {
+  const url = new URL(coopApi.promotionsUrl);
+  url.searchParams.set("api-version", "v1");
+  url.searchParams.set("store", store.id);
+  url.searchParams.set("groups", "");
+  url.searchParams.set("direct", "false");
+  url.searchParams.set("only-primary", "true");
+
+  return fetchJson(url, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "Ocp-Apim-Subscription-Key": coopApi.promotionsSubscriptionKey,
+    },
+    body: JSON.stringify({
+      resultsOptions: {
+        skip: 0,
+        take: size,
+        sortBy: [],
+        facets: [],
+      },
+      customData: {
+        personalizeCampaigns: false,
+        consent: {},
+      },
+    }),
+  });
+}
+
+function mapCoopProduct(store, product) {
+  const promotion = product.onlinePromotions?.[0];
+  if (!promotion) return null;
+
+  const quantity = Number(promotion.numberOfProductRequired) > 1 ? Number(promotion.numberOfProductRequired) : 1;
+  const originalPrice = parseMoney(product.salesPriceData?.b2cPrice ?? product.piecePriceData?.b2cPrice);
+  const promotionTotal = parseMoney(product.promotionPriceData?.b2cPrice ?? promotion.priceData?.b2cPrice);
+  const currentPrice = promotionTotal && quantity > 1 ? roundMoney(promotionTotal / quantity) : promotionTotal;
+  const discountPercent =
+    originalPrice && currentPrice && currentPrice < originalPrice
+      ? Math.round(((originalPrice - currentPrice) / originalPrice) * 100)
+      : null;
+
+  if (!discountPercent || discountPercent <= 0) return null;
+
+  const brand = cleanBrand(product.manufacturerName);
+  const article = formatArticleWithBrand(formatArticleWithSize(product.name, product.packageSizeInformation), brand);
+  const dealText = quantity > 1 && promotionTotal ? `${quantity} för ${formatPrice(promotionTotal)} kr` : null;
+  const id = `coop-${product.id || product.ean || slug(article)}-${slug(store.city)}`;
+
+  return {
+    id,
+    article,
+    brand,
+    chain: "Coop",
+    cities: [store.city],
+    originalPrice,
+    currentPrice,
+    dealText,
+    unit: cleanUnit(product.comparativePriceText || product.salesUnit || product.packageSizeInformation || "per styck"),
+    discountPercent,
+    validTo: parseIsoDate(promotion.endDate),
+    source: "Coop live",
+    storeId: store.id,
+    storeName: store.name,
+  };
+}
+
+async function fetchCoopChain() {
+  const offers = [];
+  const stores = [];
+  const errors = [];
+
+  let storeMap = [];
+  try {
+    storeMap = await fetchCoopStoreMap();
+  } catch (error) {
+    return {
+      chain: "Coop",
+      ok: false,
+      stores: 0,
+      offers: 0,
+      errors: [{ city: ALL_SWEDEN, error: error.message }],
+      data: [],
+    };
+  }
+
+  for (const city of citiesToSample) {
+    try {
+      const store = await getCoopStoreForCity(storeMap, city);
+      if (!store) {
+        errors.push({ city, error: "Ingen Coop-butik med livekampanjer hittades" });
+        continue;
+      }
+
+      stores.push(store);
+      offers.push(...(await fetchCoopOffersForStore(store)));
+    } catch (error) {
+      errors.push({ city, error: error.message });
+    }
+  }
+
+  return {
+    chain: "Coop",
+    ok: offers.length > 0,
+    stores: stores.length,
+    offers: offers.length,
+    errors,
+    data: mergeOffersByPromotion(offers),
+  };
+}
+
 async function probeProvider(provider) {
   try {
     return {
@@ -237,14 +408,14 @@ async function probeProvider(provider) {
 async function main() {
   const live = process.argv.includes("--live");
   const probes = live ? await Promise.all(providers.map(probeProvider)) : [];
-  const axfoodResults = live ? await Promise.all(axfoodChains.map(fetchAxfoodChain)) : [];
-  const liveOffers = axfoodResults.flatMap((result) => result.data);
+  const chainResults = live ? await Promise.all([...axfoodChains.map(fetchAxfoodChain), fetchCoopChain()]) : [];
+  const liveOffers = chainResults.flatMap((result) => result.data);
 
   const database = {
     updatedAt: new Date().toISOString(),
     providers,
     probes,
-    sourceStatus: axfoodResults.map(({ data, ...status }) => status),
+    sourceStatus: chainResults.map(({ data, ...status }) => status),
     offers: liveOffers,
   };
 
@@ -284,6 +455,13 @@ function parseTimestamp(value) {
   return date.toISOString().slice(0, 10);
 }
 
+function parseIsoDate(value) {
+  if (!value) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().slice(0, 10);
+}
+
 function cleanLabel(value) {
   return String(value || "").replace(/\s+/g, " ").trim() || null;
 }
@@ -309,6 +487,24 @@ function formatArticleWithBrand(article, brand) {
   }
 
   return `${brand} ${cleanArticle}`;
+}
+
+function formatArticleWithSize(article, size) {
+  const cleanArticle = cleanLabel(article);
+  const cleanSize = cleanLabel(size);
+  if (!cleanArticle || !cleanSize) return cleanArticle ?? cleanSize ?? "Okänd vara";
+
+  if (normalizeCity(cleanArticle).includes(normalizeCity(cleanSize))) {
+    return cleanArticle;
+  }
+
+  return `${cleanArticle} ${cleanSize}`;
+}
+
+function formatPrice(value) {
+  return new Intl.NumberFormat("sv-SE", {
+    maximumFractionDigits: Number.isInteger(value) ? 0 : 2,
+  }).format(value);
 }
 
 function normalizeCity(value) {
