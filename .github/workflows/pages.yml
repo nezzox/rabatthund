@@ -1,0 +1,49 @@
+name: Deploy RabattHund to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6,7,13,14 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check Swedish schedule
+        if: github.event_name == 'schedule'
+        run: |
+          hour=$(TZ=Europe/Stockholm date +%H)
+          if [ "$hour" != "08" ] && [ "$hour" != "15" ]; then
+            echo "Skipping outside 08.00/15.00 Europe/Stockholm"
+            exit 78
+          fi
+      - run: node scripts/update-offers.mjs --live
+      - run: node scripts/build-github-pages.mjs
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update RabattHund offers"
+          file_pattern: public/data/offers.json
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages-dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
