@@ -5,82 +5,304 @@ const ALL_SWEDEN = "Hela Sverige";
 const databasePath = path.join(process.cwd(), "public", "data", "offers.json");
 
 const providers = [
-  { chain: "ICA", sourceUrl: "https://www.ica.se/erbjudanden/" },
-  { chain: "Coop", sourceUrl: "https://www.coop.se/handla/erbjudanden/" },
-  { chain: "Willys", sourceUrl: "https://www.willys.se/erbjudanden" },
-  { chain: "Hemköp", sourceUrl: "https://www.hemkop.se/erbjudanden" },
-  { chain: "Lidl", sourceUrl: "https://www.lidl.se/c/erbjudanden/s10025573" },
-  { chain: "City Gross", sourceUrl: "https://www.citygross.se/erbjudanden" },
+  { chain: "ICA", sourceUrl: "https://www.ica.se/erbjudanden/", status: "pending-fetcher" },
+  { chain: "Coop", sourceUrl: "https://www.coop.se/butiker-erbjudanden/", status: "pending-fetcher" },
+  { chain: "Willys", sourceUrl: "https://www.willys.se/erbjudanden", status: "live" },
+  { chain: "Hemköp", sourceUrl: "https://www.hemkop.se/erbjudanden", status: "live" },
+  { chain: "Lidl", sourceUrl: "https://www.lidl.se/c/reklamblad/s10018018", status: "pending-fetcher" },
+  { chain: "City Gross", sourceUrl: "https://www.citygross.se/erbjudanden", status: "pending-fetcher" },
 ];
 
-const seedOffers = [
-  offer("ica-001", "ICA", "Kaffe mellanrost 450 g", [ALL_SWEDEN], 69.95, 39.95, null, "per paket", "2026-08-11"),
-  offer("coop-001", "Coop", "Färsk kycklingfilé", ["Stockholm", "Uppsala", "Västerås"], 129, 79, null, "per kg", "2026-08-11"),
-  offer("willys-001", "Willys", "Pasta 500 g", [ALL_SWEDEN], 16.95, 9.95, null, "per förpackning", "2026-08-10"),
-  offer("hemkop-001", "Hemköp", "Ekologiska bananer", ["Göteborg", "Malmö", "Lund", "Helsingborg"], 29.95, 19.95, null, "per kg", "2026-08-11"),
-  offer("lidl-001", "Lidl", "Grekisk yoghurt 1 kg", [ALL_SWEDEN], 34.95, 19.95, null, "per hink", "2026-08-09"),
-  offer("citygross-001", "City Gross", "Nötfärs 12%", ["Linköping", "Norrköping", "Jönköping", "Växjö"], 119, 79.95, null, "per kg", "2026-08-11"),
-  offer("ica-002", "ICA", "Frukostflingor", ["Stockholm", "Göteborg", "Malmö"], 39.95, null, "3 för 2", "utvalda sorter", "2026-08-11", 33),
-  offer("coop-002", "Coop", "Lagrad ost 700 g", [ALL_SWEDEN], 89.95, 59.95, null, "per bit", "2026-08-12"),
-  offer("willys-002", "Willys", "Tvättmedel storpack", ["Örebro", "Karlstad", "Eskilstuna", "Västerås"], 99.95, 49.95, null, "per förpackning", "2026-08-10"),
-  offer("hemkop-002", "Hemköp", "Färska räkor", ["Göteborg", "Halmstad", "Malmö"], 249, 149, null, "per kg", "2026-08-08"),
-  offer("lidl-002", "Lidl", "Glasspinnar multipack", [ALL_SWEDEN], 44.95, 24.95, null, "per paket", "2026-08-09"),
-  offer("citygross-002", "City Gross", "Laxfilé portionsbitar", ["Umeå", "Luleå", "Sundsvall", "Gävle"], 179, 99, null, "per kg", "2026-08-11"),
-  offer("ica-003", "ICA", "Tomater i ask", ["Kalmar", "Växjö", "Skövde", "Borås"], 34.95, 19.95, null, "500 g", "2026-08-11"),
-  offer("coop-003", "Coop", "Mineralvatten 1,5 l", [ALL_SWEDEN], 18, null, "5 för 45 kr", "exkl. pant", "2026-08-12", 50),
-  offer("willys-003", "Willys", "Falukorv 800 g", [ALL_SWEDEN], 49.95, 29.95, null, "per ring", "2026-08-10"),
-  offer("hemkop-003", "Hemköp", "Bröd från bageriet", ["Stockholm", "Uppsala", "Gävle"], 35, null, "2 för 45 kr", "utvalda sorter", "2026-08-11", 36),
-  offer("lidl-003", "Lidl", "Mozzarella 125 g", [ALL_SWEDEN], 16.95, 9.95, null, "per styck", "2026-08-09"),
-  offer("citygross-003", "City Gross", "Grillkorv 900 g", [ALL_SWEDEN], 59.95, 34.95, null, "per paket", "2026-08-11"),
+const axfoodChains = [
+  {
+    chain: "Willys",
+    baseUrl: "https://www.willys.se",
+    apiPrefix: "/axfood/rest/v1",
+  },
+  {
+    chain: "Hemköp",
+    baseUrl: "https://www.hemkop.se",
+    apiPrefix: "/axfood/rest/v1",
+  },
 ];
 
-function offer(id, chain, article, cities, originalPrice, currentPrice, dealText, unit, validTo, explicitDiscount) {
+const citiesToSample = [
+  "Stockholm",
+  "Göteborg",
+  "Malmö",
+  "Uppsala",
+  "Västerås",
+  "Norrköping",
+  "Linköping",
+  "Örebro",
+  "Helsingborg",
+  "Jönköping",
+  "Umeå",
+  "Lund",
+  "Borås",
+  "Eskilstuna",
+  "Gävle",
+  "Halmstad",
+  "Karlstad",
+  "Kalmar",
+  "Växjö",
+  "Luleå",
+  "Sundsvall",
+  "Skövde",
+];
+
+const requestHeaders = {
+  "accept": "application/json",
+  "accept-language": "sv-SE,sv;q=0.9,en;q=0.6",
+  "user-agent": "RabattHund/0.2 (+https://nezzox.github.io/rabatthund/)",
+};
+
+async function fetchJson(url) {
+  const response = await fetch(url, { headers: requestHeaders });
+  if (!response.ok) {
+    throw new Error(`${response.status} ${response.statusText} från ${url}`);
+  }
+
+  return response.json();
+}
+
+async function fetchText(url) {
+  const response = await fetch(url, {
+    headers: {
+      ...requestHeaders,
+      "accept": "text/html,application/xhtml+xml",
+    },
+  });
+
+  return {
+    ok: response.ok,
+    status: response.status,
+    sourceUrl: url,
+  };
+}
+
+async function getFirstStoreForCity(chain, city) {
+  const url = new URL(`${chain.baseUrl}${chain.apiPrefix}/search/store`);
+  url.searchParams.set("q", city);
+  url.searchParams.set("size", "12");
+
+  const data = await fetchJson(url);
+  const stores = data.results ?? [];
+  const selected =
+    stores.find((store) => normalizeCity(store.address?.town) === normalizeCity(city) && !store.externalPickupLocation) ??
+    stores.find((store) => !store.externalPickupLocation) ??
+    stores[0];
+
+  if (!selected?.storeId) return null;
+
+  return {
+    id: selected.storeId,
+    city: selected.address?.town || city,
+    name: selected.displayName || selected.name || `${chain.chain} ${city}`,
+  };
+}
+
+async function fetchAxfoodOffersForStore(chain, store, size = 40) {
+  const url = new URL(`${chain.baseUrl}${chain.apiPrefix}/search/campaigns/offline`);
+  url.searchParams.set("q", store.id);
+  url.searchParams.set("size", String(size));
+
+  const data = await fetchJson(url);
+  return (data.results ?? [])
+    .map((product) => mapAxfoodProduct(chain.chain, store, product))
+    .filter(Boolean);
+}
+
+function mapAxfoodProduct(chain, store, product) {
+  const promotion = product.potentialPromotions?.[0];
+  if (!promotion) return null;
+
+  let originalPrice = parseMoney(product.priceValue ?? product.priceNoUnit ?? product.price);
+  const currentPrice = parseMoney(promotion.price?.value ?? promotion.price ?? promotion.rewardLabel ?? promotion.cartLabel);
+  const savedAmount = parseMoney(promotion.savePrice);
+  if (currentPrice && savedAmount && (!originalPrice || currentPrice >= originalPrice)) {
+    originalPrice = roundMoney(currentPrice + savedAmount);
+  }
+
+  const dealText = currentPrice ? null : cleanLabel(promotion.rewardLabel || promotion.cartLabel || promotion.conditionLabel);
   const discountPercent =
-    explicitDiscount ?? Math.round(((Number(originalPrice) - Number(currentPrice)) / Number(originalPrice)) * 100);
+    originalPrice && currentPrice && currentPrice < originalPrice
+      ? Math.round(((originalPrice - currentPrice) / originalPrice) * 100)
+      : parseDiscountPercent(savedAmount, originalPrice);
+
+  if (!discountPercent || discountPercent <= 0) return null;
+
+  const validTo = parseSwedishCampaignDate(promotion.endDate) ?? parseTimestamp(promotion.validUntil);
+  const article = promotion.name || product.name;
+  const id = `${slug(chain)}-${promotion.code || product.code}-${slug(store.city)}`;
 
   return {
     id,
     article,
     chain,
-    cities,
+    cities: [store.city],
     originalPrice,
     currentPrice,
     dealText,
-    unit,
+    unit: cleanUnit(product.priceUnit || promotion.weightVolume || product.displayVolume || "per styck"),
     discountPercent,
     validTo,
+    source: "Axfood live",
+    storeId: store.id,
+    storeName: store.name,
+  };
+}
+
+function mergeOffersByPromotion(offers) {
+  const merged = new Map();
+
+  for (const offer of offers) {
+    const key = [
+      offer.chain,
+      offer.article.toLowerCase(),
+      offer.originalPrice ?? "",
+      offer.currentPrice ?? offer.dealText ?? "",
+      offer.validTo ?? "",
+    ].join("|");
+
+    const existing = merged.get(key);
+    if (!existing) {
+      merged.set(key, { ...offer, cities: [...offer.cities] });
+      continue;
+    }
+
+    if (existing.cities.includes(ALL_SWEDEN)) {
+      continue;
+    }
+
+    existing.cities = Array.from(new Set([...existing.cities, ...offer.cities])).sort((a, b) => a.localeCompare(b, "sv-SE"));
+    if (existing.cities.length >= Math.max(8, citiesToSample.length * 0.7)) {
+      existing.cities = [ALL_SWEDEN];
+    }
+  }
+
+  return [...merged.values()].sort((a, b) => b.discountPercent - a.discountPercent || a.article.localeCompare(b.article, "sv-SE"));
+}
+
+async function fetchAxfoodChain(chain) {
+  const offers = [];
+  const stores = [];
+  const errors = [];
+
+  for (const city of citiesToSample) {
+    try {
+      const store = await getFirstStoreForCity(chain, city);
+      if (!store) {
+        errors.push({ city, error: "Ingen butik hittades" });
+        continue;
+      }
+
+      stores.push(store);
+      offers.push(...(await fetchAxfoodOffersForStore(chain, store)));
+    } catch (error) {
+      errors.push({ city, error: error.message });
+    }
+  }
+
+  return {
+    chain: chain.chain,
+    ok: offers.length > 0,
+    stores: stores.length,
+    offers: offers.length,
+    errors,
+    data: mergeOffersByPromotion(offers),
   };
 }
 
 async function probeProvider(provider) {
-  const response = await fetch(provider.sourceUrl, {
-    headers: {
-      "accept-language": "sv-SE,sv;q=0.9,en;q=0.6",
-      "user-agent": "RabattHund/0.1 (+https://github.com/nezzox/rabatthund)",
-    },
-  });
-
-  return {
-    chain: provider.chain,
-    ok: response.ok,
-    status: response.status,
-    sourceUrl: provider.sourceUrl,
-  };
+  try {
+    return {
+      chain: provider.chain,
+      status: provider.status,
+      ...(await fetchText(provider.sourceUrl)),
+    };
+  } catch (error) {
+    return {
+      chain: provider.chain,
+      status: provider.status,
+      ok: false,
+      error: error.message,
+      sourceUrl: provider.sourceUrl,
+    };
+  }
 }
 
 async function main() {
   const live = process.argv.includes("--live");
-  const probes = live ? await Promise.allSettled(providers.map(probeProvider)) : [];
+  const probes = live ? await Promise.all(providers.map(probeProvider)) : [];
+  const axfoodResults = live ? await Promise.all(axfoodChains.map(fetchAxfoodChain)) : [];
+  const liveOffers = axfoodResults.flatMap((result) => result.data);
+
   const database = {
     updatedAt: new Date().toISOString(),
     providers,
-    probes: probes.map((result) => (result.status === "fulfilled" ? result.value : { ok: false, error: result.reason?.message })),
-    offers: seedOffers,
+    probes,
+    sourceStatus: axfoodResults.map(({ data, ...status }) => status),
+    offers: liveOffers,
   };
 
   await mkdir(path.dirname(databasePath), { recursive: true });
   await writeFile(databasePath, `${JSON.stringify(database, null, 2)}\n`, "utf8");
-  console.log(`RabattHund skrev ${database.offers.length} erbjudanden till ${databasePath}`);
+  console.log(`RabattHund skrev ${database.offers.length} live-erbjudanden till ${databasePath}`);
+}
+
+function parseMoney(value) {
+  if (typeof value === "number" && Number.isFinite(value)) return roundMoney(value);
+  if (!value) return null;
+
+  const match = String(value)
+    .replace(/\s/g, "")
+    .replace(",", ".")
+    .match(/(\d+(?:\.\d+)?)/);
+
+  if (!match) return null;
+  return roundMoney(Number(match[1]));
+}
+
+function parseDiscountPercent(saved, originalPrice) {
+  if (!saved || !originalPrice) return null;
+  return Math.round((saved / originalPrice) * 100);
+}
+
+function parseSwedishCampaignDate(value) {
+  const match = String(value || "").match(/^(\d{2})\/(\d{2})-(\d{4})$/);
+  if (!match) return null;
+  return `${match[3]}-${match[2]}-${match[1]}`;
+}
+
+function parseTimestamp(value) {
+  if (!value) return null;
+  const date = new Date(Number(value));
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().slice(0, 10);
+}
+
+function cleanLabel(value) {
+  return String(value || "").replace(/\s+/g, " ").trim() || null;
+}
+
+function cleanUnit(value) {
+  return cleanLabel(value)?.replace(/^kr\//i, "per ") ?? "per styck";
+}
+
+function normalizeCity(value) {
+  return String(value || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "");
+}
+
+function roundMoney(value) {
+  return Math.round(Number(value) * 100) / 100;
+}
+
+function slug(value) {
+  return normalizeCity(value).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
 main().catch((error) => {
