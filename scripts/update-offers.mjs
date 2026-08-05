@@ -133,12 +133,14 @@ function mapAxfoodProduct(chain, store, product) {
   if (!discountPercent || discountPercent <= 0) return null;
 
   const validTo = parseSwedishCampaignDate(promotion.endDate) ?? parseTimestamp(promotion.validUntil);
-  const article = promotion.name || product.name;
+  const brand = cleanBrand(product.manufacturer ?? product.brandName ?? product.brand ?? promotion.brands?.[0]);
+  const article = formatArticleWithBrand(promotion.name || product.name, brand);
   const id = `${slug(chain)}-${promotion.code || product.code}-${slug(store.city)}`;
 
   return {
     id,
     article,
+    brand,
     chain,
     cities: [store.city],
     originalPrice,
@@ -288,6 +290,25 @@ function cleanLabel(value) {
 
 function cleanUnit(value) {
   return cleanLabel(value)?.replace(/^kr\//i, "per ") ?? "per styck";
+}
+
+function cleanBrand(value) {
+  const brand = cleanLabel(value)?.split("•")[0]?.trim();
+  if (!brand || brand === "-") return null;
+  return brand;
+}
+
+function formatArticleWithBrand(article, brand) {
+  const cleanArticle = cleanLabel(article);
+  if (!brand || !cleanArticle) return cleanArticle ?? brand ?? "Okänd vara";
+
+  const normalizedArticle = normalizeCity(cleanArticle);
+  const normalizedBrand = normalizeCity(brand);
+  if (normalizedArticle === normalizedBrand || normalizedArticle.startsWith(normalizedBrand)) {
+    return cleanArticle;
+  }
+
+  return `${brand} ${cleanArticle}`;
 }
 
 function normalizeCity(value) {
