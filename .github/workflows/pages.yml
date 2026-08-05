@@ -42,6 +42,8 @@ jobs:
           commit_message: "Update RabattHund offers"
           file_pattern: public/data/offers.json
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: pages-dist
