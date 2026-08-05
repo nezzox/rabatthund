@@ -1,0 +1,344 @@
+{
+  "updatedAt": "2026-08-05T13:07:09.243Z",
+  "providers": [
+    {
+      "chain": "ICA",
+      "sourceUrl": "https://www.ica.se/erbjudanden/"
+    },
+    {
+      "chain": "Coop",
+      "sourceUrl": "https://www.coop.se/handla/erbjudanden/"
+    },
+    {
+      "chain": "Willys",
+      "sourceUrl": "https://www.willys.se/erbjudanden"
+    },
+    {
+      "chain": "Hemköp",
+      "sourceUrl": "https://www.hemkop.se/erbjudanden"
+    },
+    {
+      "chain": "Lidl",
+      "sourceUrl": "https://www.lidl.se/c/erbjudanden/s10025573"
+    },
+    {
+      "chain": "City Gross",
+      "sourceUrl": "https://www.citygross.se/erbjudanden"
+    }
+  ],
+  "probes": [
+    {
+      "chain": "ICA",
+      "ok": true,
+      "status": 200,
+      "sourceUrl": "https://www.ica.se/erbjudanden/"
+    },
+    {
+      "chain": "Coop",
+      "ok": false,
+      "status": 404,
+      "sourceUrl": "https://www.coop.se/handla/erbjudanden/"
+    },
+    {
+      "chain": "Willys",
+      "ok": true,
+      "status": 200,
+      "sourceUrl": "https://www.willys.se/erbjudanden"
+    },
+    {
+      "chain": "Hemköp",
+      "ok": true,
+      "status": 200,
+      "sourceUrl": "https://www.hemkop.se/erbjudanden"
+    },
+    {
+      "chain": "Lidl",
+      "ok": false,
+      "status": 404,
+      "sourceUrl": "https://www.lidl.se/c/erbjudanden/s10025573"
+    },
+    {
+      "chain": "City Gross",
+      "ok": true,
+      "status": 200,
+      "sourceUrl": "https://www.citygross.se/erbjudanden"
+    }
+  ],
+  "offers": [
+    {
+      "id": "ica-001",
+      "article": "Kaffe mellanrost 450 g",
+      "chain": "ICA",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 69.95,
+      "currentPrice": 39.95,
+      "dealText": null,
+      "unit": "per paket",
+      "discountPercent": 43,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "coop-001",
+      "article": "Färsk kycklingfilé",
+      "chain": "Coop",
+      "cities": [
+        "Stockholm",
+        "Uppsala",
+        "Västerås"
+      ],
+      "originalPrice": 129,
+      "currentPrice": 79,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 39,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "willys-001",
+      "article": "Pasta 500 g",
+      "chain": "Willys",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 16.95,
+      "currentPrice": 9.95,
+      "dealText": null,
+      "unit": "per förpackning",
+      "discountPercent": 41,
+      "validTo": "2026-08-10"
+    },
+    {
+      "id": "hemkop-001",
+      "article": "Ekologiska bananer",
+      "chain": "Hemköp",
+      "cities": [
+        "Göteborg",
+        "Malmö",
+        "Lund",
+        "Helsingborg"
+      ],
+      "originalPrice": 29.95,
+      "currentPrice": 19.95,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 33,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "lidl-001",
+      "article": "Grekisk yoghurt 1 kg",
+      "chain": "Lidl",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 34.95,
+      "currentPrice": 19.95,
+      "dealText": null,
+      "unit": "per hink",
+      "discountPercent": 43,
+      "validTo": "2026-08-09"
+    },
+    {
+      "id": "citygross-001",
+      "article": "Nötfärs 12%",
+      "chain": "City Gross",
+      "cities": [
+        "Linköping",
+        "Norrköping",
+        "Jönköping",
+        "Växjö"
+      ],
+      "originalPrice": 119,
+      "currentPrice": 79.95,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 33,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "ica-002",
+      "article": "Frukostflingor",
+      "chain": "ICA",
+      "cities": [
+        "Stockholm",
+        "Göteborg",
+        "Malmö"
+      ],
+      "originalPrice": 39.95,
+      "currentPrice": null,
+      "dealText": "3 för 2",
+      "unit": "utvalda sorter",
+      "discountPercent": 33,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "coop-002",
+      "article": "Lagrad ost 700 g",
+      "chain": "Coop",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 89.95,
+      "currentPrice": 59.95,
+      "dealText": null,
+      "unit": "per bit",
+      "discountPercent": 33,
+      "validTo": "2026-08-12"
+    },
+    {
+      "id": "willys-002",
+      "article": "Tvättmedel storpack",
+      "chain": "Willys",
+      "cities": [
+        "Örebro",
+        "Karlstad",
+        "Eskilstuna",
+        "Västerås"
+      ],
+      "originalPrice": 99.95,
+      "currentPrice": 49.95,
+      "dealText": null,
+      "unit": "per förpackning",
+      "discountPercent": 50,
+      "validTo": "2026-08-10"
+    },
+    {
+      "id": "hemkop-002",
+      "article": "Färska räkor",
+      "chain": "Hemköp",
+      "cities": [
+        "Göteborg",
+        "Halmstad",
+        "Malmö"
+      ],
+      "originalPrice": 249,
+      "currentPrice": 149,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 40,
+      "validTo": "2026-08-08"
+    },
+    {
+      "id": "lidl-002",
+      "article": "Glasspinnar multipack",
+      "chain": "Lidl",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 44.95,
+      "currentPrice": 24.95,
+      "dealText": null,
+      "unit": "per paket",
+      "discountPercent": 44,
+      "validTo": "2026-08-09"
+    },
+    {
+      "id": "citygross-002",
+      "article": "Laxfilé portionsbitar",
+      "chain": "City Gross",
+      "cities": [
+        "Umeå",
+        "Luleå",
+        "Sundsvall",
+        "Gävle"
+      ],
+      "originalPrice": 179,
+      "currentPrice": 99,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 45,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "ica-003",
+      "article": "Tomater i ask",
+      "chain": "ICA",
+      "cities": [
+        "Kalmar",
+        "Växjö",
+        "Skövde",
+        "Borås"
+      ],
+      "originalPrice": 34.95,
+      "currentPrice": 19.95,
+      "dealText": null,
+      "unit": "500 g",
+      "discountPercent": 43,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "coop-003",
+      "article": "Mineralvatten 1,5 l",
+      "chain": "Coop",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 18,
+      "currentPrice": null,
+      "dealText": "5 för 45 kr",
+      "unit": "exkl. pant",
+      "discountPercent": 50,
+      "validTo": "2026-08-12"
+    },
+    {
+      "id": "willys-003",
+      "article": "Falukorv 800 g",
+      "chain": "Willys",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 49.95,
+      "currentPrice": 29.95,
+      "dealText": null,
+      "unit": "per ring",
+      "discountPercent": 40,
+      "validTo": "2026-08-10"
+    },
+    {
+      "id": "hemkop-003",
+      "article": "Bröd från bageriet",
+      "chain": "Hemköp",
+      "cities": [
+        "Stockholm",
+        "Uppsala",
+        "Gävle"
+      ],
+      "originalPrice": 35,
+      "currentPrice": null,
+      "dealText": "2 för 45 kr",
+      "unit": "utvalda sorter",
+      "discountPercent": 36,
+      "validTo": "2026-08-11"
+    },
+    {
+      "id": "lidl-003",
+      "article": "Mozzarella 125 g",
+      "chain": "Lidl",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 16.95,
+      "currentPrice": 9.95,
+      "dealText": null,
+      "unit": "per styck",
+      "discountPercent": 41,
+      "validTo": "2026-08-09"
+    },
+    {
+      "id": "citygross-003",
+      "article": "Grillkorv 900 g",
+      "chain": "City Gross",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 59.95,
+      "currentPrice": 34.95,
+      "dealText": null,
+      "unit": "per paket",
+      "discountPercent": 42,
+      "validTo": "2026-08-11"
+    }
+  ]
+}
