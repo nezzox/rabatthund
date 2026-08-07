@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T13:56:54.461Z",
+  "updatedAt": "2026-08-07T06:56:03.407Z",
   "providers": [
     {
       "chain": "ICA",
@@ -75,7 +75,7 @@
       "chain": "Willys",
       "ok": true,
       "stores": 22,
-      "offers": 810,
+      "offers": 833,
       "errors": []
     },
     {
@@ -137,12 +137,32 @@
   ],
   "offers": [
     {
-      "id": "willys-2500312949-eskilstuna",
+      "id": "willys-2500313243-goteborg",
+      "article": "GRANAROLO Quattrocento",
+      "brand": "GRANAROLO",
+      "chain": "Willys",
+      "cities": [
+        "Borås",
+        "Göteborg",
+        "Lund",
+        "Malmö"
+      ],
+      "originalPrice": 269,
+      "currentPrice": 149,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 45,
+      "validTo": "2026-08-16",
+      "source": "Axfood live",
+      "storeId": "2102",
+      "storeName": "Willys Göteborg Wieselgrensplatsen"
+    },
+    {
+      "id": "willys-2500312949-vaxjo",
       "article": "BERGADER Bavaria blu",
       "brand": "BERGADER",
       "chain": "Willys",
       "cities": [
-        "Eskilstuna",
         "Växjö"
       ],
       "originalPrice": 76.9,
@@ -152,8 +172,26 @@
       "discountPercent": 42,
       "validTo": "2026-08-16",
       "source": "Axfood live",
-      "storeId": "2224",
-      "storeName": "Willys Eskilstuna City"
+      "storeId": "2131",
+      "storeName": "Willys Växjö Teleborg"
+    },
+    {
+      "id": "willys-2500321383-stockholm",
+      "article": "SVERIGE Ekologisk basilika i kruka",
+      "brand": "SVERIGE",
+      "chain": "Willys",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 16.9,
+      "currentPrice": 9.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 41,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "2258",
+      "storeName": "Willys Stockholm Fridhemsplan"
     },
     {
       "id": "willys-2500310468-stockholm",
@@ -168,6 +206,24 @@
       "dealText": null,
       "unit": "per st",
       "discountPercent": 40,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "2258",
+      "storeName": "Willys Stockholm Fridhemsplan"
+    },
+    {
+      "id": "willys-2500314036-stockholm",
+      "article": "SCAN Fläskytterfilé",
+      "brand": "SCAN",
+      "chain": "Willys",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 115,
+      "currentPrice": 69.9,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 39,
       "validTo": "2026-08-09",
       "source": "Axfood live",
       "storeId": "2258",
@@ -228,19 +284,19 @@
       "storeName": "Willys Stockholm Fridhemsplan"
     },
     {
-      "id": "willys-2500310479-stockholm",
-      "article": "GARANT Gyros",
-      "brand": "GARANT",
+      "id": "willys-2500313243-stockholm",
+      "article": "GRANAROLO Quattrocento",
+      "brand": "GRANAROLO",
       "chain": "Willys",
       "cities": [
         "Hela Sverige"
       ],
-      "originalPrice": 56.68,
-      "currentPrice": 39.9,
+      "originalPrice": 219,
+      "currentPrice": 149,
       "dealText": null,
-      "unit": "per st",
-      "discountPercent": 30,
-      "validTo": "2026-08-09",
+      "unit": "per kg",
+      "discountPercent": 32,
+      "validTo": "2026-08-16",
       "source": "Axfood live",
       "storeId": "2258",
       "storeName": "Willys Stockholm Fridhemsplan"
@@ -336,24 +392,6 @@
       "storeName": "Willys Stockholm Fridhemsplan"
     },
     {
-      "id": "willys-2500310391-stockholm",
-      "article": "SOFTLAN Sköljmedel",
-      "brand": "SOFTLAN",
-      "chain": "Willys",
-      "cities": [
-        "Hela Sverige"
-      ],
-      "originalPrice": 65.6,
-      "currentPrice": 50,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 24,
-      "validTo": "2026-08-30",
-      "source": "Axfood live",
-      "storeId": "2258",
-      "storeName": "Willys Stockholm Fridhemsplan"
-    },
-    {
       "id": "willys-2500310366-stockholm",
       "article": "Västerbottensost",
       "brand": "VÄSTERBOTTENS",
@@ -439,6 +477,24 @@
       "unit": "per st",
       "discountPercent": 21,
       "validTo": "2026-08-16",
+      "source": "Axfood live",
+      "storeId": "2258",
+      "storeName": "Willys Stockholm Fridhemsplan"
+    },
+    {
+      "id": "willys-2500311077-stockholm",
+      "article": "KAR KAR Glass 4-pack",
+      "brand": "KAR KAR",
+      "chain": "Willys",
+      "cities": [
+        "Hela Sverige"
+      ],
+      "originalPrice": 24.9,
+      "currentPrice": 19.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 20,
+      "validTo": "2026-08-09",
       "source": "Axfood live",
       "storeId": "2258",
       "storeName": "Willys Stockholm Fridhemsplan"
@@ -565,24 +621,6 @@
       "unit": "per st",
       "discountPercent": 13,
       "validTo": "2026-08-30",
-      "source": "Axfood live",
-      "storeId": "2258",
-      "storeName": "Willys Stockholm Fridhemsplan"
-    },
-    {
-      "id": "willys-2500310478-stockholm",
-      "article": "TULIP Spareribs",
-      "brand": "TULIP",
-      "chain": "Willys",
-      "cities": [
-        "Hela Sverige"
-      ],
-      "originalPrice": 68.99,
-      "currentPrice": 59.9,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 13,
-      "validTo": "2026-08-09",
       "source": "Axfood live",
       "storeId": "2258",
       "storeName": "Willys Stockholm Fridhemsplan"
@@ -876,6 +914,24 @@
       "storeName": "Hemköp Helsingborg Laröd"
     },
     {
+      "id": "hemkop-2500320792-skovde",
+      "article": "Svensk romansallad",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Skövde"
+      ],
+      "originalPrice": 24.3,
+      "currentPrice": 10,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 59,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4606",
+      "storeName": "Hemköp Skövde Hentorpshallen"
+    },
+    {
       "id": "hemkop-2500322133-uppsala",
       "article": "Garant Rågbröd 6-pack",
       "brand": "Garant",
@@ -904,8 +960,10 @@
       "cities": [
         "Eskilstuna",
         "Norrköping",
+        "Skövde",
         "Stockholm",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 21.72,
       "currentPrice": 10,
@@ -927,8 +985,10 @@
         "Jönköping",
         "Karlstad",
         "Norrköping",
+        "Skövde",
         "Uppsala",
-        "Västerås"
+        "Västerås",
+        "Örebro"
       ],
       "originalPrice": 18.88,
       "currentPrice": 9,
@@ -951,9 +1011,7 @@
         "Kalmar",
         "Linköping",
         "Lund",
-        "Malmö",
-        "Skövde",
-        "Örebro"
+        "Malmö"
       ],
       "originalPrice": 20.77,
       "currentPrice": 10,
@@ -962,8 +1020,8 @@
       "discountPercent": 52,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310377-stockholm",
@@ -977,10 +1035,8 @@
         "Linköping",
         "Lund",
         "Malmö",
-        "Skövde",
         "Stockholm",
-        "Växjö",
-        "Örebro"
+        "Växjö"
       ],
       "originalPrice": 18.45,
       "currentPrice": 9,
@@ -991,6 +1047,42 @@
       "source": "Axfood live",
       "storeId": "4190",
       "storeName": "Hemköp Stockholm Torsplan"
+    },
+    {
+      "id": "hemkop-2500320792-uppsala",
+      "article": "Svensk romansallad",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 20.6,
+      "currentPrice": 10,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 51,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4592",
+      "storeName": "Hemköp Uppsala Västertorg"
+    },
+    {
+      "id": "hemkop-2500320792-karlstad",
+      "article": "Svensk romansallad",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Karlstad"
+      ],
+      "originalPrice": 19.95,
+      "currentPrice": 10,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 50,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4755",
+      "storeName": "Hemköp Karlstad C"
     },
     {
       "id": "hemkop-2500320789-helsingborg",
@@ -1011,13 +1103,54 @@
       "storeName": "Hemköp Helsingborg Laröd"
     },
     {
+      "id": "hemkop-2500320789-skovde",
+      "article": "Gröna druvor",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Skövde"
+      ],
+      "originalPrice": 42.8,
+      "currentPrice": 22,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 49,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4606",
+      "storeName": "Hemköp Skövde Hentorpshallen"
+    },
+    {
+      "id": "hemkop-2500322131-malmo",
+      "article": "Dafgårds Munkar",
+      "brand": "Dafgårds",
+      "chain": "Hemköp",
+      "cities": [
+        "Eskilstuna",
+        "Kalmar",
+        "Lund",
+        "Malmö",
+        "Örebro"
+      ],
+      "originalPrice": 11.3,
+      "currentPrice": 6,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 47,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4247",
+      "storeName": "Hemköp Malmö Triangeln"
+    },
+    {
       "id": "hemkop-2500320789-vasteras",
       "article": "Gröna druvor",
       "brand": null,
       "chain": "Hemköp",
       "cities": [
         "Jönköping",
-        "Västerås"
+        "Västerås",
+        "Örebro"
       ],
       "originalPrice": 41.85,
       "currentPrice": 22,
@@ -1030,24 +1163,39 @@
       "storeName": "Hemköp Västerås Malmaberg"
     },
     {
+      "id": "hemkop-2500320792-helsingborg",
+      "article": "Svensk romansallad",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Helsingborg"
+      ],
+      "originalPrice": 18.95,
+      "currentPrice": 10,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 47,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4542",
+      "storeName": "Hemköp Helsingborg Laröd"
+    },
+    {
       "id": "hemkop-2500320789-stockholm",
       "article": "Gröna druvor",
       "brand": null,
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
-        "Göteborg",
         "Halmstad",
         "Kalmar",
         "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
-        "Skövde",
         "Stockholm",
         "Uppsala",
-        "Växjö",
-        "Örebro"
+        "Växjö"
       ],
       "originalPrice": 39.85,
       "currentPrice": 22,
@@ -1078,6 +1226,27 @@
       "storeName": "Hemköp Karlstad C"
     },
     {
+      "id": "hemkop-2500320792-goteborg",
+      "article": "Svensk romansallad",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Göteborg",
+        "Jönköping",
+        "Västerås",
+        "Örebro"
+      ],
+      "originalPrice": 17.85,
+      "currentPrice": 10,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 44,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
+    },
+    {
       "id": "hemkop-2500316233-helsingborg",
       "article": "Dalsjöfors Svensk fläskytterfilé",
       "brand": "Dalsjöfors",
@@ -1090,24 +1259,6 @@
       "dealText": null,
       "unit": "per kg",
       "discountPercent": 43,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4542",
-      "storeName": "Hemköp Helsingborg Laröd"
-    },
-    {
-      "id": "hemkop-2500310493-helsingborg",
-      "article": "Garant Eko Ekologisk tagliatelle",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Helsingborg"
-      ],
-      "originalPrice": 34.7,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 42,
       "validTo": "2026-08-09",
       "source": "Axfood live",
       "storeId": "4542",
@@ -1253,10 +1404,12 @@
         "Jönköping",
         "Karlstad",
         "Norrköping",
+        "Skövde",
         "Stockholm",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 22.95,
       "currentPrice": 14,
@@ -1278,12 +1431,15 @@
         "Halmstad",
         "Jönköping",
         "Karlstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
+        "Skövde",
         "Stockholm",
         "Uppsala",
-        "Västerås"
+        "Västerås",
+        "Örebro"
       ],
       "originalPrice": 113.3,
       "currentPrice": 69.95,
@@ -1323,9 +1479,11 @@
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
+        "Göteborg",
         "Halmstad",
         "Jönköping",
         "Karlstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
@@ -1333,7 +1491,8 @@
         "Stockholm",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 32.13,
       "currentPrice": 20,
@@ -1346,38 +1505,18 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
-      "id": "hemkop-2500310493-uppsala",
-      "article": "Garant Eko Ekologisk tagliatelle",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Eskilstuna",
-        "Jönköping",
-        "Karlstad",
-        "Norrköping",
-        "Uppsala",
-        "Västerås"
-      ],
-      "originalPrice": 31.7,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 37,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4592",
-      "storeName": "Hemköp Uppsala Västertorg"
-    },
-    {
-      "id": "hemkop-2500310415-uppsala",
+      "id": "hemkop-2500310415-goteborg",
       "article": "Pepsi, Zingo Läsk 6-pack",
       "brand": "Pepsi, Zingo",
       "chain": "Hemköp",
       "cities": [
+        "Göteborg",
         "Helsingborg",
         "Jönköping",
         "Karlstad",
+        "Linköping",
         "Norrköping",
+        "Skövde",
         "Uppsala",
         "Västerås",
         "Växjö"
@@ -1389,20 +1528,46 @@
       "discountPercent": 37,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4592",
-      "storeName": "Hemköp Uppsala Västertorg"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
-      "id": "hemkop-2500310320-malmo",
+      "id": "hemkop-2500320792-stockholm",
+      "article": "Svensk romansallad",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Eskilstuna",
+        "Halmstad",
+        "Kalmar",
+        "Linköping",
+        "Lund",
+        "Malmö",
+        "Norrköping",
+        "Stockholm",
+        "Växjö"
+      ],
+      "originalPrice": 15.85,
+      "currentPrice": 10,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 37,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4190",
+      "storeName": "Hemköp Stockholm Torsplan"
+    },
+    {
+      "id": "hemkop-2500310320-goteborg",
       "article": "Zeta Prosciutto Crudo",
       "brand": "Zeta",
       "chain": "Hemköp",
       "cities": [
+        "Göteborg",
         "Halmstad",
         "Helsingborg",
         "Lund",
-        "Malmö",
-        "Skövde"
+        "Malmö"
       ],
       "originalPrice": 39.95,
       "currentPrice": 25,
@@ -1411,8 +1576,8 @@
       "discountPercent": 37,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4247",
-      "storeName": "Hemköp Malmö Triangeln"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500311789-stockholm",
@@ -1433,15 +1598,12 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
-      "id": "hemkop-2500314898-goteborg",
+      "id": "hemkop-2500314898-kalmar",
       "article": "Garant Pizza",
       "brand": "Garant",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 31.18,
       "currentPrice": 20,
@@ -1450,8 +1612,8 @@
       "discountPercent": 36,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310256-goteborg",
@@ -1464,9 +1626,7 @@
         "Kalmar",
         "Linköping",
         "Lund",
-        "Malmö",
-        "Skövde",
-        "Örebro"
+        "Malmö"
       ],
       "originalPrice": 21.95,
       "currentPrice": 14,
@@ -1475,8 +1635,8 @@
       "discountPercent": 36,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310420-uppsala",
@@ -1488,9 +1648,11 @@
         "Jönköping",
         "Karlstad",
         "Norrköping",
+        "Skövde",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 14.14,
       "currentPrice": 9,
@@ -1503,15 +1665,12 @@
       "storeName": "Hemköp Uppsala Västertorg"
     },
     {
-      "id": "hemkop-2500310320-goteborg",
+      "id": "hemkop-2500310320-kalmar",
       "article": "Zeta Prosciutto Crudo",
       "brand": "Zeta",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 38.95,
       "currentPrice": 25,
@@ -1520,8 +1679,8 @@
       "discountPercent": 36,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500316233-goteborg",
@@ -1531,10 +1690,7 @@
       "cities": [
         "Göteborg",
         "Kalmar",
-        "Linköping",
-        "Skövde",
-        "Växjö",
-        "Örebro"
+        "Växjö"
       ],
       "originalPrice": 107.6,
       "currentPrice": 69.95,
@@ -1543,8 +1699,8 @@
       "discountPercent": 35,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310431-helsingborg",
@@ -1574,10 +1730,12 @@
         "Jönköping",
         "Karlstad",
         "Norrköping",
+        "Skövde",
         "Stockholm",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 45.95,
       "currentPrice": 30,
@@ -1608,32 +1766,13 @@
       "storeName": "Hemköp Jönköping C"
     },
     {
-      "id": "hemkop-2500316265-jonkoping",
-      "article": "Garant Hamburgare Nöt & Grönt 2-pack",
-      "brand": "Garant",
-      "chain": "Hemköp",
-      "cities": [
-        "Eskilstuna",
-        "Jönköping",
-        "Lund"
-      ],
-      "originalPrice": 30.18,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 34,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4674",
-      "storeName": "Hemköp Jönköping C"
-    },
-    {
       "id": "hemkop-2500310378-uppsala",
       "article": "Pick & Mix Naturgodis",
       "brand": "Pick & Mix",
       "chain": "Hemköp",
       "cities": [
-        "Uppsala"
+        "Uppsala",
+        "Örebro"
       ],
       "originalPrice": 226.19,
       "currentPrice": 149.5,
@@ -1651,10 +1790,11 @@
       "brand": "Risifrutti",
       "chain": "Hemköp",
       "cities": [
+        "Göteborg",
         "Halmstad",
+        "Linköping",
         "Lund",
         "Malmö",
-        "Skövde",
         "Stockholm"
       ],
       "originalPrice": 13.72,
@@ -1715,15 +1855,47 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
+      "id": "hemkop-2500316234-malmo",
+      "article": "Garant Salsiccia, Chorizo",
+      "brand": "Garant",
+      "chain": "Hemköp",
+      "cities": [
+        "Eskilstuna",
+        "Halmstad",
+        "Helsingborg",
+        "Jönköping",
+        "Karlstad",
+        "Linköping",
+        "Lund",
+        "Malmö",
+        "Norrköping",
+        "Skövde",
+        "Uppsala",
+        "Västerås",
+        "Örebro"
+      ],
+      "originalPrice": 52.05,
+      "currentPrice": 35,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 33,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4247",
+      "storeName": "Hemköp Malmö Triangeln"
+    },
+    {
       "id": "hemkop-2500310275-stockholm",
       "article": "Garant Tångcaviar",
       "brand": "Garant",
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
+        "Göteborg",
         "Halmstad",
         "Jönköping",
         "Karlstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
@@ -1731,7 +1903,8 @@
         "Stockholm",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 22.24,
       "currentPrice": 15,
@@ -1744,16 +1917,16 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
-      "id": "hemkop-2500310400-malmo",
+      "id": "hemkop-2500310400-goteborg",
       "article": "Head & Shoulders Schampo, Balsam",
       "brand": "Head & Shoulders",
       "chain": "Hemköp",
       "cities": [
+        "Göteborg",
         "Halmstad",
         "Linköping",
         "Lund",
-        "Malmö",
-        "Skövde"
+        "Malmö"
       ],
       "originalPrice": 44.95,
       "currentPrice": 30,
@@ -1762,8 +1935,8 @@
       "discountPercent": 33,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4247",
-      "storeName": "Hemköp Malmö Triangeln"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310330-uppsala",
@@ -1787,42 +1960,24 @@
       "storeName": "Hemköp Uppsala Västertorg"
     },
     {
-      "id": "hemkop-2500316265-orebro",
-      "article": "Garant Hamburgare Nöt & Grönt 2-pack",
+      "id": "hemkop-2500316234-stockholm",
+      "article": "Garant Salsiccia, Chorizo",
       "brand": "Garant",
       "chain": "Hemköp",
       "cities": [
-        "Kalmar",
-        "Örebro"
-      ],
-      "originalPrice": 29.23,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 32,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4204",
-      "storeName": "Hemköp Örebro Svampen"
-    },
-    {
-      "id": "hemkop-2500310400-goteborg",
-      "article": "Head & Shoulders Schampo, Balsam",
-      "brand": "Head & Shoulders",
-      "chain": "Hemköp",
-      "cities": [
         "Göteborg",
-        "Örebro"
+        "Stockholm",
+        "Växjö"
       ],
-      "originalPrice": 43.95,
-      "currentPrice": 30,
+      "originalPrice": 51.11,
+      "currentPrice": 35,
       "dealText": null,
       "unit": "per st",
       "discountPercent": 32,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4190",
+      "storeName": "Hemköp Stockholm Torsplan"
     },
     {
       "id": "hemkop-2500310483-karlstad",
@@ -1843,14 +1998,12 @@
       "storeName": "Hemköp Karlstad C"
     },
     {
-      "id": "hemkop-2500310420-goteborg",
+      "id": "hemkop-2500310420-kalmar",
       "article": "Risifrutti, Mannafrutti",
       "brand": "Risifrutti",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 13.2,
       "currentPrice": 9,
@@ -1859,8 +2012,8 @@
       "discountPercent": 32,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310320-stockholm",
@@ -1870,8 +2023,10 @@
       "cities": [
         "Eskilstuna",
         "Norrköping",
+        "Skövde",
         "Stockholm",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 36.95,
       "currentPrice": 25,
@@ -1882,25 +2037,6 @@
       "source": "Axfood live",
       "storeId": "4190",
       "storeName": "Hemköp Stockholm Torsplan"
-    },
-    {
-      "id": "hemkop-2500310493-malmo",
-      "article": "Garant Eko Ekologisk tagliatelle",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Lund",
-        "Malmö"
-      ],
-      "originalPrice": 28.86,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 31,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4247",
-      "storeName": "Hemköp Malmö Triangeln"
     },
     {
       "id": "hemkop-2500310378-karlstad",
@@ -1942,15 +2078,30 @@
       "storeName": "Hemköp Uppsala Västertorg"
     },
     {
-      "id": "hemkop-2500310275-goteborg",
+      "id": "hemkop-2500316234-kalmar",
+      "article": "Garant Salsiccia, Chorizo",
+      "brand": "Garant",
+      "chain": "Hemköp",
+      "cities": [
+        "Kalmar"
+      ],
+      "originalPrice": 50.16,
+      "currentPrice": 35,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 30,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
+    },
+    {
+      "id": "hemkop-2500310275-kalmar",
       "article": "Garant Tångcaviar",
       "brand": "Garant",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 21.29,
       "currentPrice": 15,
@@ -1959,8 +2110,8 @@
       "discountPercent": 30,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310324-uppsala",
@@ -1990,12 +2141,15 @@
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
+        "Göteborg",
         "Halmstad",
         "Helsingborg",
+        "Linköping",
         "Malmö",
         "Norrköping",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Örebro"
       ],
       "originalPrice": 119,
       "currentPrice": 85,
@@ -2013,7 +2167,17 @@
       "brand": "Bonjour",
       "chain": "Hemköp",
       "cities": [
-        "Hela Sverige"
+        "Eskilstuna",
+        "Halmstad",
+        "Jönköping",
+        "Kalmar",
+        "Linköping",
+        "Lund",
+        "Malmö",
+        "Skövde",
+        "Stockholm",
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 14.14,
       "currentPrice": 10,
@@ -2024,24 +2188,6 @@
       "source": "Axfood live",
       "storeId": "4190",
       "storeName": "Hemköp Stockholm Torsplan"
-    },
-    {
-      "id": "hemkop-2500310486-helsingborg",
-      "article": "Garant Eko Ekologisk riven kokos",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Helsingborg"
-      ],
-      "originalPrice": 34.97,
-      "currentPrice": 25,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 29,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4542",
-      "storeName": "Hemköp Helsingborg Laröd"
     },
     {
       "id": "hemkop-2500310494-helsingborg",
@@ -2088,7 +2234,9 @@
         "Eskilstuna",
         "Helsingborg",
         "Norrköping",
-        "Stockholm"
+        "Skövde",
+        "Stockholm",
+        "Örebro"
       ],
       "originalPrice": 84.55,
       "currentPrice": 59.95,
@@ -2137,36 +2285,12 @@
       "storeName": "Hemköp Helsingborg Laröd"
     },
     {
-      "id": "hemkop-2500310493-goteborg",
-      "article": "Garant Eko Ekologisk tagliatelle",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
-      ],
-      "originalPrice": 27.91,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 28,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
-    },
-    {
-      "id": "hemkop-2500310474-goteborg",
+      "id": "hemkop-2500310474-kalmar",
       "article": "Arla Präst, Herrgård, Grevé",
       "brand": "Arla",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 116,
       "currentPrice": 85,
@@ -2175,8 +2299,8 @@
       "discountPercent": 27,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500313630-uppsala",
@@ -2219,15 +2343,16 @@
       "storeName": "Hemköp Helsingborg Laröd"
     },
     {
-      "id": "hemkop-2500310330-malmo",
+      "id": "hemkop-2500310330-goteborg",
       "article": "Royal Greenland Räkor med skal",
       "brand": "Royal Greenland",
       "chain": "Hemköp",
       "cities": [
+        "Göteborg",
         "Halmstad",
+        "Linköping",
         "Lund",
         "Malmö",
-        "Skövde",
         "Växjö"
       ],
       "originalPrice": 81.75,
@@ -2237,8 +2362,8 @@
       "discountPercent": 27,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4247",
-      "storeName": "Hemköp Malmö Triangeln"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310243-uppsala",
@@ -2269,12 +2394,15 @@
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
+        "Göteborg",
         "Halmstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Örebro"
       ],
       "originalPrice": 51.05,
       "currentPrice": 38,
@@ -2297,12 +2425,15 @@
         "Helsingborg",
         "Jönköping",
         "Karlstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
+        "Skövde",
         "Stockholm",
         "Uppsala",
-        "Västerås"
+        "Västerås",
+        "Örebro"
       ],
       "originalPrice": 173.4,
       "currentPrice": 129,
@@ -2315,15 +2446,12 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
-      "id": "hemkop-2500310330-goteborg",
+      "id": "hemkop-2500310330-kalmar",
       "article": "Royal Greenland Räkor med skal",
       "brand": "Royal Greenland",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 80.75,
       "currentPrice": 59.95,
@@ -2332,8 +2460,8 @@
       "discountPercent": 26,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310324-stockholm",
@@ -2386,24 +2514,6 @@
       "storeName": "Hemköp Uppsala Västertorg"
     },
     {
-      "id": "hemkop-2500313139-eskilstuna",
-      "article": "Sevan Hummus",
-      "brand": "Sevan",
-      "chain": "Hemköp",
-      "cities": [
-        "Eskilstuna"
-      ],
-      "originalPrice": 33.07,
-      "currentPrice": 24.95,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 25,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4221",
-      "storeName": "Hemköp Eskilstuna City"
-    },
-    {
       "id": "hemkop-2500310243-stockholm",
       "article": "Yes Handdiskmedel",
       "brand": "Yes",
@@ -2412,7 +2522,9 @@
         "Eskilstuna",
         "Helsingborg",
         "Norrköping",
-        "Stockholm"
+        "Skövde",
+        "Stockholm",
+        "Örebro"
       ],
       "originalPrice": 43.95,
       "currentPrice": 32.95,
@@ -2438,27 +2550,6 @@
       ],
       "originalPrice": 52.85,
       "currentPrice": 39.95,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 24,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4592",
-      "storeName": "Hemköp Uppsala Västertorg"
-    },
-    {
-      "id": "hemkop-2500310486-uppsala",
-      "article": "Garant Eko Ekologisk riven kokos",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Jönköping",
-        "Karlstad",
-        "Uppsala",
-        "Västerås"
-      ],
-      "originalPrice": 33.07,
-      "currentPrice": 25,
       "dealText": null,
       "unit": "per st",
       "discountPercent": 24,
@@ -2496,10 +2587,7 @@
       "cities": [
         "Göteborg",
         "Kalmar",
-        "Linköping",
-        "Skövde",
-        "Växjö",
-        "Örebro"
+        "Växjö"
       ],
       "originalPrice": 169.6,
       "currentPrice": 129,
@@ -2508,8 +2596,8 @@
       "discountPercent": 24,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310378-goteborg",
@@ -2526,8 +2614,8 @@
       "discountPercent": 24,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310170-stockholm",
@@ -2586,12 +2674,15 @@
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
+        "Göteborg",
         "Halmstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Örebro"
       ],
       "originalPrice": 51.85,
       "currentPrice": 39.95,
@@ -2604,15 +2695,12 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
-      "id": "hemkop-2500313630-goteborg",
+      "id": "hemkop-2500313630-kalmar",
       "article": "Falkenberg Kräftstjärtar",
       "brand": "Falkenberg",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 49.16,
       "currentPrice": 38,
@@ -2621,8 +2709,8 @@
       "discountPercent": 23,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310484-helsingborg",
@@ -2643,15 +2731,16 @@
       "storeName": "Hemköp Helsingborg Laröd"
     },
     {
-      "id": "hemkop-2500310243-malmo",
+      "id": "hemkop-2500310243-goteborg",
       "article": "Yes Handdiskmedel",
       "brand": "Yes",
       "chain": "Hemköp",
       "cities": [
+        "Göteborg",
         "Halmstad",
+        "Linköping",
         "Lund",
-        "Malmö",
-        "Skövde"
+        "Malmö"
       ],
       "originalPrice": 42.95,
       "currentPrice": 32.95,
@@ -2660,33 +2749,8 @@
       "discountPercent": 23,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4247",
-      "storeName": "Hemköp Malmö Triangeln"
-    },
-    {
-      "id": "hemkop-2500310486-stockholm",
-      "article": "Garant Eko Ekologisk riven kokos",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Eskilstuna",
-        "Halmstad",
-        "Lund",
-        "Malmö",
-        "Norrköping",
-        "Skövde",
-        "Stockholm",
-        "Växjö"
-      ],
-      "originalPrice": 32.13,
-      "currentPrice": 25,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 22,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4190",
-      "storeName": "Hemköp Stockholm Torsplan"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310494-stockholm",
@@ -2695,13 +2759,16 @@
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
+        "Göteborg",
         "Halmstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
         "Skövde",
         "Stockholm",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 32.13,
       "currentPrice": 25,
@@ -2745,8 +2812,7 @@
         "Malmö",
         "Norrköping",
         "Skövde",
-        "Stockholm",
-        "Örebro"
+        "Stockholm"
       ],
       "originalPrice": 188.3,
       "currentPrice": 149.5,
@@ -2777,15 +2843,12 @@
       "storeName": "Hemköp Västerås Malmaberg"
     },
     {
-      "id": "hemkop-2500310243-goteborg",
+      "id": "hemkop-2500310243-kalmar",
       "article": "Yes Handdiskmedel",
       "brand": "Yes",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 41.95,
       "currentPrice": 32.95,
@@ -2794,46 +2857,16 @@
       "discountPercent": 21,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
-      "id": "hemkop-2500322136-stockholm",
-      "article": "Emmi Kaltbach",
-      "brand": "Emmi",
-      "chain": "Hemköp",
-      "cities": [
-        "Göteborg",
-        "Halmstad",
-        "Kalmar",
-        "Linköping",
-        "Lund",
-        "Malmö",
-        "Skövde",
-        "Stockholm",
-        "Växjö",
-        "Örebro"
-      ],
-      "originalPrice": 472.2,
-      "currentPrice": 379.5,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 20,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4190",
-      "storeName": "Hemköp Stockholm Torsplan"
-    },
-    {
-      "id": "hemkop-2500310431-goteborg",
+      "id": "hemkop-2500310431-kalmar",
       "article": "Falkenberg Gravad, Kallrökt lax",
       "brand": "Falkenberg",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 49.85,
       "currentPrice": 39.95,
@@ -2842,29 +2875,8 @@
       "discountPercent": 20,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
-    },
-    {
-      "id": "hemkop-2500310486-goteborg",
-      "article": "Garant Eko Ekologisk riven kokos",
-      "brand": "Garant Eko",
-      "chain": "Hemköp",
-      "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
-      ],
-      "originalPrice": 31.18,
-      "currentPrice": 25,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 20,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310345-stockholm",
@@ -2890,24 +2902,6 @@
       "currentPrice": 12,
       "dealText": null,
       "unit": "per st",
-      "discountPercent": 20,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4190",
-      "storeName": "Hemköp Stockholm Torsplan"
-    },
-    {
-      "id": "hemkop-2500322134-stockholm",
-      "article": "Slega, Ridderheims Chark",
-      "brand": "Slega, Ridderheims",
-      "chain": "Hemköp",
-      "cities": [
-        "Stockholm"
-      ],
-      "originalPrice": 499,
-      "currentPrice": 399.5,
-      "dealText": null,
-      "unit": "per kg",
       "discountPercent": 20,
       "validTo": "2026-08-09",
       "source": "Axfood live",
@@ -2943,11 +2937,14 @@
         "Helsingborg",
         "Jönköping",
         "Karlstad",
+        "Linköping",
         "Lund",
         "Malmö",
         "Norrköping",
+        "Skövde",
         "Uppsala",
-        "Västerås"
+        "Västerås",
+        "Örebro"
       ],
       "originalPrice": 272,
       "currentPrice": 219,
@@ -2960,17 +2957,13 @@
       "storeName": "Hemköp Malmö Triangeln"
     },
     {
-      "id": "hemkop-2500322134-malmo",
+      "id": "hemkop-2500322134-orebro",
       "article": "Slega, Ridderheims Chark",
       "brand": "Slega, Ridderheims",
       "chain": "Hemköp",
       "cities": [
         "Kalmar",
-        "Linköping",
         "Lund",
-        "Malmö",
-        "Skövde",
-        "Växjö",
         "Örebro"
       ],
       "originalPrice": 491.1,
@@ -2980,8 +2973,8 @@
       "discountPercent": 19,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4247",
-      "storeName": "Hemköp Malmö Triangeln"
+      "storeId": "4644",
+      "storeName": "Hemköp Örebro Lucullus"
     },
     {
       "id": "hemkop-2500310452-stockholm",
@@ -2994,10 +2987,12 @@
         "Jönköping",
         "Karlstad",
         "Norrköping",
+        "Skövde",
         "Stockholm",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 26.97,
       "currentPrice": 22,
@@ -3010,15 +3005,12 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
-      "id": "hemkop-2500310494-goteborg",
+      "id": "hemkop-2500310494-kalmar",
       "article": "Garant Eko Ekologisk skinka",
       "brand": "Garant Eko",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 30.23,
       "currentPrice": 25,
@@ -3027,8 +3019,8 @@
       "discountPercent": 17,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310452-goteborg",
@@ -3041,9 +3033,7 @@
         "Kalmar",
         "Linköping",
         "Lund",
-        "Malmö",
-        "Skövde",
-        "Örebro"
+        "Malmö"
       ],
       "originalPrice": 26.45,
       "currentPrice": 22,
@@ -3052,8 +3042,8 @@
       "discountPercent": 17,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310270-helsingborg",
@@ -3081,10 +3071,7 @@
       "cities": [
         "Göteborg",
         "Kalmar",
-        "Linköping",
-        "Skövde",
-        "Växjö",
-        "Örebro"
+        "Växjö"
       ],
       "originalPrice": 262,
       "currentPrice": 219,
@@ -3093,8 +3080,8 @@
       "discountPercent": 16,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310240-stockholm",
@@ -3176,17 +3163,20 @@
       "chain": "Hemköp",
       "cities": [
         "Eskilstuna",
+        "Göteborg",
         "Halmstad",
         "Helsingborg",
         "Jönköping",
         "Karlstad",
+        "Linköping",
         "Malmö",
         "Norrköping",
         "Skövde",
         "Stockholm",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 25.45,
       "currentPrice": 22,
@@ -3226,8 +3216,10 @@
         "Helsingborg",
         "Jönköping",
         "Norrköping",
+        "Skövde",
         "Uppsala",
-        "Västerås"
+        "Västerås",
+        "Örebro"
       ],
       "originalPrice": 18.45,
       "currentPrice": 16,
@@ -3240,6 +3232,38 @@
       "storeName": "Hemköp Uppsala Västertorg"
     },
     {
+      "id": "hemkop-2500310454-stockholm",
+      "article": "Garant Vispgrädde",
+      "brand": "Garant",
+      "chain": "Hemköp",
+      "cities": [
+        "Eskilstuna",
+        "Göteborg",
+        "Halmstad",
+        "Helsingborg",
+        "Jönköping",
+        "Kalmar",
+        "Karlstad",
+        "Linköping",
+        "Lund",
+        "Malmö",
+        "Norrköping",
+        "Stockholm",
+        "Uppsala",
+        "Västerås",
+        "Växjö"
+      ],
+      "originalPrice": 28.34,
+      "currentPrice": 25,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 12,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4190",
+      "storeName": "Hemköp Stockholm Torsplan"
+    },
+    {
       "id": "hemkop-2500310484-uppsala",
       "article": "God morgon Juice",
       "brand": "God morgon",
@@ -3248,9 +3272,11 @@
         "Jönköping",
         "Karlstad",
         "Norrköping",
+        "Skövde",
         "Uppsala",
         "Västerås",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 27.39,
       "currentPrice": 24,
@@ -3261,6 +3287,24 @@
       "source": "Axfood live",
       "storeId": "4592",
       "storeName": "Hemköp Uppsala Västertorg"
+    },
+    {
+      "id": "hemkop-2500320789-goteborg",
+      "article": "Gröna druvor",
+      "brand": null,
+      "chain": "Hemköp",
+      "cities": [
+        "Göteborg"
+      ],
+      "originalPrice": 25,
+      "currentPrice": 22,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 12,
+      "validTo": "2026-08-09",
+      "source": "Axfood live",
+      "storeId": "4269",
+      "storeName": "Hemköp Göteborg Nordstan"
     },
     {
       "id": "hemkop-2500310483-stockholm",
@@ -3274,10 +3318,8 @@
         "Linköping",
         "Lund",
         "Malmö",
-        "Skövde",
         "Stockholm",
-        "Växjö",
-        "Örebro"
+        "Växjö"
       ],
       "originalPrice": 17.93,
       "currentPrice": 16,
@@ -3290,15 +3332,12 @@
       "storeName": "Hemköp Stockholm Torsplan"
     },
     {
-      "id": "hemkop-2500310450-goteborg",
+      "id": "hemkop-2500310450-kalmar",
       "article": "Arla Smör- & Rapsolja",
       "brand": "Arla",
       "chain": "Hemköp",
       "cities": [
-        "Göteborg",
-        "Kalmar",
-        "Linköping",
-        "Örebro"
+        "Kalmar"
       ],
       "originalPrice": 24.5,
       "currentPrice": 22,
@@ -3307,8 +3346,8 @@
       "discountPercent": 10,
       "validTo": "2026-08-09",
       "source": "Axfood live",
-      "storeId": "4349",
-      "storeName": "Hemköp Göteborg Stigbergstorget"
+      "storeId": "4207",
+      "storeName": "Hemköp Kalmar"
     },
     {
       "id": "hemkop-2500310484-stockholm",
@@ -3321,7 +3360,6 @@
         "Kalmar",
         "Linköping",
         "Lund",
-        "Skövde",
         "Stockholm"
       ],
       "originalPrice": 26.45,
@@ -3333,24 +3371,6 @@
       "source": "Axfood live",
       "storeId": "4190",
       "storeName": "Hemköp Stockholm Torsplan"
-    },
-    {
-      "id": "hemkop-2500322134-halmstad",
-      "article": "Slega, Ridderheims Chark",
-      "brand": "Slega, Ridderheims",
-      "chain": "Hemköp",
-      "cities": [
-        "Halmstad"
-      ],
-      "originalPrice": 419,
-      "currentPrice": 399.5,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 5,
-      "validTo": "2026-08-09",
-      "source": "Axfood live",
-      "storeId": "4245",
-      "storeName": "Hemköp Halmstad C"
     },
     {
       "id": "coop-5000112637939-stockholm",
@@ -3459,6 +3479,24 @@
       "source": "Coop live",
       "storeId": "252600",
       "storeName": "Stora Coop Backaplan"
+    },
+    {
+      "id": "coop-8007640882982-umea",
+      "article": "Enervit Vitamingel Cola 25ml",
+      "brand": "Enervit",
+      "chain": "Coop",
+      "cities": [
+        "Umeå"
+      ],
+      "originalPrice": 40.22,
+      "currentPrice": 21,
+      "dealText": "2 för 42 kr",
+      "unit": "per lit",
+      "discountPercent": 48,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
     },
     {
       "id": "coop-7316150376425-goteborg",
@@ -3833,27 +3871,6 @@
       "storeName": "Stora Coop Garnisonen Linköping"
     },
     {
-      "id": "coop-2317432600004-uppsala",
-      "article": "Melon 950 gram ungefärlig vikt",
-      "brand": null,
-      "chain": "Coop",
-      "cities": [
-        "Eskilstuna",
-        "Linköping",
-        "Norrköping",
-        "Uppsala"
-      ],
-      "originalPrice": 26.9,
-      "currentPrice": 17.1,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 36,
-      "validTo": "2026-08-09",
-      "source": "Coop live",
-      "storeId": "251300",
-      "storeName": "Stora Coop Boländerna"
-    },
-    {
       "id": "coop-2320719100005-goteborg",
       "article": "Scan Kassler Rökt & rimmad 1000 gram ungefärlig vikt",
       "brand": "Scan",
@@ -3866,7 +3883,6 @@
         "Jönköping",
         "Karlstad",
         "Linköping",
-        "Luleå",
         "Norrköping",
         "Skövde",
         "Umeå",
@@ -4353,6 +4369,27 @@
       "storeName": "Stora Coop Ladugårdsängen"
     },
     {
+      "id": "coop-2317432600004-uppsala",
+      "article": "Melon 950 gram ungefärlig vikt",
+      "brand": null,
+      "chain": "Coop",
+      "cities": [
+        "Eskilstuna",
+        "Linköping",
+        "Norrköping",
+        "Uppsala"
+      ],
+      "originalPrice": 24.9,
+      "currentPrice": 17.1,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 31,
+      "validTo": "2026-08-09",
+      "source": "Coop live",
+      "storeId": "251300",
+      "storeName": "Stora Coop Boländerna"
+    },
+    {
       "id": "coop-5740017115254-stockholm",
       "article": "Mikkeller Alkoholfri Öl 0.3% 33 cl",
       "brand": "Mikkeller",
@@ -4520,27 +4557,7 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
-        "Borås",
         "Göteborg",
-        "Sundsvall",
-        "Umeå"
-      ],
-      "originalPrice": 21.29,
-      "currentPrice": 15,
-      "dealText": "2 för 30 kr",
-      "unit": "utan sås/spad",
-      "discountPercent": 30,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "252600",
-      "storeName": "Stora Coop Backaplan"
-    },
-    {
-      "id": "coop-7340191153950-jonkoping",
-      "article": "Coop Ärtor & små morötter 400 G",
-      "brand": "Coop",
-      "chain": "Coop",
-      "cities": [
         "Halmstad",
         "Jönköping",
         "Skövde",
@@ -4553,8 +4570,28 @@
       "discountPercent": 30,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "072000",
-      "storeName": "Stora Coop Jönköping"
+      "storeId": "252600",
+      "storeName": "Stora Coop Backaplan"
+    },
+    {
+      "id": "coop-7340191153950-umea",
+      "article": "Coop Ärtor & små morötter 400 G",
+      "brand": "Coop",
+      "chain": "Coop",
+      "cities": [
+        "Borås",
+        "Sundsvall",
+        "Umeå"
+      ],
+      "originalPrice": 21.29,
+      "currentPrice": 15,
+      "dealText": "2 för 30 kr",
+      "unit": "utan sås/spad",
+      "discountPercent": 30,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
     },
     {
       "id": "coop-7300170040787-stockholm",
@@ -4982,24 +5019,6 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-5774540980805-skovde",
-      "article": "Anthon Berg Marsipanbröd Baileys 33g",
-      "brand": "Anthon Berg",
-      "chain": "Coop",
-      "cities": [
-        "Skövde"
-      ],
-      "originalPrice": 13.72,
-      "currentPrice": 10,
-      "dealText": "2 för 20 kr",
-      "unit": "per kg",
-      "discountPercent": 27,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "254800",
-      "storeName": "Stora Coop Nolhaga Skövde"
-    },
-    {
       "id": "coop-57540597-stockholm",
       "article": "Anthon Berg Marsipanbröd Original 40g",
       "brand": "Anthon Berg",
@@ -5009,6 +5028,7 @@
         "Göteborg",
         "Halmstad",
         "Jönköping",
+        "Skövde",
         "Stockholm",
         "Växjö"
       ],
@@ -5222,8 +5242,7 @@
         "Skövde",
         "Stockholm",
         "Umeå",
-        "Växjö",
-        "Örebro"
+        "Växjö"
       ],
       "originalPrice": 54.46,
       "currentPrice": 39.5,
@@ -5234,6 +5253,24 @@
       "source": "Coop live",
       "storeId": "035000",
       "storeName": "Coop Daglivs"
+    },
+    {
+      "id": "coop-7311310026745-orebro",
+      "article": "Santa Maria Kryddkvarn Chicken & Steak 75 g",
+      "brand": "Santa Maria",
+      "chain": "Coop",
+      "cities": [
+        "Örebro"
+      ],
+      "originalPrice": 54.46,
+      "currentPrice": 39.5,
+      "dealText": "2 för 79 kr",
+      "unit": "per kg",
+      "discountPercent": 27,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "176211",
+      "storeName": "Stora Coop Ladugårdsängen"
     },
     {
       "id": "coop-7310070006974-stockholm",
@@ -5252,6 +5289,24 @@
       "source": "Coop live",
       "storeId": "035000",
       "storeName": "Coop Daglivs"
+    },
+    {
+      "id": "coop-7323130113109-eskilstuna",
+      "article": "Sydgrönt Spetskål mini 2-pack 300 g",
+      "brand": "Sydgrönt",
+      "chain": "Coop",
+      "cities": [
+        "Eskilstuna"
+      ],
+      "originalPrice": 39.7,
+      "currentPrice": 29,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 27,
+      "validTo": "2026-08-09",
+      "source": "Coop live",
+      "storeId": "253000",
+      "storeName": "Stora Coop Eskilstuna"
     },
     {
       "id": "coop-7300156578556-goteborg",
@@ -5545,9 +5600,8 @@
         "Halmstad",
         "Jönköping",
         "Skövde",
-        "Sundsvall",
-        "Umeå",
-        "Växjö"
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 26.45,
       "currentPrice": 19.5,
@@ -5611,11 +5665,12 @@
       "storeName": "Coop Daglivs"
     },
     {
-      "id": "coop-7340191169616-jonkoping",
+      "id": "coop-7340191169616-goteborg",
       "article": "Coop Jordnötter rostade & saltade 250 G",
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
+        "Göteborg",
         "Halmstad",
         "Jönköping",
         "Skövde",
@@ -5628,8 +5683,8 @@
       "discountPercent": 25,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "072000",
-      "storeName": "Stora Coop Jönköping"
+      "storeId": "252600",
+      "storeName": "Stora Coop Backaplan"
     },
     {
       "id": "coop-7340191162792-goteborg",
@@ -5694,6 +5749,24 @@
       "source": "Coop live",
       "storeId": "105610",
       "storeName": "Stora Coop Halmstad"
+    },
+    {
+      "id": "coop-5712969024953-stockholm",
+      "article": "Donut Worry Be Happy Munk mini pink & flower sprinkles 20g",
+      "brand": "Donut Worry Be Happy",
+      "chain": "Coop",
+      "cities": [
+        "Stockholm"
+      ],
+      "originalPrice": 4.26,
+      "currentPrice": 3.2,
+      "dealText": "10 för 32 kr",
+      "unit": "per kg",
+      "discountPercent": 25,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "035000",
+      "storeName": "Coop Daglivs"
     },
     {
       "id": "coop-7310532115725-stockholm",
@@ -6015,7 +6088,6 @@
       "cities": [
         "Halmstad",
         "Jönköping",
-        "Skövde",
         "Växjö"
       ],
       "originalPrice": 13.2,
@@ -6035,7 +6107,6 @@
       "chain": "Coop",
       "cities": [
         "Borås",
-        "Göteborg",
         "Stockholm"
       ],
       "originalPrice": 19.83,
@@ -6054,25 +6125,7 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
-        "Borås",
-        "Göteborg"
-      ],
-      "originalPrice": 19.83,
-      "currentPrice": 15,
-      "dealText": "2 för 30 kr",
-      "unit": "per kg",
-      "discountPercent": 24,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "252600",
-      "storeName": "Stora Coop Backaplan"
-    },
-    {
-      "id": "coop-7340191158757-uppsala",
-      "article": "Coop Micro Popcorn Butter 3-pack 270 g",
-      "brand": "Coop",
-      "chain": "Coop",
-      "cities": [
+        "Göteborg",
         "Halmstad",
         "Jönköping",
         "Karlstad",
@@ -6091,8 +6144,26 @@
       "discountPercent": 24,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "251300",
-      "storeName": "Stora Coop Boländerna"
+      "storeId": "252600",
+      "storeName": "Stora Coop Backaplan"
+    },
+    {
+      "id": "coop-7340191158757-boras",
+      "article": "Coop Micro Popcorn Butter 3-pack 270 g",
+      "brand": "Coop",
+      "chain": "Coop",
+      "cities": [
+        "Borås"
+      ],
+      "originalPrice": 19.83,
+      "currentPrice": 15,
+      "dealText": "2 för 30 kr",
+      "unit": "per kg",
+      "discountPercent": 24,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "252200",
+      "storeName": "Stora Coop Borås"
     },
     {
       "id": "coop-7340191139169-goteborg",
@@ -6201,24 +6272,6 @@
       "currentPrice": 9.75,
       "dealText": "4 för 39 kr",
       "unit": "per lit",
-      "discountPercent": 24,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "035000",
-      "storeName": "Coop Daglivs"
-    },
-    {
-      "id": "coop-7613036961721-stockholm",
-      "article": "STARBUCKS Kaffekapslar Colombia Mellanrost 10-pack 10 st",
-      "brand": "STARBUCKS",
-      "chain": "Coop",
-      "cities": [
-        "Stockholm"
-      ],
-      "originalPrice": 49.17,
-      "currentPrice": 37.5,
-      "dealText": "2 för 75 kr",
-      "unit": "per st",
       "discountPercent": 24,
       "validTo": "2026-09-06",
       "source": "Coop live",
@@ -6438,6 +6491,7 @@
       "chain": "Coop",
       "cities": [
         "Karlstad",
+        "Luleå",
         "Norrköping",
         "Uppsala",
         "Örebro"
@@ -6767,24 +6821,6 @@
       "storeName": "Coop Daglivs"
     },
     {
-      "id": "coop-8410525121500-uppsala",
-      "article": "FINI Magic carpets Sour 75 g",
-      "brand": "FINI",
-      "chain": "Coop",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 12.78,
-      "currentPrice": 10,
-      "dealText": "2 för 20 kr",
-      "unit": "per kg",
-      "discountPercent": 22,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "251300",
-      "storeName": "Stora Coop Boländerna"
-    },
-    {
       "id": "coop-8410525178085-goteborg",
       "article": "FINI Melonskivor 75 GR",
       "brand": "FINI",
@@ -6801,6 +6837,7 @@
         "Norrköping",
         "Sundsvall",
         "Umeå",
+        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -7063,7 +7100,6 @@
       "chain": "Coop",
       "cities": [
         "Borås",
-        "Eskilstuna",
         "Göteborg",
         "Halmstad",
         "Jönköping",
@@ -7206,17 +7242,33 @@
       "storeName": "Stora Coop Stenby Västerås"
     },
     {
-      "id": "coop-8007640886133-stockholm",
+      "id": "coop-8007640886133-goteborg",
       "article": "Enervit Gel Koffein Citrus Energy 25ml",
       "brand": "Enervit",
       "chain": "Coop",
       "cities": [
+        "Göteborg"
+      ],
+      "originalPrice": 26.45,
+      "currentPrice": 21,
+      "dealText": "2 för 42 kr",
+      "unit": "per lit",
+      "discountPercent": 21,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "252600",
+      "storeName": "Stora Coop Backaplan"
+    },
+    {
+      "id": "coop-8007640882982-stockholm",
+      "article": "Enervit Vitamingel Cola 25ml",
+      "brand": "Enervit",
+      "chain": "Coop",
+      "cities": [
         "Borås",
-        "Göteborg",
         "Jönköping",
         "Skövde",
         "Stockholm",
-        "Umeå",
         "Växjö",
         "Örebro"
       ],
@@ -7237,7 +7289,6 @@
       "chain": "Coop",
       "cities": [
         "Sundsvall",
-        "Umeå",
         "Örebro"
       ],
       "originalPrice": 35.92,
@@ -7581,7 +7632,7 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-7310960024415-uppsala",
+      "id": "coop-7310960024415-vasteras",
       "article": "Billys Pan Pizza Original 9-pack 9 pack",
       "brand": "Billys",
       "chain": "Coop",
@@ -7591,7 +7642,6 @@
         "Linköping",
         "Luleå",
         "Norrköping",
-        "Uppsala",
         "Västerås",
         "Örebro"
       ],
@@ -7602,8 +7652,8 @@
       "discountPercent": 20,
       "validTo": "2026-08-09",
       "source": "Coop live",
-      "storeId": "251300",
-      "storeName": "Stora Coop Boländerna"
+      "storeId": "185510",
+      "storeName": "Stora Coop Stenby Västerås"
     },
     {
       "id": "coop-7310960024415-umea",
@@ -7980,7 +8030,6 @@
         "Borås",
         "Göteborg",
         "Halmstad",
-        "Jönköping",
         "Skövde",
         "Stockholm"
       ],
@@ -8018,15 +8067,14 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-8001440120244-uppsala",
+      "id": "coop-8001440120244-norrkoping",
       "article": "Cirio Tomater Passerade 350 g",
       "brand": "Cirio",
       "chain": "Coop",
       "cities": [
         "Karlstad",
         "Linköping",
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 18.46,
       "currentPrice": 15,
@@ -8035,8 +8083,8 @@
       "discountPercent": 19,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "251300",
-      "storeName": "Stora Coop Boländerna"
+      "storeId": "056095",
+      "storeName": "Stora Coop Risängen"
     },
     {
       "id": "coop-7340191173439-sundsvall",
@@ -8102,6 +8150,24 @@
       "storeName": "Stora Coop Backaplan"
     },
     {
+      "id": "coop-7340011424086-skovde",
+      "article": "Coop Kattmat Helfoder Lax & tonfisk 415 g",
+      "brand": "Coop",
+      "chain": "Coop",
+      "cities": [
+        "Skövde"
+      ],
+      "originalPrice": 15.5,
+      "currentPrice": 12.5,
+      "dealText": "2 för 25 kr",
+      "unit": "per kg",
+      "discountPercent": 19,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "254800",
+      "storeName": "Stora Coop Nolhaga Skövde"
+    },
+    {
       "id": "coop-7340011424079-goteborg",
       "article": "Coop Kattmat Kyckling & kalv 415 g",
       "brand": "Coop",
@@ -8110,7 +8176,6 @@
         "Borås",
         "Göteborg",
         "Halmstad",
-        "Skövde",
         "Växjö",
         "Örebro"
       ],
@@ -8278,8 +8343,8 @@
       "storeName": "Stora Coop Backaplan"
     },
     {
-      "id": "coop-8007640886133-uppsala",
-      "article": "Enervit Gel Koffein Citrus Energy 25ml",
+      "id": "coop-8007640882982-uppsala",
+      "article": "Enervit Vitamingel Cola 25ml",
       "brand": "Enervit",
       "chain": "Coop",
       "cities": [
@@ -8343,13 +8408,13 @@
       "storeName": "Coop Daglivs"
     },
     {
-      "id": "coop-7316150970340-halmstad",
+      "id": "coop-7316150970340-jonkoping",
       "article": "Fontana Fetaost Original 150 g",
       "brand": "Fontana",
       "chain": "Coop",
       "cities": [
         "Halmstad",
-        "Skövde",
+        "Jönköping",
         "Växjö"
       ],
       "originalPrice": 30.24,
@@ -8359,8 +8424,8 @@
       "discountPercent": 19,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "105610",
-      "storeName": "Stora Coop Halmstad"
+      "storeId": "072000",
+      "storeName": "Stora Coop Jönköping"
     },
     {
       "id": "coop-7316150979596-norrkoping",
@@ -8522,6 +8587,7 @@
         "Halmstad",
         "Jönköping",
         "Sundsvall",
+        "Umeå",
         "Växjö",
         "Örebro"
       ],
@@ -8725,7 +8791,8 @@
       "brand": "Änglamark",
       "chain": "Coop",
       "cities": [
-        "Halmstad"
+        "Halmstad",
+        "Skövde"
       ],
       "originalPrice": 33.95,
       "currentPrice": 27.5,
@@ -8746,7 +8813,6 @@
         "Borås",
         "Göteborg",
         "Jönköping",
-        "Skövde",
         "Växjö"
       ],
       "originalPrice": 33.95,
@@ -9083,8 +9149,8 @@
       "storeName": "Coop Daglivs"
     },
     {
-      "id": "coop-8007640886133-vasteras",
-      "article": "Enervit Gel Koffein Citrus Energy 25ml",
+      "id": "coop-8007640882982-vasteras",
+      "article": "Enervit Vitamingel Cola 25ml",
       "brand": "Enervit",
       "chain": "Coop",
       "cities": [
@@ -9146,6 +9212,24 @@
       "storeName": "Coop Daglivs"
     },
     {
+      "id": "coop-7310960044116-uppsala",
+      "article": "Gorby´s Pirog Original 10-pack 1400 g",
+      "brand": "Gorby´s",
+      "chain": "Coop",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 97.48,
+      "currentPrice": 79.5,
+      "dealText": "2 för 159 kr",
+      "unit": "per kg",
+      "discountPercent": 18,
+      "validTo": "2026-08-09",
+      "source": "Coop live",
+      "storeId": "251300",
+      "storeName": "Stora Coop Boländerna"
+    },
+    {
       "id": "coop-7314720634746-uppsala",
       "article": "Kiviks Musteri Lemonad Jordgubb & Mynta 27.5 cl",
       "brand": "Kiviks Musteri",
@@ -9168,24 +9252,6 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-7392672003384-lulea",
-      "article": "Lindahls Drickkvarg Hallon & Vanilj 0,8% 330 ml",
-      "brand": "Lindahls",
-      "chain": "Coop",
-      "cities": [
-        "Luleå"
-      ],
-      "originalPrice": 15.29,
-      "currentPrice": 12.5,
-      "dealText": "2 för 25 kr",
-      "unit": "per lit",
-      "discountPercent": 18,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "242200",
-      "storeName": "Stora Coop Storheden"
-    },
-    {
       "id": "coop-7392672003414-uppsala",
       "article": "Lindahls Drickkvarg Smultron 0,8% 330 ml",
       "brand": "Lindahls",
@@ -9194,6 +9260,7 @@
         "Eskilstuna",
         "Karlstad",
         "Linköping",
+        "Luleå",
         "Norrköping",
         "Umeå",
         "Uppsala",
@@ -9371,14 +9438,13 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-7350027793984-orebro",
+      "id": "coop-7350027793984-umea",
       "article": "Zeta Burrata 100 g",
       "brand": "Zeta",
       "chain": "Coop",
       "cities": [
         "Sundsvall",
-        "Umeå",
-        "Örebro"
+        "Umeå"
       ],
       "originalPrice": 33.63,
       "currentPrice": 27.5,
@@ -9387,8 +9453,8 @@
       "discountPercent": 18,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "176211",
-      "storeName": "Stora Coop Ladugårdsängen"
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
     },
     {
       "id": "coop-3838975566606-stockholm",
@@ -9439,6 +9505,7 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
+        "Skövde",
         "Växjö"
       ],
       "originalPrice": 22.24,
@@ -10368,8 +10435,8 @@
       "storeName": "Stora Coop Backaplan"
     },
     {
-      "id": "coop-7350104403058-jonkoping",
-      "article": "Nick´s Proteinbar Hazelnut chocolate 50g",
+      "id": "coop-7350104403010-jonkoping",
+      "article": "Nick´s Proteinbar Salty peanut 50g",
       "brand": "Nick´s",
       "chain": "Coop",
       "cities": [
@@ -10538,6 +10605,24 @@
       "storeName": "Stora Coop Stenby Västerås"
     },
     {
+      "id": "coop-4008239231093-vaxjo",
+      "article": "Vitakraft Hundgodis Beef-Stick Lamm 12 g",
+      "brand": "Vitakraft",
+      "chain": "Coop",
+      "cities": [
+        "Växjö"
+      ],
+      "originalPrice": 8.95,
+      "currentPrice": 7.5,
+      "dealText": "4 för 30 kr",
+      "unit": "per kg",
+      "discountPercent": 16,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "075800",
+      "storeName": "Stora Coop Norremark"
+    },
+    {
       "id": "coop-4008239230096-stockholm",
       "article": "Vitakraft Hundgodis Beef-Stick Oxkött 12 g",
       "brand": "Vitakraft",
@@ -10548,8 +10633,7 @@
         "Halmstad",
         "Jönköping",
         "Skövde",
-        "Stockholm",
-        "Växjö"
+        "Stockholm"
       ],
       "originalPrice": 8.95,
       "currentPrice": 7.5,
@@ -10571,6 +10655,7 @@
         "Jönköping",
         "Skövde",
         "Sundsvall",
+        "Umeå",
         "Växjö",
         "Örebro"
       ],
@@ -10736,6 +10821,7 @@
         "Eskilstuna",
         "Karlstad",
         "Linköping",
+        "Luleå",
         "Norrköping",
         "Uppsala"
       ],
@@ -10750,22 +10836,22 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-7310401056388-lulea",
-      "article": "Briska Alkoholfri cider Päron 0,5% 33cl",
-      "brand": "Briska",
+      "id": "coop-7340191165335-norrkoping",
+      "article": "Coop Digestive 400 g",
+      "brand": "Coop",
       "chain": "Coop",
       "cities": [
-        "Luleå"
+        "Norrköping"
       ],
-      "originalPrice": 11.31,
-      "currentPrice": 9.67,
-      "dealText": "3 för 29 kr",
-      "unit": "per lit",
+      "originalPrice": 11.79,
+      "currentPrice": 10,
+      "dealText": "2 för 20 kr",
+      "unit": "per kg",
       "discountPercent": 15,
-      "validTo": "2026-09-06",
+      "validTo": "2026-08-09",
       "source": "Coop live",
-      "storeId": "242200",
-      "storeName": "Stora Coop Storheden"
+      "storeId": "056095",
+      "storeName": "Stora Coop Risängen"
     },
     {
       "id": "coop-7340191159389-stockholm",
@@ -11159,7 +11245,6 @@
       "brand": "PROPUD",
       "chain": "Coop",
       "cities": [
-        "Eskilstuna",
         "Linköping",
         "Luleå",
         "Norrköping",
@@ -11174,6 +11259,24 @@
       "source": "Coop live",
       "storeId": "251300",
       "storeName": "Stora Coop Boländerna"
+    },
+    {
+      "id": "coop-7350068295416-eskilstuna",
+      "article": "PROPUD Proteinbar Nöt-Crème 55g",
+      "brand": "PROPUD",
+      "chain": "Coop",
+      "cities": [
+        "Eskilstuna"
+      ],
+      "originalPrice": 20.35,
+      "currentPrice": 17.33,
+      "dealText": "3 för 52 kr",
+      "unit": "per kg",
+      "discountPercent": 15,
+      "validTo": "2026-08-09",
+      "source": "Coop live",
+      "storeId": "253000",
+      "storeName": "Stora Coop Eskilstuna"
     },
     {
       "id": "coop-5740301223825-vasteras",
@@ -11598,7 +11701,6 @@
         "Karlstad",
         "Linköping",
         "Luleå",
-        "Norrköping",
         "Sundsvall",
         "Umeå",
         "Uppsala",
@@ -11798,6 +11900,7 @@
       "brand": "Änglamark",
       "chain": "Coop",
       "cities": [
+        "Eskilstuna",
         "Karlstad",
         "Linköping",
         "Luleå",
@@ -11815,13 +11918,14 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-7340011315162-umea",
+      "id": "coop-7340011315162-orebro",
       "article": "Änglamark Spaghetti Eko 500 G",
       "brand": "Änglamark",
       "chain": "Coop",
       "cities": [
         "Sundsvall",
-        "Umeå"
+        "Umeå",
+        "Örebro"
       ],
       "originalPrice": 17.49,
       "currentPrice": 15,
@@ -11830,8 +11934,8 @@
       "discountPercent": 14,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "231400",
-      "storeName": "Stora Coop Ersboda"
+      "storeId": "176211",
+      "storeName": "Stora Coop Ladugårdsängen"
     },
     {
       "id": "coop-7350014910745-orebro",
@@ -11862,6 +11966,7 @@
         "Göteborg",
         "Jönköping",
         "Skövde",
+        "Sundsvall",
         "Umeå"
       ],
       "originalPrice": 45.38,
@@ -11925,14 +12030,13 @@
       "storeName": "Coop Daglivs"
     },
     {
-      "id": "coop-7340191167964-orebro",
+      "id": "coop-7340191167964-umea",
       "article": "Coop Glutenfri Tårtbotten 200 G",
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
         "Sundsvall",
-        "Umeå",
-        "Örebro"
+        "Umeå"
       ],
       "originalPrice": 31.71,
       "currentPrice": 27.5,
@@ -11941,8 +12045,8 @@
       "discountPercent": 13,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "176211",
-      "storeName": "Stora Coop Ladugårdsängen"
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
     },
     {
       "id": "coop-7340191157590-vasteras",
@@ -12257,6 +12361,7 @@
         "Linköping",
         "Luleå",
         "Norrköping",
+        "Skövde",
         "Stockholm",
         "Uppsala"
       ],
@@ -12610,6 +12715,24 @@
       "source": "Coop live",
       "storeId": "252200",
       "storeName": "Stora Coop Borås"
+    },
+    {
+      "id": "coop-7350014910745-uppsala",
+      "article": "BioSalma Vätskebalans Citronsmak 21-pack 21st",
+      "brand": "BioSalma",
+      "chain": "Coop",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 44.43,
+      "currentPrice": 39.5,
+      "dealText": "2 för 79 kr",
+      "unit": "per st",
+      "discountPercent": 11,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "251300",
+      "storeName": "Stora Coop Boländerna"
     },
     {
       "id": "coop-7350014910738-stockholm",
@@ -13078,7 +13201,6 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
-        "Eskilstuna",
         "Karlstad",
         "Linköping",
         "Luleå",
@@ -13160,29 +13282,12 @@
       "storeName": "Stora Coop Stenby Västerås"
     },
     {
-      "id": "coop-9006900011512-eskilstuna",
-      "article": "Pfanner Iste Citron & Lime 2 L",
-      "brand": "Pfanner",
-      "chain": "Coop",
-      "cities": [
-        "Eskilstuna"
-      ],
-      "originalPrice": 21.72,
-      "currentPrice": 19.5,
-      "dealText": "2 för 39 kr",
-      "unit": "per lit",
-      "discountPercent": 10,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "253000",
-      "storeName": "Stora Coop Eskilstuna"
-    },
-    {
       "id": "coop-9006900011529-uppsala",
       "article": "Pfanner Iste Persika 2L",
       "brand": "Pfanner",
       "chain": "Coop",
       "cities": [
+        "Eskilstuna",
         "Karlstad",
         "Linköping",
         "Luleå",
@@ -13691,12 +13796,29 @@
       "storeName": "Stora Coop Stenby Västerås"
     },
     {
+      "id": "coop-7350126089032-eskilstuna",
+      "article": "Felix Ceasardressing 335ml",
+      "brand": "Felix",
+      "chain": "Coop",
+      "cities": [
+        "Eskilstuna"
+      ],
+      "originalPrice": 29.29,
+      "currentPrice": 27.5,
+      "dealText": "2 för 55 kr",
+      "unit": "per lit",
+      "discountPercent": 6,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "253000",
+      "storeName": "Stora Coop Eskilstuna"
+    },
+    {
       "id": "coop-7350126089063-uppsala",
       "article": "Felix Dressing Rhode Island 335ml",
       "brand": "Felix",
       "chain": "Coop",
       "cities": [
-        "Eskilstuna",
         "Karlstad",
         "Linköping",
         "Luleå",
