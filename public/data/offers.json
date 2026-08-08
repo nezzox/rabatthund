@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T06:28:29.993Z",
+  "updatedAt": "2026-08-08T13:36:01.492Z",
   "providers": [
     {
       "chain": "ICA",
@@ -3839,7 +3839,6 @@
       "chain": "Coop",
       "cities": [
         "Borås",
-        "Eskilstuna",
         "Göteborg",
         "Halmstad",
         "Jönköping",
@@ -4767,6 +4766,7 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
+        "Eskilstuna",
         "Linköping",
         "Stockholm"
       ],
@@ -7663,21 +7663,7 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
-        "Borås",
-        "Göteborg",
-        "Halmstad",
-        "Jönköping",
-        "Karlstad",
-        "Linköping",
-        "Luleå",
-        "Norrköping",
-        "Skövde",
-        "Stockholm",
-        "Sundsvall",
-        "Umeå",
-        "Uppsala",
-        "Växjö",
-        "Örebro"
+        "Hela Sverige"
       ],
       "originalPrice": 12.5,
       "currentPrice": 10,
@@ -8084,7 +8070,6 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
-        "Eskilstuna",
         "Linköping"
       ],
       "originalPrice": 18.46,
@@ -10749,7 +10734,6 @@
         "Eskilstuna",
         "Karlstad",
         "Linköping",
-        "Luleå",
         "Norrköping",
         "Uppsala"
       ],
@@ -10762,6 +10746,24 @@
       "source": "Coop live",
       "storeId": "251300",
       "storeName": "Stora Coop Boländerna"
+    },
+    {
+      "id": "coop-7310401056388-lulea",
+      "article": "Briska Alkoholfri cider Päron 0,5% 33cl",
+      "brand": "Briska",
+      "chain": "Coop",
+      "cities": [
+        "Luleå"
+      ],
+      "originalPrice": 11.31,
+      "currentPrice": 9.67,
+      "dealText": "3 för 29 kr",
+      "unit": "per lit",
+      "discountPercent": 15,
+      "validTo": "2026-09-06",
+      "source": "Coop live",
+      "storeId": "242200",
+      "storeName": "Stora Coop Storheden"
     },
     {
       "id": "coop-7340191165335-vasteras",
