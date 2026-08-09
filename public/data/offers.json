@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-09T06:33:21.738Z",
+  "updatedAt": "2026-08-09T13:39:26.887Z",
   "providers": [
     {
       "chain": "ICA",
@@ -3822,6 +3822,7 @@
       "chain": "Coop",
       "cities": [
         "Borås",
+        "Eskilstuna",
         "Göteborg",
         "Halmstad",
         "Jönköping",
@@ -8017,7 +8018,6 @@
       "brand": "Coop",
       "chain": "Coop",
       "cities": [
-        "Eskilstuna",
         "Linköping"
       ],
       "originalPrice": 18.46,
