@@ -28,23 +28,30 @@ jobs:
         with:
           node-version: 22
       - name: Check Swedish schedule
+        id: schedule_check
         if: github.event_name == 'schedule'
         run: |
           hour=$(TZ=Europe/Stockholm date +%H)
           if [ "$hour" != "08" ] && [ "$hour" != "15" ]; then
             echo "Skipping outside 08.00/15.00 Europe/Stockholm"
-            exit 78
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
           fi
       - run: node scripts/update-offers.mjs --live
+        if: steps.schedule_check.outputs.should_run != 'false'
       - run: node scripts/build-github-pages.mjs
+        if: steps.schedule_check.outputs.should_run != 'false'
       - uses: stefanzweifel/git-auto-commit-action@v5
+        if: steps.schedule_check.outputs.should_run != 'false'
         continue-on-error: true
         with:
           commit_message: "Update RabattHund offers"
           file_pattern: public/data/offers.json
       - uses: actions/configure-pages@v5
+        if: steps.schedule_check.outputs.should_run != 'false'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.schedule_check.outputs.should_run != 'false'
         with:
           path: pages-dist
       - id: deployment
         uses: actions/deploy-pages@v4
+        if: steps.schedule_check.outputs.should_run != 'false'
