@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T06:17:30.709Z",
+  "updatedAt": "2026-08-16T13:22:08.679Z",
   "providers": [
     {
       "chain": "ICA",
@@ -5643,21 +5643,7 @@
       "brand": "AUSSIE",
       "chain": "Coop",
       "cities": [
-        "Borås",
-        "Eskilstuna",
-        "Göteborg",
-        "Halmstad",
-        "Jönköping",
-        "Karlstad",
-        "Linköping",
-        "Luleå",
-        "Norrköping",
-        "Skövde",
-        "Sundsvall",
-        "Umeå",
-        "Uppsala",
-        "Västerås",
-        "Örebro"
+        "Hela Sverige"
       ],
       "originalPrice": 72.5,
       "currentPrice": 49.5,
@@ -5970,13 +5956,14 @@
       "storeName": "Stora Coop Garnisonen Linköping"
     },
     {
-      "id": "coop-2307141100001-vasteras",
+      "id": "coop-2307141100001-uppsala",
       "article": "Guldfågeln Kycklingvingar 800 gram ungefärlig vikt",
       "brand": "Guldfågeln",
       "chain": "Coop",
       "cities": [
         "Linköping",
         "Luleå",
+        "Uppsala",
         "Västerås"
       ],
       "originalPrice": 63.88,
@@ -5986,8 +5973,8 @@
       "discountPercent": 31,
       "validTo": "2026-08-16",
       "source": "Coop live",
-      "storeId": "185510",
-      "storeName": "Stora Coop Stenby Västerås"
+      "storeId": "251300",
+      "storeName": "Stora Coop Boländerna"
     },
     {
       "id": "coop-7310070382306-goteborg",
@@ -9069,24 +9056,6 @@
       "storeName": "Stora Coop Stenby Västerås"
     },
     {
-      "id": "coop-8700216919548-vaxjo",
-      "article": "AUSSIE Balsam Miracle Moist 200ML",
-      "brand": "AUSSIE",
-      "chain": "Coop",
-      "cities": [
-        "Växjö"
-      ],
-      "originalPrice": 62.5,
-      "currentPrice": 49.5,
-      "dealText": "2 för 99 kr",
-      "unit": "per liter",
-      "discountPercent": 21,
-      "validTo": "2026-08-23",
-      "source": "Coop live",
-      "storeId": "075800",
-      "storeName": "Stora Coop Norremark"
-    },
-    {
       "id": "coop-7340191119802-boras",
       "article": "Coop Glass Caramel 900 ml",
       "brand": "Coop",
@@ -10966,15 +10935,14 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-7350002402979-uppsala",
+      "id": "coop-7350002402979-linkoping",
       "article": "Zeta Svarta Bönor Eko 380g",
       "brand": "Zeta",
       "chain": "Coop",
       "cities": [
         "Eskilstuna",
         "Linköping",
-        "Luleå",
-        "Uppsala"
+        "Luleå"
       ],
       "originalPrice": 15.62,
       "currentPrice": 13,
@@ -10983,8 +10951,8 @@
       "discountPercent": 17,
       "validTo": "2026-09-06",
       "source": "Coop live",
-      "storeId": "251300",
-      "storeName": "Stora Coop Boländerna"
+      "storeId": "056010",
+      "storeName": "Stora Coop Garnisonen Linköping"
     },
     {
       "id": "coop-7300156507235-karlstad",
