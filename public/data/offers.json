@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-18T06:19:32.133Z",
+  "updatedAt": "2026-08-18T13:33:28.975Z",
   "providers": [
     {
       "chain": "ICA",
@@ -4179,6 +4179,7 @@
       "cities": [
         "Göteborg",
         "Karlstad",
+        "Luleå",
         "Sundsvall",
         "Umeå"
       ],
@@ -4764,8 +4765,8 @@
     },
     {
       "id": "coop-6408432061264-stockholm",
-      "article": "VALIO Smör Extrasaltat 500 G",
-      "brand": "VALIO",
+      "article": "Valio Smör Extrasaltat 500 G",
+      "brand": "Valio",
       "chain": "Coop",
       "cities": [
         "Stockholm"
@@ -4963,8 +4964,8 @@
     },
     {
       "id": "coop-6408432061264-goteborg",
-      "article": "VALIO Smör Extrasaltat 500 G",
-      "brand": "VALIO",
+      "article": "Valio Smör Extrasaltat 500 G",
+      "brand": "Valio",
       "chain": "Coop",
       "cities": [
         "Borås",
@@ -4994,8 +4995,8 @@
     },
     {
       "id": "coop-6408432061264-umea",
-      "article": "VALIO Smör Extrasaltat 500 G",
-      "brand": "VALIO",
+      "article": "Valio Smör Extrasaltat 500 G",
+      "brand": "Valio",
       "chain": "Coop",
       "cities": [
         "Sundsvall",
@@ -5109,6 +5110,61 @@
       "source": "Coop live",
       "storeId": "252600",
       "storeName": "Stora Coop Backaplan"
+    },
+    {
+      "id": "coop-7310760012315-sundsvall",
+      "article": "Arvid Nordquist Bryggkaffe Mellanmörk Gran Dia 500 g",
+      "brand": "Arvid Nordquist",
+      "chain": "Coop",
+      "cities": [
+        "Sundsvall"
+      ],
+      "originalPrice": 74.65,
+      "currentPrice": 49.5,
+      "dealText": "2 för 99 kr",
+      "unit": "per kg",
+      "discountPercent": 34,
+      "validTo": "2026-08-23",
+      "source": "Coop live",
+      "storeId": "232000",
+      "storeName": "Stora Coop Sundsvall"
+    },
+    {
+      "id": "coop-7310760012919-umea",
+      "article": "Arvid Nordquist Bryggkaffe Mellanmörk Svea 500 g",
+      "brand": "Arvid Nordquist",
+      "chain": "Coop",
+      "cities": [
+        "Umeå"
+      ],
+      "originalPrice": 74.65,
+      "currentPrice": 49.5,
+      "dealText": "2 för 99 kr",
+      "unit": "per kg",
+      "discountPercent": 34,
+      "validTo": "2026-08-23",
+      "source": "Coop live",
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
+    },
+    {
+      "id": "coop-7310760012896-umea",
+      "article": "Arvid Nordquist Bryggkaffe Mellanrost 500 g",
+      "brand": "Arvid Nordquist",
+      "chain": "Coop",
+      "cities": [
+        "Sundsvall",
+        "Umeå"
+      ],
+      "originalPrice": 74.65,
+      "currentPrice": 49.5,
+      "dealText": "2 för 99 kr",
+      "unit": "per kg",
+      "discountPercent": 34,
+      "validTo": "2026-08-23",
+      "source": "Coop live",
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
     },
     {
       "id": "coop-7300156582461-stockholm",
@@ -5847,7 +5903,6 @@
         "Luleå",
         "Norrköping",
         "Skövde",
-        "Sundsvall",
         "Uppsala",
         "Västerås",
         "Växjö",
@@ -5864,30 +5919,25 @@
       "storeName": "Stora Coop Backaplan"
     },
     {
-      "id": "coop-7310760012919-umea",
-      "article": "Arvid Nordquist Bryggkaffe Mellanmörk Svea 500 g",
-      "brand": "Arvid Nordquist",
-      "chain": "Coop",
-      "cities": [
-        "Umeå"
-      ],
-      "originalPrice": 74.65,
-      "currentPrice": 52.5,
-      "dealText": "2 för 105 kr",
-      "unit": "per kg",
-      "discountPercent": 30,
-      "validTo": "2026-08-23",
-      "source": "Coop live",
-      "storeId": "231400",
-      "storeName": "Stora Coop Ersboda"
-    },
-    {
       "id": "coop-7310760012896-goteborg",
       "article": "Arvid Nordquist Bryggkaffe Mellanrost 500 g",
       "brand": "Arvid Nordquist",
       "chain": "Coop",
       "cities": [
-        "Hela Sverige"
+        "Borås",
+        "Eskilstuna",
+        "Göteborg",
+        "Halmstad",
+        "Jönköping",
+        "Karlstad",
+        "Linköping",
+        "Luleå",
+        "Norrköping",
+        "Skövde",
+        "Uppsala",
+        "Västerås",
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 74.65,
       "currentPrice": 52.5,
@@ -6293,6 +6343,7 @@
         "Jönköping",
         "Karlstad",
         "Stockholm",
+        "Växjö",
         "Örebro"
       ],
       "originalPrice": 42.9,
@@ -6458,7 +6509,6 @@
         "Göteborg",
         "Halmstad",
         "Linköping",
-        "Luleå",
         "Norrköping",
         "Stockholm",
         "Sundsvall",
@@ -6946,6 +6996,7 @@
         "Göteborg",
         "Halmstad",
         "Jönköping",
+        "Karlstad",
         "Linköping",
         "Luleå",
         "Skövde",
@@ -8405,7 +8456,6 @@
       "brand": "Läkerol",
       "chain": "Coop",
       "cities": [
-        "Sundsvall",
         "Örebro"
       ],
       "originalPrice": 24.95,
@@ -8674,7 +8724,9 @@
         "Göteborg",
         "Halmstad",
         "Jönköping",
-        "Skövde"
+        "Skövde",
+        "Sundsvall",
+        "Växjö"
       ],
       "originalPrice": 37.9,
       "currentPrice": 29,
@@ -8692,7 +8744,6 @@
       "brand": "Felix",
       "chain": "Coop",
       "cities": [
-        "Karlstad",
         "Linköping"
       ],
       "originalPrice": 57.68,
@@ -8891,7 +8942,6 @@
       "brand": "Xtra",
       "chain": "Coop",
       "cities": [
-        "Eskilstuna",
         "Karlstad",
         "Linköping",
         "Luleå",
@@ -11276,12 +11326,13 @@
       "storeName": "Stora Coop Garnisonen Linköping"
     },
     {
-      "id": "coop-7350037197789-eskilstuna",
+      "id": "coop-7350037197789-norrkoping",
       "article": "Härryda Karlsson Ölkorv Klassisk 80 g",
       "brand": "Härryda Karlsson",
       "chain": "Coop",
       "cities": [
-        "Eskilstuna"
+        "Eskilstuna",
+        "Norrköping"
       ],
       "originalPrice": 30.24,
       "currentPrice": 25,
@@ -11290,8 +11341,8 @@
       "discountPercent": 17,
       "validTo": "2026-08-23",
       "source": "Coop live",
-      "storeId": "253000",
-      "storeName": "Stora Coop Eskilstuna"
+      "storeId": "056095",
+      "storeName": "Stora Coop Risängen"
     },
     {
       "id": "coop-7350037197819-uppsala",
@@ -11302,7 +11353,6 @@
         "Karlstad",
         "Linköping",
         "Luleå",
-        "Norrköping",
         "Uppsala"
       ],
       "originalPrice": 30.24,
@@ -11686,24 +11736,6 @@
       "source": "Coop live",
       "storeId": "035000",
       "storeName": "Coop Daglivs"
-    },
-    {
-      "id": "coop-7300156597410-vaxjo",
-      "article": "Coop Blomjord 8 liter",
-      "brand": "Coop",
-      "chain": "Coop",
-      "cities": [
-        "Växjö"
-      ],
-      "originalPrice": 40.95,
-      "currentPrice": 34.5,
-      "dealText": "2 för 69 kr",
-      "unit": "per liter",
-      "discountPercent": 16,
-      "validTo": "2026-09-06",
-      "source": "Coop live",
-      "storeId": "075800",
-      "storeName": "Stora Coop Norremark"
     },
     {
       "id": "coop-7300156601179-orebro",
@@ -12608,6 +12640,24 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
+      "id": "coop-5760466878234-vasteras",
+      "article": "Kelda® Tomatsoppa Mild 5 dl",
+      "brand": "Kelda®",
+      "chain": "Coop",
+      "cities": [
+        "Västerås"
+      ],
+      "originalPrice": 26.03,
+      "currentPrice": 22.5,
+      "dealText": "2 för 45 kr",
+      "unit": "per lit",
+      "discountPercent": 14,
+      "validTo": "2026-08-23",
+      "source": "Coop live",
+      "storeId": "185510",
+      "storeName": "Stora Coop Stenby Västerås"
+    },
+    {
       "id": "coop-7613031239436-stockholm",
       "article": "NESCAFÉ Lyx Mörkrost Snabbkaffe Refill 200 G",
       "brand": "NESCAFÉ",
@@ -12812,8 +12862,8 @@
       "storeName": "Stora Coop Boländerna"
     },
     {
-      "id": "coop-7350028546992-vasteras",
-      "article": "Dalblads Proteinbar Kladdkaka 55 g",
+      "id": "coop-7350006712579-vasteras",
+      "article": "Dalblads Proteinbar Kokos 55 g",
       "brand": "Dalblads",
       "chain": "Coop",
       "cities": [
@@ -13254,24 +13304,6 @@
       "storeName": "Stora Coop Stenby Västerås"
     },
     {
-      "id": "coop-7300156597403-vaxjo",
-      "article": "Coop Blomjord 18 liter",
-      "brand": "Coop",
-      "chain": "Coop",
-      "cities": [
-        "Växjö"
-      ],
-      "originalPrice": 49.95,
-      "currentPrice": 44.5,
-      "dealText": "2 för 89 kr",
-      "unit": "per liter",
-      "discountPercent": 11,
-      "validTo": "2026-08-30",
-      "source": "Coop live",
-      "storeId": "075800",
-      "storeName": "Stora Coop Norremark"
-    },
-    {
       "id": "coop-2317076900003-goteborg",
       "article": "Coop Grytbitar Fläsk 1000 gram ungefärlig vikt",
       "brand": "Coop",
@@ -13486,6 +13518,7 @@
       "brand": "Familjefågel",
       "chain": "Coop",
       "cities": [
+        "Eskilstuna",
         "Karlstad",
         "Linköping",
         "Luleå",
@@ -13514,24 +13547,6 @@
       "currentPrice": 46.9,
       "dealText": null,
       "unit": "per kg",
-      "discountPercent": 11,
-      "validTo": "2026-08-23",
-      "source": "Coop live",
-      "storeId": "185510",
-      "storeName": "Stora Coop Stenby Västerås"
-    },
-    {
-      "id": "coop-7070866035648-vasteras",
-      "article": "Nutrilett Shake Caffé Mocha 20-pack 20 port",
-      "brand": "Nutrilett",
-      "chain": "Coop",
-      "cities": [
-        "Västerås"
-      ],
-      "originalPrice": 235.66,
-      "currentPrice": 209,
-      "dealText": null,
-      "unit": "per st",
       "discountPercent": 11,
       "validTo": "2026-08-23",
       "source": "Coop live",
