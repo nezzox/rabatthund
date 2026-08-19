@@ -7,7 +7,8 @@ const state = {
   selectedCity: ALL_SWEDEN,
   selectedChain: "ICA",
   searchQuery: "",
-  isCityPickerOpen: false,
+  cityQuery: "",
+  shouldFocusCitySearch: false,
   visibleLimit: 100,
   snapshot: { updatedAt: new Date().toISOString(), offers: [] },
 };
@@ -135,10 +136,21 @@ function render() {
     searchField?.focus({ preventScroll: true });
     searchField?.setSelectionRange(searchField.value.length, searchField.value.length);
   }
+
+  if (state.shouldFocusCitySearch) {
+    const citySearchField = document.getElementById("city-search");
+    citySearchField?.focus({ preventScroll: true });
+    citySearchField?.setSelectionRange(citySearchField.value.length, citySearchField.value.length);
+    state.shouldFocusCitySearch = false;
+  }
 }
 
 function cityPicker(cities) {
-  const options = [ALL_SWEDEN, ...cities]
+  const query = normalizedSearchTerm(state.cityQuery);
+  const matchingCities = query
+    ? [ALL_SWEDEN, ...cities].filter((city) => normalizedSearchTerm(city).includes(query))
+    : [];
+  const options = matchingCities
     .map(
       (city) =>
         `<button aria-selected="${state.selectedCity === city}" class="${state.selectedCity === city ? "chosen" : ""}" role="option" type="button" data-city="${escapeHtml(city)}">${escapeHtml(city)}</button>`,
@@ -146,12 +158,10 @@ function cityPicker(cities) {
     .join("");
 
   return `<section class="control-band" aria-label="Välj ort">
-    <span class="control-label">Min ort</span>
+    <label class="control-label" for="city-search">Min ort</label>
     <div class="city-picker">
-      <button aria-expanded="${state.isCityPickerOpen}" aria-haspopup="listbox" class="city-picker-button" type="button" data-action="toggle-city-picker">
-        <span>${escapeHtml(state.selectedCity)}</span><span class="chevron" aria-hidden="true"></span>
-      </button>
-      ${state.isCityPickerOpen ? `<div class="city-picker-list" role="listbox" aria-label="Städer">${options}</div>` : ""}
+      <input aria-controls="city-search-results" aria-expanded="${Boolean(query)}" autocomplete="off" id="city-search" placeholder="Skriv för att hitta din ort" role="combobox" spellcheck="false" type="search" value="${escapeHtml(state.cityQuery)}" />
+      ${query ? `<div class="city-picker-list" id="city-search-results" role="listbox" aria-label="Matchande orter">${options || `<p class="city-picker-empty">Ingen ort matchar din sökning.</p>`}</div>` : `<p class="city-picker-hint">Sök bland ${cities.length} orter.</p>`}
     </div>
   </section>`;
 }
@@ -200,21 +210,22 @@ root.addEventListener("click", (event) => {
   const resetsOfferLimit = ["top", "city", "store", "search", "all"].includes(action) || target.dataset.city || target.dataset.chain;
   if (resetsOfferLimit) state.visibleLimit = 100;
   if (action === "top") state.view = "top";
-  if (action === "city") state.view = "city";
+  if (action === "city") {
+    state.view = "city";
+    state.cityQuery = "";
+    state.shouldFocusCitySearch = true;
+  }
   if (action === "store") state.view = "store";
   if (action === "search") {
     state.view = "search";
-    state.isCityPickerOpen = false;
   }
   if (action === "all") {
     state.selectedCity = ALL_SWEDEN;
     state.view = "all";
-    state.isCityPickerOpen = false;
   }
-  if (action === "toggle-city-picker") state.isCityPickerOpen = !state.isCityPickerOpen;
   if (target.dataset.city) {
     state.selectedCity = target.dataset.city;
-    state.isCityPickerOpen = false;
+    state.cityQuery = "";
     if (state.view !== "store" && state.view !== "search") state.view = "city";
   }
   if (target.dataset.chain) state.selectedChain = target.dataset.chain;
@@ -222,8 +233,14 @@ root.addEventListener("click", (event) => {
 });
 
 root.addEventListener("input", (event) => {
-  if (event.target.id !== "product-search") return;
-  state.searchQuery = event.target.value;
+  if (event.target.id === "city-search") {
+    state.cityQuery = event.target.value;
+    state.shouldFocusCitySearch = true;
+  } else if (event.target.id === "product-search") {
+    state.searchQuery = event.target.value;
+  } else {
+    return;
+  }
   state.visibleLimit = 100;
   render();
 });
