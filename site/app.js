@@ -179,7 +179,7 @@ function renderOffer(offer) {
   return `<article class="offer-row">
     <div class="offer-main"><div><h3>${escapeHtml(offer.article)}</h3><p>${escapeHtml(offer.chain)}</p></div><strong>${Math.round(offer.discountPercent)}%</strong></div>
     <div class="price-line">${price}<span>${escapeHtml(offer.unit)}</span></div>
-    <div class="offer-meta"><span>Gäller i ${escapeHtml(offer.cities.includes(ALL_SWEDEN) ? ALL_SWEDEN : offer.cities.join(", "))}</span><span>t.o.m. ${escapeHtml(offer.validTo)}</span></div>
+    <div class="offer-meta"><span>Gäller i ${escapeHtml(offer.cities.includes(ALL_SWEDEN) ? ALL_SWEDEN : offer.cities.join(", "))}</span><span>${offer.validTo ? `t.o.m. ${escapeHtml(offer.validTo)}` : "Aktuellt online"}</span></div>
   </article>`;
 }
 
