@@ -90,6 +90,9 @@ const citiesToSample = [
   "Skövde",
 ];
 
+const storeFetchConcurrency = 8;
+const onlineStoreFetchConcurrency = 4;
+
 const requestHeaders = {
   "accept": "application/json",
   "accept-language": "sv-SE,sv;q=0.9,en;q=0.6",
@@ -163,15 +166,26 @@ async function getFirstStoreForCity(chain, city) {
   };
 }
 
-async function fetchAxfoodOffersForStore(chain, store, size = 40) {
+async function fetchAxfoodOffersForStore(chain, store, size = 120) {
+  const firstPage = await fetchAxfoodCampaignPage(chain, store, size, 0);
+  const pages = firstPage.pagination?.numberOfPages ?? 1;
+  const remainingPages = await Promise.all(
+    Array.from({ length: Math.max(0, pages - 1) }, (_, index) => fetchAxfoodCampaignPage(chain, store, size, index + 1)),
+  );
+
+  return [firstPage, ...remainingPages]
+    .flatMap((data) => data.results ?? [])
+    .map((product) => mapAxfoodProduct(chain.chain, store, product))
+    .filter(Boolean);
+}
+
+async function fetchAxfoodCampaignPage(chain, store, size, page) {
   const url = new URL(`${chain.baseUrl}${chain.apiPrefix}/search/campaigns/offline`);
   url.searchParams.set("q", store.id);
   url.searchParams.set("size", String(size));
+  url.searchParams.set("page", String(page));
 
-  const data = await fetchJson(url);
-  return (data.results ?? [])
-    .map((product) => mapAxfoodProduct(chain.chain, store, product))
-    .filter(Boolean);
+  return fetchJson(url);
 }
 
 function mapAxfoodProduct(chain, store, product) {
@@ -218,6 +232,8 @@ function mapAxfoodProduct(chain, store, product) {
 
 function mergeOffersByPromotion(offers) {
   const merged = new Map();
+  const cityCount = new Set(offers.flatMap((offer) => offer.cities).filter((city) => city !== ALL_SWEDEN)).size;
+  const nationwideThreshold = Math.max(8, cityCount * 0.7);
 
   for (const offer of offers) {
     const key = [
@@ -239,7 +255,7 @@ function mergeOffersByPromotion(offers) {
     }
 
     existing.cities = Array.from(new Set([...existing.cities, ...offer.cities])).sort((a, b) => a.localeCompare(b, "sv-SE"));
-    if (existing.cities.length >= Math.max(8, citiesToSample.length * 0.7)) {
+    if (existing.cities.length >= nationwideThreshold) {
       existing.cities = [ALL_SWEDEN];
     }
   }
@@ -247,25 +263,53 @@ function mergeOffersByPromotion(offers) {
   return [...merged.values()].sort((a, b) => b.discountPercent - a.discountPercent || a.article.localeCompare(b.article, "sv-SE"));
 }
 
-async function fetchAxfoodChain(chain) {
-  const offers = [];
-  const stores = [];
-  const errors = [];
+async function mapWithConcurrency(items, limit, mapper) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
 
-  for (const city of citiesToSample) {
-    try {
-      const store = await getFirstStoreForCity(chain, city);
-      if (!store) {
-        errors.push({ city, error: "Ingen butik hittades" });
-        continue;
-      }
-
-      stores.push(store);
-      offers.push(...(await fetchAxfoodOffersForStore(chain, store)));
-    } catch (error) {
-      errors.push({ city, error: error.message });
+  async function worker() {
+    while (nextIndex < items.length) {
+      const index = nextIndex;
+      nextIndex += 1;
+      results[index] = await mapper(items[index]);
     }
   }
+
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return results;
+}
+
+function flattenResults(results) {
+  return results.flatMap((result) => result ?? []);
+}
+
+async function fetchAxfoodChain(chain) {
+  const errors = [];
+  let stores = [];
+
+  try {
+    stores = await fetchAxfoodStores(chain);
+  } catch (error) {
+    return {
+      chain: chain.chain,
+      ok: false,
+      stores: 0,
+      offers: 0,
+      errors: [{ city: ALL_SWEDEN, error: error.message }],
+      data: [],
+    };
+  }
+
+  const offers = flattenResults(
+    await mapWithConcurrency(stores, storeFetchConcurrency, async (store) => {
+      try {
+        return await fetchAxfoodOffersForStore(chain, store);
+      } catch (error) {
+        errors.push({ city: store.city, error: error.message });
+        return [];
+      }
+    }),
+  );
 
   return {
     chain: chain.chain,
@@ -275,6 +319,17 @@ async function fetchAxfoodChain(chain) {
     errors,
     data: mergeOffersByPromotion(offers),
   };
+}
+
+async function fetchAxfoodStores(chain) {
+  const data = await fetchJson(`${chain.baseUrl}${chain.apiPrefix}/store`);
+  return (Array.isArray(data) ? data : [])
+    .filter((store) => store.storeId && store.name && store.address?.town && !store.externalPickupLocation && !store.external)
+    .map((store) => ({
+      id: store.storeId,
+      city: store.address.town,
+      name: store.displayName || store.name,
+    }));
 }
 
 async function fetchIcaAccessToken() {
@@ -304,6 +359,22 @@ async function getIcaStoreForCity(token, city) {
     city: selected.visitingCity || city,
     name: selected.marketingName || selected.name || `ICA ${city}`,
   };
+}
+
+async function fetchIcaStores(token) {
+  const url = new URL(`${icaApi.baseUrl}/storesearch/v1/searchbyquery`);
+  url.searchParams.set("query", "");
+  url.searchParams.set("take", "2000");
+  url.searchParams.set("offset", "0");
+
+  const data = await fetchJson(url, { headers: icaAuthHeaders(token) });
+  return (data.documents ?? [])
+    .filter((store) => store.id && store.visitingCity)
+    .map((store) => ({
+      id: store.id,
+      city: store.visitingCity,
+      name: store.marketingName || store.name || `ICA ${store.visitingCity}`,
+    }));
 }
 
 function scoreIcaStoreCandidate(store, city) {
@@ -568,10 +639,9 @@ function getIcaOnlineUnit(value) {
 }
 
 async function fetchIcaChain() {
-  const offers = [];
-  const stores = [];
   const errors = [];
   let token = "";
+  let stores = [];
   let onlineStores = [];
 
   try {
@@ -593,31 +663,48 @@ async function fetchIcaChain() {
     errors.push({ city: ALL_SWEDEN, error: `ICA Online: ${error.message}` });
   }
 
-  for (const city of citiesToSample) {
-    try {
-      const store = await getIcaStoreForCity(token, city);
-      if (!store) {
-        errors.push({ city, error: "Ingen ICA-butik hittades" });
-        continue;
-      }
-
-      stores.push(store);
-      offers.push(...(await fetchIcaOffersForStore(token, store)));
-
-      const onlineStore = getIcaOnlineStore(store, onlineStores);
-      if (onlineStore) {
-        try {
-          offers.push(...(await fetchIcaOnlineOffersForStore(store, onlineStore)));
-        } catch (error) {
-          if (!isNotFoundError(error)) {
-            errors.push({ city, error: `ICA Online: ${error.message}` });
-          }
-        }
-      }
-    } catch (error) {
-      errors.push({ city, error: error.message });
-    }
+  try {
+    stores = await fetchIcaStores(token);
+  } catch (error) {
+    return {
+      chain: "ICA",
+      ok: false,
+      stores: 0,
+      offers: 0,
+      errors: [{ city: ALL_SWEDEN, error: error.message }],
+      data: [],
+    };
   }
+
+  const storeOffers = flattenResults(
+    await mapWithConcurrency(stores, storeFetchConcurrency, async (store) => {
+      try {
+        return await fetchIcaOffersForStore(token, store);
+      } catch (error) {
+        errors.push({ city: store.city, error: error.message });
+        return [];
+      }
+    }),
+  );
+
+  const physicalStoresById = new Map(stores.map((store) => [Number(store.id), store]));
+  const onlineOffers = flattenResults(
+    await mapWithConcurrency(onlineStores, onlineStoreFetchConcurrency, async (onlineStore) => {
+      const store = physicalStoresById.get(Number(onlineStore.id));
+      if (!store) return [];
+
+      try {
+        return await fetchIcaOnlineOffersForStore(store, onlineStore);
+      } catch (error) {
+        if (!isNotFoundError(error)) {
+          errors.push({ city: store.city, error: `ICA Online: ${error.message}` });
+        }
+        return [];
+      }
+    }),
+  );
+
+  const offers = [...storeOffers, ...onlineOffers];
 
   for (const seed of icaOnlineApi.promotionSeeds) {
     try {
@@ -681,13 +768,21 @@ async function fetchCoopOfferCount(store) {
 }
 
 async function fetchCoopOffersForStore(store, size = 120) {
-  const data = await fetchCoopPromotions(store, size);
-  return (data.results?.items ?? [])
+  const firstPage = await fetchCoopPromotions(store, size);
+  const total = firstPage.results?.count ?? firstPage.results?.items?.length ?? 0;
+  const remainingPages = await Promise.all(
+    Array.from({ length: Math.max(0, Math.ceil(total / size) - 1) }, (_, index) =>
+      fetchCoopPromotions(store, size, (index + 1) * size),
+    ),
+  );
+
+  return [firstPage, ...remainingPages]
+    .flatMap((data) => data.results?.items ?? [])
     .map((product) => mapCoopProduct(store, product))
     .filter(Boolean);
 }
 
-async function fetchCoopPromotions(store, size) {
+async function fetchCoopPromotions(store, size, skip = 0) {
   const url = new URL(coopApi.promotionsUrl);
   url.searchParams.set("api-version", "v1");
   url.searchParams.set("store", store.id);
@@ -703,7 +798,7 @@ async function fetchCoopPromotions(store, size) {
     },
     body: JSON.stringify({
       resultsOptions: {
-        skip: 0,
+        skip,
         take: size,
         sortBy: [],
         facets: [],
@@ -755,8 +850,6 @@ function mapCoopProduct(store, product) {
 }
 
 async function fetchCoopChain() {
-  const offers = [];
-  const stores = [];
   const errors = [];
 
   let storeMap = [];
@@ -773,20 +866,23 @@ async function fetchCoopChain() {
     };
   }
 
-  for (const city of citiesToSample) {
-    try {
-      const store = await getCoopStoreForCity(storeMap, city);
-      if (!store) {
-        errors.push({ city, error: "Ingen Coop-butik med livekampanjer hittades" });
-        continue;
+  const stores = storeMap
+    .filter((store) => store.ledgerAccountNumber && store.city)
+    .map((store) => ({
+      id: store.ledgerAccountNumber,
+      city: store.city,
+      name: store.name || `Coop ${store.city}`,
+    }));
+  const offers = flattenResults(
+    await mapWithConcurrency(stores, storeFetchConcurrency, async (store) => {
+      try {
+        return await fetchCoopOffersForStore(store);
+      } catch (error) {
+        errors.push({ city: store.city, error: error.message });
+        return [];
       }
-
-      stores.push(store);
-      offers.push(...(await fetchCoopOffersForStore(store)));
-    } catch (error) {
-      errors.push({ city, error: error.message });
-    }
-  }
+    }),
+  );
 
   return {
     chain: "Coop",
@@ -818,17 +914,27 @@ function scoreCityGrossStoreCandidate(store, city) {
 }
 
 async function fetchCityGrossOffersForStore(store) {
+  const firstPage = await fetchCityGrossOfferPage(store, 0);
+  const pages = firstPage.totalPages ?? 1;
+  const remainingPages = await Promise.all(
+    Array.from({ length: Math.max(0, pages - 1) }, (_, index) => fetchCityGrossOfferPage(store, (index + 1) * 300)),
+  );
+
+  return [firstPage, ...remainingPages]
+    .flatMap((data) => data.items ?? [])
+    .map((product) => mapCityGrossProduct(store, product))
+    .filter(Boolean);
+}
+
+async function fetchCityGrossOfferPage(store, skip) {
   const url = new URL(`${cityGrossApi.baseUrl}${cityGrossApi.offersPath}`);
   url.searchParams.set("currentWeekDiscountOnly", "true");
   url.searchParams.set("discountonly", "true");
-  url.searchParams.set("skip", "0");
+  url.searchParams.set("skip", String(skip));
   url.searchParams.set("store", store.storeNumber);
   url.searchParams.set("take", "300");
 
-  const data = await fetchJson(url);
-  return (data.items ?? [])
-    .map((product) => mapCityGrossProduct(store, product))
-    .filter(Boolean);
+  return fetchJson(url);
 }
 
 function mapCityGrossProduct(store, product) {
@@ -879,8 +985,6 @@ function mapCityGrossUnit(unit) {
 }
 
 async function fetchCityGrossChain() {
-  const offers = [];
-  const stores = [];
   const errors = [];
 
   let storeMap = [];
@@ -897,20 +1001,17 @@ async function fetchCityGrossChain() {
     };
   }
 
-  for (const city of citiesToSample) {
-    try {
-      const store = getCityGrossStoreForCity(storeMap, city);
-      if (!store) {
-        errors.push({ city, error: "Ingen City Gross-butik hittades" });
-        continue;
+  const stores = storeMap.filter((store) => store.storeNumber && store.city);
+  const offers = flattenResults(
+    await mapWithConcurrency(stores, storeFetchConcurrency, async (store) => {
+      try {
+        return await fetchCityGrossOffersForStore(store);
+      } catch (error) {
+        errors.push({ city: store.city, error: error.message });
+        return [];
       }
-
-      stores.push(store);
-      offers.push(...(await fetchCityGrossOffersForStore(store)));
-    } catch (error) {
-      errors.push({ city, error: error.message });
-    }
-  }
+    }),
+  );
 
   return {
     chain: "City Gross",
@@ -1133,7 +1234,7 @@ async function fetchLidlChain() {
     );
 
     const currentFlyers = selectCurrentLidlFlyers(flyers);
-    for (const flyer of currentFlyers.slice(0, 1)) {
+    for (const flyer of currentFlyers) {
       offers.push(...parseLidlFlyerOffers(flyer));
     }
   } catch (error) {
