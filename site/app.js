@@ -6,6 +6,7 @@ const state = {
   view: "top",
   selectedCity: ALL_SWEDEN,
   selectedChain: "ICA",
+  searchQuery: "",
   isCityPickerOpen: false,
   snapshot: { updatedAt: new Date().toISOString(), offers: [] },
 };
@@ -43,6 +44,28 @@ function sortedOffers(offers) {
   return [...offers].sort((a, b) => b.discountPercent - a.discountPercent);
 }
 
+function normalizedSearchTerm(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("sv-SE")
+    .trim();
+}
+
+function matchesSearch(offer, query) {
+  const terms = normalizedSearchTerm(query).split(/\s+/).filter(Boolean);
+  if (!terms.length) return true;
+
+  const searchableText = normalizedSearchTerm([
+    offer.article,
+    offer.brand,
+    offer.chain,
+    offer.dealText,
+  ].filter(Boolean).join(" "));
+
+  return terms.every((term) => searchableText.includes(term));
+}
+
 function render() {
   const allOffers = state.snapshot.offers;
   const cities = Array.from(
@@ -50,6 +73,7 @@ function render() {
   ).sort((a, b) => a.localeCompare(b, "sv-SE"));
 
   const cityOffers = sortedOffers(allOffers.filter((offer) => appliesToCity(offer, state.selectedCity)));
+  const searchOffers = cityOffers.filter((offer) => matchesSearch(offer, state.searchQuery));
   const visibleOffers =
     state.view === "top"
       ? sortedOffers(allOffers).slice(0, 10)
@@ -57,7 +81,9 @@ function render() {
         ? cityOffers.filter((offer) => offer.chain === state.selectedChain)
         : state.view === "all"
           ? sortedOffers(allOffers)
-          : cityOffers;
+          : state.view === "search"
+            ? searchOffers
+            : cityOffers;
 
   const heading =
     state.view === "top"
@@ -66,6 +92,10 @@ function render() {
         ? `${state.selectedChain} i ${state.selectedCity}`
         : state.view === "all"
           ? "Alla butiker"
+          : state.view === "search"
+            ? state.searchQuery.trim()
+              ? `Sökresultat: ${state.searchQuery.trim()}`
+              : "Sök vara"
           : `Erbjudanden i ${state.selectedCity}`;
 
   root.innerHTML = `
@@ -84,16 +114,24 @@ function render() {
         <button class="${state.view === "city" ? "active" : ""}" type="button" data-action="city">Min ort</button>
         <button class="${state.view === "store" ? "active" : ""}" type="button" data-action="store">Butik</button>
         <button class="${state.view === "all" ? "active" : ""}" type="button" data-action="all">Alla butiker</button>
+        <button class="${state.view === "search" ? "active" : ""}" type="button" data-action="search">Sök vara</button>
       </nav>
       <section class="intro-band">
         <div><p class="eyebrow">Senast uppdaterad: ${escapeHtml(formatUpdatedAt(state.snapshot.updatedAt))}</p><h1>${escapeHtml(heading)}</h1></div>
         <div class="stat-strip" aria-label="Sammanfattning"><span>${visibleOffers.length} erbjudanden</span><span>${chains.length} kedjor</span></div>
       </section>
-      ${state.view === "city" || state.view === "store" ? cityPicker(cities) : ""}
+      ${state.view === "city" || state.view === "store" || state.view === "search" ? cityPicker(cities) : ""}
       ${state.view === "store" ? chainGrid() : ""}
+      ${state.view === "search" ? searchControl() : ""}
       <section class="offer-list" aria-label="${escapeHtml(heading)}">${visibleOffers.map(renderOffer).join("")}</section>
     </main>
   `;
+
+  if (state.view === "search") {
+    const searchField = document.getElementById("product-search");
+    searchField?.focus({ preventScroll: true });
+    searchField?.setSelectionRange(searchField.value.length, searchField.value.length);
+  }
 }
 
 function cityPicker(cities) {
@@ -124,6 +162,13 @@ function chainGrid() {
     .join("")}</section>`;
 }
 
+function searchControl() {
+  return `<section class="search-band" role="search">
+    <label for="product-search">Sök vara</label>
+    <input id="product-search" type="search" inputmode="search" autocomplete="off" placeholder="Till exempel ost" value="${escapeHtml(state.searchQuery)}" />
+  </section>`;
+}
+
 function renderOffer(offer) {
   const original = formatPrice(offer.originalPrice);
   const current = formatPrice(offer.currentPrice);
@@ -146,6 +191,10 @@ root.addEventListener("click", (event) => {
   if (action === "top") state.view = "top";
   if (action === "city") state.view = "city";
   if (action === "store") state.view = "store";
+  if (action === "search") {
+    state.view = "search";
+    state.isCityPickerOpen = false;
+  }
   if (action === "all") {
     state.selectedCity = ALL_SWEDEN;
     state.view = "all";
@@ -155,9 +204,15 @@ root.addEventListener("click", (event) => {
   if (target.dataset.city) {
     state.selectedCity = target.dataset.city;
     state.isCityPickerOpen = false;
-    if (state.view !== "store") state.view = "city";
+    if (state.view !== "store" && state.view !== "search") state.view = "city";
   }
   if (target.dataset.chain) state.selectedChain = target.dataset.chain;
+  render();
+});
+
+root.addEventListener("input", (event) => {
+  if (event.target.id !== "product-search") return;
+  state.searchQuery = event.target.value;
   render();
 });
 
@@ -170,3 +225,4 @@ function escapeHtml(value) {
     "'": "&#39;",
   })[char]);
 }
+
