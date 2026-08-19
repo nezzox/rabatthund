@@ -32,6 +32,18 @@ const icaApi = {
   baseUrl: "https://apim-pub.gw.ica.se/sverige/digx",
 };
 
+const icaOnlineApi = {
+  storesUrl: "https://handla.ica.se/api/store/v1?groupby=citygroup&customerType=B2C",
+  baseUrl: "https://handlaprivatkund.ica.se",
+  promotionSeeds: [
+    {
+      accountId: "1051010",
+      city: "Norrköping",
+      promotionId: "66eae0fc-43fa-4ffb-bca4-1eaa94fb1436",
+    },
+  ],
+};
+
 const coopApi = {
   chain: "Coop",
   storeMapUrl: "https://proxy.api.coop.se/external/store/stores/map?conceptIds=12,6,95&invertFilter=true&api-version=v2",
@@ -114,11 +126,13 @@ async function fetchText(url) {
   };
 }
 
-async function fetchTextContent(url) {
+async function fetchTextContent(url, options = {}) {
   const response = await fetch(url, {
+    ...options,
     headers: {
       ...requestHeaders,
       "accept": "text/html,application/xhtml+xml,text/plain",
+      ...(options.headers ?? {}),
     },
   });
   if (!response.ok) {
@@ -362,11 +376,203 @@ function icaAuthHeaders(token) {
   };
 }
 
+async function fetchIcaOnlineStoreMap() {
+  const data = await fetchJson(icaOnlineApi.storesUrl);
+  return collectIcaOnlineStores(data);
+}
+
+function collectIcaOnlineStores(node, stores = []) {
+  if (Array.isArray(node)) {
+    node.forEach((item) => collectIcaOnlineStores(item, stores));
+    return stores;
+  }
+
+  if (!node || typeof node !== "object") return stores;
+
+  if (node.id && node.accountId && node.city) {
+    stores.push({
+      id: String(node.id),
+      accountId: String(node.accountId),
+      city: node.city,
+      name: node.name || `ICA ${node.city}`,
+    });
+    return stores;
+  }
+
+  Object.values(node).forEach((item) => collectIcaOnlineStores(item, stores));
+  return stores;
+}
+
+function getIcaOnlineStore(store, onlineStores) {
+  return (
+    onlineStores.find((candidate) => Number(candidate.id) === Number(store.id)) ??
+    onlineStores
+      .filter((candidate) => normalizeCity(candidate.city) === normalizeCity(store.city))
+      .sort((a, b) => scoreIcaOnlineStoreCandidate(b, store) - scoreIcaOnlineStoreCandidate(a, store))[0] ??
+    null
+  );
+}
+
+function scoreIcaOnlineStoreCandidate(candidate, store) {
+  let score = 0;
+  if (normalizeCity(candidate.city) === normalizeCity(store.city)) score += 100;
+  if (normalizeCity(candidate.name) === normalizeCity(store.name)) score += 100;
+  if (normalizeCity(candidate.name).includes(normalizeCity(store.city))) score += 10;
+  return score;
+}
+
+async function fetchIcaOnlineOffersForStore(store, onlineStore) {
+  const pageUrl = `${icaOnlineApi.baseUrl}/stores/${onlineStore.accountId}/promotions`;
+  const html = await fetchTextContent(pageUrl);
+  const initialState = extractIcaOnlineInitialState(html);
+  const products = Object.values(initialState?.data?.products?.productEntities ?? {});
+
+  return products.map((product) => mapIcaOnlineProduct(store, onlineStore, product)).filter(Boolean);
+}
+
+function extractIcaOnlineInitialState(html) {
+  const marker = "window.__INITIAL_STATE__=";
+  const start = html.indexOf(marker);
+  if (start < 0) throw new Error("ICA Online-sidan saknar kampanjdata");
+
+  const valueStart = start + marker.length;
+  let depth = 0;
+  let quote = "";
+  let escaped = false;
+
+  for (let index = valueStart; index < html.length; index += 1) {
+    const character = html[index];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (character === "\\") escaped = true;
+      else if (character === quote) quote = "";
+      continue;
+    }
+
+    if (character === '"' || character === "'") {
+      quote = character;
+      continue;
+    }
+
+    if (character === "{") depth += 1;
+    if (character === "}") {
+      depth -= 1;
+      if (depth === 0) return JSON.parse(html.slice(valueStart, index + 1));
+    }
+  }
+
+  throw new Error("ICA Online-sidans kampanjdata kunde inte tolkas");
+}
+
+function mapIcaOnlineProduct(store, onlineStore, product) {
+  const promotion = product.offer ?? product.offers?.find((offer) => offer.type === "OFFER");
+  const originalPrice = parseMoney(product.price?.original?.amount);
+  const regularPrice = parseMoney(product.price?.current?.amount);
+  const quantity = Number(promotion?.requiredProductQuantity) || getQuantityFromDealText(promotion?.description);
+  const promotionTotal = getPromotionTotalFromDealText(promotion?.description);
+  const currentPrice =
+    quantity > 1 && promotionTotal ? roundMoney(promotionTotal / quantity) : parseMoney(product.price?.current?.amount);
+  const referencePrice = originalPrice ?? regularPrice;
+  const discountPercent =
+    referencePrice && currentPrice && currentPrice < referencePrice
+      ? Math.round(((referencePrice - currentPrice) / referencePrice) * 100)
+      : null;
+
+  if (!promotion || !discountPercent || discountPercent <= 0) return null;
+
+  const brand = cleanBrand(product.brand);
+  return {
+    id: `ica-online-${promotion.id || product.productId}-${slug(store.city)}`,
+    article: formatArticleWithBrand(product.name, brand),
+    brand,
+    chain: "ICA",
+    cities: [store.city],
+    originalPrice: referencePrice,
+    currentPrice,
+    dealText: cleanLabel(promotion.description),
+    unit: getIcaOnlineUnit(product.price?.unit?.label),
+    discountPercent,
+    validTo: null,
+    source: "ICA online live",
+    storeId: store.id,
+    storeName: onlineStore.name,
+  };
+}
+
+async function fetchIcaOnlinePromotionSeed(seed, stores) {
+  const store = stores.find((candidate) => normalizeCity(candidate.city) === normalizeCity(seed.city));
+  if (!store) return [];
+
+  const url = `${icaOnlineApi.baseUrl}/stores/${seed.accountId}/api/webproductpagews/v4/promotion/${seed.promotionId}`;
+  const promotion = await fetchJson(url);
+  if (!isIcaOnlinePromotionActive(promotion.activePeriod)) return [];
+
+  return (promotion.promotionGroups ?? []).flatMap((group) =>
+    (group.products ?? []).map((product) => mapIcaOnlinePromotionProduct(store, promotion, group, product)).filter(Boolean),
+  );
+}
+
+function isIcaOnlinePromotionActive(activePeriod) {
+  const now = new Date();
+  const from = activePeriod?.activeFrom ? new Date(activePeriod.activeFrom) : null;
+  const to = activePeriod?.activeTo ? new Date(activePeriod.activeTo) : null;
+  return (!from || from <= now) && (!to || to >= now);
+}
+
+function mapIcaOnlinePromotionProduct(store, promotion, group, product) {
+  const quantity = Number(group.quantity) || Number(product.promotions?.[0]?.requiredProductQuantity) || 1;
+  const promotionTotal = parseMoney(group.reward?.offer ?? promotion.description);
+  const originalPrice = parseMoney(product.price?.amount);
+  const currentPrice = promotionTotal && quantity > 1 ? roundMoney(promotionTotal / quantity) : promotionTotal;
+  const discountPercent =
+    originalPrice && currentPrice && currentPrice < originalPrice
+      ? Math.round(((originalPrice - currentPrice) / originalPrice) * 100)
+      : null;
+
+  if (!discountPercent || discountPercent <= 0) return null;
+
+  const brand = cleanBrand(product.brand);
+  return {
+    id: `ica-online-${promotion.promoId}-${product.productId}-${slug(store.city)}`,
+    article: formatArticleWithBrand(product.name, brand),
+    brand,
+    chain: "ICA",
+    cities: [store.city],
+    originalPrice,
+    currentPrice,
+    dealText: cleanLabel(promotion.description),
+    unit: getIcaOnlineUnit(product.unitPrice?.unitName),
+    discountPercent,
+    validTo: parseIsoDate(promotion.activePeriod?.activeTo),
+    source: "ICA online live",
+    storeId: store.id,
+    storeName: store.name,
+  };
+}
+
+function getQuantityFromDealText(value) {
+  const match = String(value ?? "").match(/(\d+)\s*för\s*[\d.,]+/i);
+  return match ? Number(match[1]) : 1;
+}
+
+function getPromotionTotalFromDealText(value) {
+  const match = String(value ?? "").match(/\d+\s*för\s*([\d.,]+)/i);
+  return match ? parseMoney(match[1]) : null;
+}
+
+function getIcaOnlineUnit(value) {
+  const label = String(value ?? "").toLowerCase();
+  if (label.includes("kg")) return "per kg";
+  if (label.includes("litre") || label.includes("liter")) return "per liter";
+  return "per styck";
+}
+
 async function fetchIcaChain() {
   const offers = [];
   const stores = [];
   const errors = [];
   let token = "";
+  let onlineStores = [];
 
   try {
     token = await fetchIcaAccessToken();
@@ -381,6 +587,12 @@ async function fetchIcaChain() {
     };
   }
 
+  try {
+    onlineStores = await fetchIcaOnlineStoreMap();
+  } catch (error) {
+    errors.push({ city: ALL_SWEDEN, error: `ICA Online: ${error.message}` });
+  }
+
   for (const city of citiesToSample) {
     try {
       const store = await getIcaStoreForCity(token, city);
@@ -391,8 +603,27 @@ async function fetchIcaChain() {
 
       stores.push(store);
       offers.push(...(await fetchIcaOffersForStore(token, store)));
+
+      const onlineStore = getIcaOnlineStore(store, onlineStores);
+      if (onlineStore) {
+        try {
+          offers.push(...(await fetchIcaOnlineOffersForStore(store, onlineStore)));
+        } catch (error) {
+          if (!isNotFoundError(error)) {
+            errors.push({ city, error: `ICA Online: ${error.message}` });
+          }
+        }
+      }
     } catch (error) {
       errors.push({ city, error: error.message });
+    }
+  }
+
+  for (const seed of icaOnlineApi.promotionSeeds) {
+    try {
+      offers.push(...(await fetchIcaOnlinePromotionSeed(seed, stores)));
+    } catch (error) {
+      errors.push({ city: seed.city, error: `ICA Online: ${error.message}` });
     }
   }
 
@@ -404,6 +635,10 @@ async function fetchIcaChain() {
     errors,
     data: mergeOffersByPromotion(offers),
   };
+}
+
+function isNotFoundError(error) {
+  return /^404\b/.test(String(error?.message ?? error));
 }
 
 async function fetchCoopStoreMap() {
@@ -1067,3 +1302,4 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
