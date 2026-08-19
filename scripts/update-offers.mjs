@@ -5,7 +5,7 @@ const ALL_SWEDEN = "Hela Sverige";
 const databasePath = path.join(process.cwd(), "public", "data", "offers.json");
 
 const providers = [
-  { chain: "ICA", sourceUrl: "https://www.ica.se/erbjudanden/", status: "pending-fetcher" },
+  { chain: "ICA", sourceUrl: "https://www.ica.se/erbjudanden/", status: "live" },
   { chain: "Coop", sourceUrl: "https://www.coop.se/butiker-erbjudanden/", status: "live" },
   { chain: "Willys", sourceUrl: "https://www.willys.se/erbjudanden", status: "live" },
   { chain: "Hemköp", sourceUrl: "https://www.hemkop.se/erbjudanden", status: "live" },
@@ -25,6 +25,12 @@ const axfoodChains = [
     apiPrefix: "/axfood/rest/v1",
   },
 ];
+
+const icaApi = {
+  chain: "ICA",
+  tokenUrl: "https://www.ica.se/e11/public-access-token",
+  baseUrl: "https://apim-pub.gw.ica.se/sverige/digx",
+};
 
 const coopApi = {
   chain: "Coop",
@@ -230,6 +236,149 @@ async function fetchAxfoodChain(chain) {
   };
 }
 
+async function fetchIcaAccessToken() {
+  const data = await fetchJson(icaApi.tokenUrl);
+  if (!data.publicAccessToken) {
+    throw new Error("ICA svarade utan publicAccessToken");
+  }
+  return data.publicAccessToken;
+}
+
+async function getIcaStoreForCity(token, city) {
+  const url = new URL(`${icaApi.baseUrl}/storesearch/v1/searchbyquery`);
+  url.searchParams.set("query", city);
+  url.searchParams.set("take", "12");
+  url.searchParams.set("offset", "0");
+
+  const data = await fetchJson(url, { headers: icaAuthHeaders(token) });
+  const stores = data.documents ?? [];
+  const selected = stores
+    .filter((store) => normalizeCity(store.visitingCity) === normalizeCity(city) || normalizeCity(store.name).includes(normalizeCity(city)))
+    .sort((a, b) => scoreIcaStoreCandidate(b, city) - scoreIcaStoreCandidate(a, city))[0] ?? stores[0];
+
+  if (!selected?.id) return null;
+
+  return {
+    id: selected.id,
+    city: selected.visitingCity || city,
+    name: selected.marketingName || selected.name || `ICA ${city}`,
+  };
+}
+
+function scoreIcaStoreCandidate(store, city) {
+  const profileScore = {
+    maxi: 35,
+    kvantum: 30,
+    supermarket: 20,
+    nara: 10,
+    nära: 10,
+  };
+  const profile = normalizeCity(store.shortProfileName);
+  let score = profileScore[profile] ?? 0;
+  if (normalizeCity(store.visitingCity) === normalizeCity(city)) score += 100;
+  if (normalizeCity(store.name).includes(normalizeCity(city))) score += 10;
+  return score;
+}
+
+async function fetchIcaOffersForStore(token, store) {
+  const url = `${icaApi.baseUrl}/offerreader/v1/offers/store/${store.id}`;
+  const data = await fetchJson(url, { headers: icaAuthHeaders(token) });
+  return (Array.isArray(data) ? data : [])
+    .map((offer) => mapIcaOffer(store, offer))
+    .filter(Boolean);
+}
+
+function mapIcaOffer(store, offer) {
+  if (offer.discountType !== "FIXED") return null;
+
+  const storeOffer = offer.stores?.find((item) => Number(item.BMSStoreId) === Number(store.id)) ?? offer.stores?.[0];
+  const originalPrice = parseMoney(storeOffer?.regularPriceFrom ?? storeOffer?.regularPrice ?? offer.details?.regularPriceFrom);
+  const requirementValue = Number(offer.requirementValue);
+  const quantity =
+    offer.requirementType === "QUANTITY" && Number.isInteger(requirementValue) && requirementValue > 1
+      ? requirementValue
+      : 1;
+  const promotionTotal = parseMoney(offer.discountValue ?? offer.parsedMechanics?.value2);
+  const currentPrice = promotionTotal && quantity > 1 ? roundMoney(promotionTotal / quantity) : promotionTotal;
+  const discountPercent =
+    originalPrice && currentPrice && currentPrice < originalPrice
+      ? Math.round(((originalPrice - currentPrice) / originalPrice) * 100)
+      : null;
+
+  if (!discountPercent || discountPercent <= 0) return null;
+
+  const brand = cleanBrand(offer.details?.brand);
+  const article = formatArticleWithBrand(formatArticleWithSize(offer.details?.name, offer.details?.packageInformation), brand);
+  const dealText = quantity > 1 && promotionTotal ? `${quantity} för ${formatPrice(promotionTotal)} kr` : null;
+
+  return {
+    id: `ica-${offer.id}-${slug(store.city)}`,
+    article,
+    brand,
+    chain: "ICA",
+    cities: [store.city],
+    originalPrice,
+    currentPrice,
+    dealText,
+    unit: cleanUnit(offer.details?.unitOfMeasure || offer.comparisonPrice || "per styck"),
+    discountPercent,
+    validTo: parseIsoDate(offer.validTo),
+    source: "ICA live",
+    storeId: store.id,
+    storeName: store.name,
+  };
+}
+
+function icaAuthHeaders(token) {
+  return {
+    Authorization: `Bearer ${token}`,
+  };
+}
+
+async function fetchIcaChain() {
+  const offers = [];
+  const stores = [];
+  const errors = [];
+  let token = "";
+
+  try {
+    token = await fetchIcaAccessToken();
+  } catch (error) {
+    return {
+      chain: "ICA",
+      ok: false,
+      stores: 0,
+      offers: 0,
+      errors: [{ city: ALL_SWEDEN, error: error.message }],
+      data: [],
+    };
+  }
+
+  for (const city of citiesToSample) {
+    try {
+      const store = await getIcaStoreForCity(token, city);
+      if (!store) {
+        errors.push({ city, error: "Ingen ICA-butik hittades" });
+        continue;
+      }
+
+      stores.push(store);
+      offers.push(...(await fetchIcaOffersForStore(token, store)));
+    } catch (error) {
+      errors.push({ city, error: error.message });
+    }
+  }
+
+  return {
+    chain: "ICA",
+    ok: offers.length > 0,
+    stores: stores.length,
+    offers: offers.length,
+    errors,
+    data: mergeOffersByPromotion(offers),
+  };
+}
+
 async function fetchCoopStoreMap() {
   return fetchJson(coopApi.storeMapUrl, {
     headers: {
@@ -408,7 +557,7 @@ async function probeProvider(provider) {
 async function main() {
   const live = process.argv.includes("--live");
   const probes = live ? await Promise.all(providers.map(probeProvider)) : [];
-  const chainResults = live ? await Promise.all([...axfoodChains.map(fetchAxfoodChain), fetchCoopChain()]) : [];
+  const chainResults = live ? await Promise.all([fetchIcaChain(), ...axfoodChains.map(fetchAxfoodChain), fetchCoopChain()]) : [];
   const liveOffers = chainResults.flatMap((result) => result.data);
 
   const database = {
@@ -467,12 +616,15 @@ function cleanLabel(value) {
 }
 
 function cleanUnit(value) {
-  return cleanLabel(value)?.replace(/^kr\//i, "per ") ?? "per styck";
+  const unit = cleanLabel(value)?.replace(/^kr\//i, "per ").replace(/^\/(.+)/, "per $1");
+  if (!unit) return "per styck";
+  if (/^(kg|g|st|l|liter|ml|cl|pack)$/i.test(unit)) return `per ${unit}`;
+  return unit;
 }
 
 function cleanBrand(value) {
-  const brand = cleanLabel(value)?.split("•")[0]?.trim();
-  if (!brand || brand === "-") return null;
+  const brand = cleanLabel(value)?.split("•")[0]?.replace(/\.\s*Sverige$/i, "").trim();
+  if (!brand || brand === "-" || !/[\p{L}\p{N}]/u.test(brand)) return null;
   return brand;
 }
 
