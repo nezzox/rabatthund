@@ -174,6 +174,9 @@ h1 { font-size: clamp(1.7rem, 4.4vw, 3.1rem); line-height: 1; margin: 0; }
   width: 100%;
 }
 .offer-list { display: grid; gap: 10px; padding-bottom: 28px; }
+.load-more { display: flex; justify-content: center; margin: 4px auto 28px; max-width: 1080px; }
+.load-more button { background: var(--accent); border: 0; border-radius: 6px; color: #ffffff; font-weight: 800; min-height: 44px; padding: 10px 18px; }
+.load-more button:hover, .load-more button:focus-visible { background: var(--accent-dark); outline: none; }
 .offer-row { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 24px rgba(23, 33, 29, 0.06); padding: 16px; }
 .offer-main { align-items: start; display: grid; gap: 12px; grid-template-columns: 1fr auto; }
 .offer-main h3 { font-size: clamp(1.32rem, 4.8vw, 2.1rem); line-height: 1.05; margin: 0; }
