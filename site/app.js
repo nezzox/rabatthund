@@ -8,6 +8,7 @@ const state = {
   selectedChain: "ICA",
   searchQuery: "",
   isCityPickerOpen: false,
+  visibleLimit: 100,
   snapshot: { updatedAt: new Date().toISOString(), offers: [] },
 };
 
@@ -84,6 +85,7 @@ function render() {
           : state.view === "search"
             ? searchOffers
             : cityOffers;
+  const renderedOffers = visibleOffers.slice(0, state.visibleLimit);
 
   const heading =
     state.view === "top"
@@ -123,7 +125,8 @@ function render() {
       ${state.view === "city" || state.view === "store" || state.view === "search" ? cityPicker(cities) : ""}
       ${state.view === "store" ? chainGrid() : ""}
       ${state.view === "search" ? searchControl() : ""}
-      <section class="offer-list" aria-label="${escapeHtml(heading)}">${visibleOffers.map(renderOffer).join("")}</section>
+      <section class="offer-list" aria-label="${escapeHtml(heading)}">${renderedOffers.map(renderOffer).join("")}</section>
+      ${renderedOffers.length < visibleOffers.length ? `<div class="load-more"><button type="button" data-action="more">Visa fler erbjudanden</button></div>` : ""}
     </main>
   `;
 
@@ -188,6 +191,14 @@ root.addEventListener("click", (event) => {
   if (!target) return;
 
   const action = target.dataset.action;
+  if (action === "more") {
+    state.visibleLimit += 100;
+    render();
+    return;
+  }
+
+  const resetsOfferLimit = ["top", "city", "store", "search", "all"].includes(action) || target.dataset.city || target.dataset.chain;
+  if (resetsOfferLimit) state.visibleLimit = 100;
   if (action === "top") state.view = "top";
   if (action === "city") state.view = "city";
   if (action === "store") state.view = "store";
@@ -213,6 +224,7 @@ root.addEventListener("click", (event) => {
 root.addEventListener("input", (event) => {
   if (event.target.id !== "product-search") return;
   state.searchQuery = event.target.value;
+  state.visibleLimit = 100;
   render();
 });
 
