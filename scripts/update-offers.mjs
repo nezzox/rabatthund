@@ -9,8 +9,8 @@ const providers = [
   { chain: "Coop", sourceUrl: "https://www.coop.se/butiker-erbjudanden/", status: "live" },
   { chain: "Willys", sourceUrl: "https://www.willys.se/erbjudanden", status: "live" },
   { chain: "Hemköp", sourceUrl: "https://www.hemkop.se/erbjudanden", status: "live" },
-  { chain: "Lidl", sourceUrl: "https://www.lidl.se/c/reklamblad/s10018018", status: "pending-fetcher" },
-  { chain: "City Gross", sourceUrl: "https://www.citygross.se/erbjudanden", status: "pending-fetcher" },
+  { chain: "Lidl", sourceUrl: "https://www.lidl.se/c/reklamblad/s10018018", status: "live" },
+  { chain: "City Gross", sourceUrl: "https://www.citygross.se/erbjudanden", status: "live" },
 ];
 
 const axfoodChains = [
@@ -38,6 +38,19 @@ const coopApi = {
   promotionsUrl: "https://external.api.coop.se/personalization/search/products/promotions",
   storeSubscriptionKey: "990520e65cc44eef89e9e9045b57f4e9",
   promotionsSubscriptionKey: "3becf0ce306f41a1ae94077c16798187",
+};
+
+const cityGrossApi = {
+  chain: "City Gross",
+  baseUrl: "https://www.citygross.se",
+  sitesPath: "/api/v1/sites?siteTypeId=3",
+  offersPath: "/api/v1/Loop54/category/2930/products",
+};
+
+const lidlApi = {
+  chain: "Lidl",
+  overviewUrl: "https://www.lidl.se/c/reklamblad/s10018018",
+  flyerUrl: "https://endpoints.leaflets.schwarz/v4/flyer",
 };
 
 const citiesToSample = [
@@ -99,6 +112,20 @@ async function fetchText(url) {
     status: response.status,
     sourceUrl: url,
   };
+}
+
+async function fetchTextContent(url) {
+  const response = await fetch(url, {
+    headers: {
+      ...requestHeaders,
+      "accept": "text/html,application/xhtml+xml,text/plain",
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`${response.status} ${response.statusText} från ${url}`);
+  }
+
+  return response.text();
 }
 
 async function getFirstStoreForCity(chain, city) {
@@ -536,6 +563,360 @@ async function fetchCoopChain() {
   };
 }
 
+async function fetchCityGrossStores() {
+  const data = await fetchJson(`${cityGrossApi.baseUrl}${cityGrossApi.sitesPath}`);
+  return data.sites ?? [];
+}
+
+function getCityGrossStoreForCity(stores, city) {
+  const normalizedCity = normalizeCity(city);
+  return stores
+    .filter((store) => normalizeCity(store.city) === normalizedCity || normalizeCity(store.name).includes(normalizedCity))
+    .sort((a, b) => scoreCityGrossStoreCandidate(b, city) - scoreCityGrossStoreCandidate(a, city))[0] ?? null;
+}
+
+function scoreCityGrossStoreCandidate(store, city) {
+  let score = 0;
+  if (normalizeCity(store.city) === normalizeCity(city)) score += 100;
+  if (normalizeCity(store.name).includes(normalizeCity(city))) score += 20;
+  return score;
+}
+
+async function fetchCityGrossOffersForStore(store) {
+  const url = new URL(`${cityGrossApi.baseUrl}${cityGrossApi.offersPath}`);
+  url.searchParams.set("currentWeekDiscountOnly", "true");
+  url.searchParams.set("discountonly", "true");
+  url.searchParams.set("skip", "0");
+  url.searchParams.set("store", store.storeNumber);
+  url.searchParams.set("take", "300");
+
+  const data = await fetchJson(url);
+  return (data.items ?? [])
+    .map((product) => mapCityGrossProduct(store, product))
+    .filter(Boolean);
+}
+
+function mapCityGrossProduct(store, product) {
+  const prices = product.productStoreDetails?.prices;
+  const promotion = prices?.activePromotion ?? prices?.promotions?.[0];
+  if (!promotion) return null;
+
+  const originalPrice = parseMoney(prices?.ordinaryPrice?.price);
+  const currentPrice = parseMoney(promotion.priceDetails?.price ?? prices?.currentPrice?.price);
+  const quantity = Number(promotion.minQuantity) > 1 ? Number(promotion.minQuantity) : 1;
+  const promotionTotal = parseMoney(promotion.value);
+  const discountPercent =
+    originalPrice && currentPrice && currentPrice < originalPrice
+      ? Math.round(((originalPrice - currentPrice) / originalPrice) * 100)
+      : null;
+
+  if (!discountPercent || discountPercent <= 0) return null;
+
+  const brand = cleanBrand(product.brand);
+  const article = formatArticleWithBrand(formatArticleWithSize(product.name, product.descriptiveSize), brand);
+  const dealText = quantity > 1 && promotionTotal ? `${quantity} för ${formatPrice(promotionTotal)} kr` : null;
+  const id = `city-gross-${product.id || product.gtin || slug(article)}-${slug(store.city)}`;
+
+  return {
+    id,
+    article,
+    brand,
+    chain: "City Gross",
+    cities: [store.city],
+    originalPrice,
+    currentPrice,
+    dealText,
+    unit: cleanUnit(mapCityGrossUnit(promotion.priceDetails?.unit ?? prices?.ordinaryPrice?.unit)),
+    discountPercent,
+    validTo: parseIsoDate(promotion.to),
+    source: "City Gross live",
+    storeId: store.storeNumber,
+    storeName: store.name,
+  };
+}
+
+function mapCityGrossUnit(unit) {
+  const normalized = String(unit || "").toUpperCase();
+  if (normalized === "PCE") return "per st";
+  if (normalized === "KGM") return "per kg";
+  if (normalized === "LTR") return "per liter";
+  return unit || "per styck";
+}
+
+async function fetchCityGrossChain() {
+  const offers = [];
+  const stores = [];
+  const errors = [];
+
+  let storeMap = [];
+  try {
+    storeMap = await fetchCityGrossStores();
+  } catch (error) {
+    return {
+      chain: "City Gross",
+      ok: false,
+      stores: 0,
+      offers: 0,
+      errors: [{ city: ALL_SWEDEN, error: error.message }],
+      data: [],
+    };
+  }
+
+  for (const city of citiesToSample) {
+    try {
+      const store = getCityGrossStoreForCity(storeMap, city);
+      if (!store) {
+        errors.push({ city, error: "Ingen City Gross-butik hittades" });
+        continue;
+      }
+
+      stores.push(store);
+      offers.push(...(await fetchCityGrossOffersForStore(store)));
+    } catch (error) {
+      errors.push({ city, error: error.message });
+    }
+  }
+
+  return {
+    chain: "City Gross",
+    ok: offers.length > 0,
+    stores: stores.length,
+    offers: offers.length,
+    errors,
+    data: mergeOffersByPromotion(offers),
+  };
+}
+
+async function fetchLidlFlyerIdentifiers() {
+  const html = await fetchTextContent(lidlApi.overviewUrl);
+  return [...html.matchAll(/\/l\/sv\/reklamblad\/([^/"?#]+)\/ar\/0/g)]
+    .map((match) => match[1])
+    .filter((identifier, index, list) => list.indexOf(identifier) === index);
+}
+
+async function fetchLidlFlyer(identifier) {
+  const url = new URL(lidlApi.flyerUrl);
+  url.searchParams.set("flyer_identifier", identifier);
+  const data = await fetchJson(url);
+  return data.flyer;
+}
+
+function selectCurrentLidlFlyers(flyers) {
+  const today = new Date().toISOString().slice(0, 10);
+  return flyers
+    .filter(Boolean)
+    .filter((flyer) => !flyer.offerStartDate || !flyer.offerEndDate || (flyer.offerStartDate <= today && today <= flyer.offerEndDate))
+    .filter((flyer) => normalizeCity(flyer.name).includes("alla-butiker") || normalizeCity(flyer.title).includes("erbjudanden"))
+    .sort((a, b) => Number(normalizeCity(b.name).includes("alla-butiker")) - Number(normalizeCity(a.name).includes("alla-butiker")));
+}
+
+function parseLidlFlyerOffers(flyer) {
+  const offers = [];
+  for (const page of flyer.pages ?? []) {
+    offers.push(...parseLidlPageOffers(flyer, page));
+  }
+  return offers;
+}
+
+function parseLidlPageOffers(flyer, page) {
+  const tokens = normalizeLidlKeywords(page.keyWords).split(" ").filter(Boolean);
+  const offers = [];
+
+  for (let index = 0; index < tokens.length; index++) {
+    const discount = parseLidlDiscountToken(tokens[index], tokens[index + 1]);
+    if (!discount) continue;
+
+    const discountEndIndex = discount.consumesNext ? index + 1 : index;
+    const priceIndex = findLidlPriceTokenIndex(tokens, index);
+    if (priceIndex === -1) continue;
+
+    const currentPrice = parseLidlPriceToken(tokens[priceIndex]);
+    if (!currentPrice || currentPrice < 1 || currentPrice > 1000) continue;
+
+    const article = pickLidlArticle(tokens, priceIndex, index, discountEndIndex);
+    if (!article || !isUsableLidlArticle(article)) continue;
+
+    const originalPrice = roundMoney(currentPrice / (1 - discount.percent / 100));
+    if (!originalPrice || originalPrice <= currentPrice) continue;
+
+    offers.push({
+      id: `lidl-${slug(article)}-${page.number}-${discount.percent}-${Math.round(currentPrice * 100)}`,
+      article,
+      brand: inferLidlBrand(article),
+      chain: "Lidl",
+      cities: [ALL_SWEDEN],
+      originalPrice,
+      currentPrice,
+      dealText: null,
+      unit: "per styck",
+      discountPercent: discount.percent,
+      validTo: flyer.offerEndDate ?? flyer.endDate ?? null,
+      source: "Lidl reklamblad",
+      storeId: "all",
+      storeName: "Lidl alla butiker",
+    });
+  }
+
+  return offers;
+}
+
+function normalizeLidlKeywords(value) {
+  return String(value || "")
+    .replace(/&Amp/gi, "&")
+    .replace(/[﹪％]/g, "%")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function parseLidlDiscountToken(token, nextToken) {
+  const compact = String(token || "").replace(/[−–—]/g, "-");
+  const match = compact.match(/^-?(\d{1,2})%$/);
+  if (match) return { percent: Number(match[1]), consumesNext: false };
+  const splitMatch = compact.match(/^-?(\d{1,2})$/);
+  if (splitMatch && nextToken === "%") return { percent: Number(splitMatch[1]), consumesNext: true };
+  return null;
+}
+
+function findLidlPriceTokenIndex(tokens, discountIndex) {
+  for (let index = discountIndex - 1; index >= Math.max(0, discountIndex - 12); index--) {
+    if (parseLidlDiscountToken(tokens[index], tokens[index + 1])) break;
+    if (isLidlPriceToken(tokens[index]) && !isLidlReferencePrice(tokens, index)) return index;
+  }
+  for (let index = discountIndex + 1; index <= Math.min(tokens.length - 1, discountIndex + 5); index++) {
+    if (isLidlPriceToken(tokens[index]) && !isLidlReferencePrice(tokens, index)) return index;
+  }
+  return -1;
+}
+
+function isLidlPriceToken(token) {
+  return /^(\d{1,4}|\d{1,3}-)$/.test(String(token || ""));
+}
+
+function isLidlReferencePrice(tokens, index) {
+  return normalizeCity(tokens[index - 1]) === "jfr" || normalizeCity(tokens[index - 2]) === "jfr";
+}
+
+function parseLidlPriceToken(token) {
+  const value = String(token || "");
+  if (value.endsWith("-")) return parseMoney(value);
+  const digits = value.replace(/\D/g, "");
+  if (!digits) return null;
+  if (digits.length <= 2) return Number(digits);
+  return roundMoney(Number(digits) / 100);
+}
+
+function pickLidlArticle(tokens, priceIndex, discountIndex, discountEndIndex) {
+  const between = cleanLidlArticleTokens(tokens.slice(priceIndex + 1, discountIndex));
+  if (between.length >= 2 || (between.length === 1 && between[0].length >= 6)) {
+    return between.slice(0, 8).join(" ");
+  }
+
+  const after = [];
+  for (let index = discountEndIndex + 1; index < tokens.length && after.length < 8; index++) {
+    const token = tokens[index];
+    if (parseLidlDiscountToken(token, tokens[index + 1]) || isLidlPriceToken(token) || isLidlArticleStopToken(token)) break;
+    if (!isLidlNoiseToken(token) && !isLidlNumericNoiseToken(token)) after.push(token);
+  }
+
+  if (after.length >= 2 || (after.length === 1 && after[0].length >= 6)) {
+    return after.join(" ");
+  }
+
+  return null;
+}
+
+function cleanLidlArticleTokens(tokens) {
+  return tokens
+    .filter((token, index) => !parseLidlDiscountToken(token, tokens[index + 1]))
+    .filter((token) => token !== "%")
+    .filter((token) => !isLidlNumericNoiseToken(token))
+    .filter((token) => !isLidlNoiseToken(token))
+    .filter((token) => !isLidlArticleStopToken(token))
+    .filter((token) => !isLidlPriceToken(token));
+}
+
+function isLidlNumericNoiseToken(token) {
+  return /^\d{3,}$/.test(String(token || ""));
+}
+
+function isUsableLidlArticle(article) {
+  const normalized = normalizeCity(article);
+  if (/%|reservation|slutfor|avvikelse|www|jfr/.test(normalized)) return false;
+  if (/\b\d{3,}\b/.test(article)) return false;
+  return article.split(" ").length <= 6;
+}
+
+function isLidlNoiseToken(token) {
+  return [
+    "lidl",
+    "plus",
+    "superpris",
+    "kampanj",
+    "favoriter",
+    "mega",
+    "mega-",
+    "max",
+    "lag",
+    "lagt",
+    "pris",
+    "pris!",
+    "valj",
+    "sorter",
+    "ursprung",
+    "jfr",
+    "lagsta",
+    "30-dgrs",
+    "wwwww",
+  ].includes(normalizeCity(token));
+}
+
+function isLidlArticleStopToken(token) {
+  return ["region", "vecka", "man", "kampanjvaror", "tillfalligt", "besok", "butiker", "denna", "lagret"].includes(normalizeCity(token));
+}
+
+function inferLidlBrand(article) {
+  const first = cleanLabel(article)?.split(" ")[0];
+  if (!first || first.length < 3) return null;
+  return cleanBrand(first);
+}
+
+async function fetchLidlChain() {
+  const errors = [];
+  let offers = [];
+
+  try {
+    const identifiers = await fetchLidlFlyerIdentifiers();
+    const flyers = await Promise.all(
+      identifiers.map(async (identifier) => {
+        try {
+          return await fetchLidlFlyer(identifier);
+        } catch (error) {
+          errors.push({ city: ALL_SWEDEN, error: `${identifier}: ${error.message}` });
+          return null;
+        }
+      }),
+    );
+
+    const currentFlyers = selectCurrentLidlFlyers(flyers);
+    for (const flyer of currentFlyers.slice(0, 1)) {
+      offers.push(...parseLidlFlyerOffers(flyer));
+    }
+  } catch (error) {
+    errors.push({ city: ALL_SWEDEN, error: error.message });
+  }
+
+  offers = mergeOffersByPromotion(offers);
+
+  return {
+    chain: "Lidl",
+    ok: offers.length > 0,
+    stores: offers.length > 0 ? 1 : 0,
+    offers: offers.length,
+    errors,
+    data: offers,
+  };
+}
+
 async function probeProvider(provider) {
   try {
     return {
@@ -557,7 +938,15 @@ async function probeProvider(provider) {
 async function main() {
   const live = process.argv.includes("--live");
   const probes = live ? await Promise.all(providers.map(probeProvider)) : [];
-  const chainResults = live ? await Promise.all([fetchIcaChain(), ...axfoodChains.map(fetchAxfoodChain), fetchCoopChain()]) : [];
+  const chainResults = live
+    ? await Promise.all([
+        fetchIcaChain(),
+        ...axfoodChains.map(fetchAxfoodChain),
+        fetchCoopChain(),
+        fetchCityGrossChain(),
+        fetchLidlChain(),
+      ])
+    : [];
   const liveOffers = chainResults.flatMap((result) => result.data);
 
   const database = {
@@ -634,7 +1023,7 @@ function formatArticleWithBrand(article, brand) {
 
   const normalizedArticle = normalizeCity(cleanArticle);
   const normalizedBrand = normalizeCity(brand);
-  if (normalizedArticle === normalizedBrand || normalizedArticle.startsWith(normalizedBrand)) {
+  if (normalizedArticle === normalizedBrand || normalizedArticle.startsWith(normalizedBrand) || normalizedArticle.includes(normalizedBrand)) {
     return cleanArticle;
   }
 
