@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T06:20:28.144Z",
+  "updatedAt": "2026-08-19T08:42:00.594Z",
   "providers": [
     {
       "chain": "ICA",
@@ -4118,6 +4118,24 @@
       "storeName": "Coop Daglivs"
     },
     {
+      "id": "coop-5701719242860-lulea",
+      "article": "4-KIDS Strandtennis 2 rack + boll 1 st",
+      "brand": "4-KIDS",
+      "chain": "Coop",
+      "cities": [
+        "Luleå"
+      ],
+      "originalPrice": 69,
+      "currentPrice": 24.9,
+      "dealText": null,
+      "unit": "Styck",
+      "discountPercent": 64,
+      "validTo": "2026-09-11",
+      "source": "Coop live",
+      "storeId": "242200",
+      "storeName": "Stora Coop Storheden"
+    },
+    {
       "id": "coop-4006592585655-norrkoping",
       "article": "Simba Toys Docka Steffi Familj 4-pack",
       "brand": "Simba Toys",
@@ -4604,6 +4622,24 @@
       "storeName": "Coop Daglivs"
     },
     {
+      "id": "coop-7310521051218-umea",
+      "article": "Tom & Jerry Kex Tom & Jerry 175 g",
+      "brand": "Tom & Jerry",
+      "chain": "Coop",
+      "cities": [
+        "Umeå"
+      ],
+      "originalPrice": 26.45,
+      "currentPrice": 15,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 43,
+      "validTo": "2026-08-22",
+      "source": "Coop live",
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
+    },
+    {
       "id": "coop-7300156598806-stockholm",
       "article": "COOP Babyspenat 65 g",
       "brand": "COOP",
@@ -4620,6 +4656,24 @@
       "source": "Coop live",
       "storeId": "035000",
       "storeName": "Coop Daglivs"
+    },
+    {
+      "id": "coop-7313830006795-umea",
+      "article": "Polarbröd Tunnbröd Gene 330g",
+      "brand": "Polarbröd",
+      "chain": "Coop",
+      "cities": [
+        "Umeå"
+      ],
+      "originalPrice": 25.51,
+      "currentPrice": 15,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 41,
+      "validTo": "2026-08-22",
+      "source": "Coop live",
+      "storeId": "231400",
+      "storeName": "Stora Coop Ersboda"
     },
     {
       "id": "coop-42449034-goteborg",
@@ -5020,12 +5074,29 @@
       "storeName": "Stora Coop Backaplan"
     },
     {
-      "id": "coop-6408432061233-umea",
+      "id": "coop-6408432061233-sundsvall",
       "article": "VALIO Smör Normalsaltat 500 G",
       "brand": "VALIO",
       "chain": "Coop",
       "cities": [
-        "Sundsvall",
+        "Sundsvall"
+      ],
+      "originalPrice": 59.58,
+      "currentPrice": 39,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 35,
+      "validTo": "2026-08-23",
+      "source": "Coop live",
+      "storeId": "232000",
+      "storeName": "Stora Coop Sundsvall"
+    },
+    {
+      "id": "coop-6408432061240-umea",
+      "article": "VALIO Smör Osaltat 500 G",
+      "brand": "VALIO",
+      "chain": "Coop",
+      "cities": [
         "Umeå"
       ],
       "originalPrice": 59.58,
@@ -6939,7 +7010,6 @@
         "Jönköping",
         "Karlstad",
         "Linköping",
-        "Luleå",
         "Skövde",
         "Umeå",
         "Västerås"
@@ -9016,7 +9086,6 @@
         "Jönköping",
         "Skövde",
         "Sundsvall",
-        "Umeå",
         "Växjö",
         "Örebro"
       ],
@@ -10378,7 +10447,6 @@
         "Jönköping",
         "Skövde",
         "Sundsvall",
-        "Umeå",
         "Växjö",
         "Örebro"
       ],
@@ -10490,6 +10558,7 @@
       "brand": "Dalsjöfors",
       "chain": "Coop",
       "cities": [
+        "Luleå",
         "Sundsvall",
         "Uppsala"
       ],
@@ -12706,7 +12775,6 @@
         "Halmstad",
         "Jönköping",
         "Linköping",
-        "Luleå",
         "Norrköping",
         "Skövde",
         "Sundsvall",
