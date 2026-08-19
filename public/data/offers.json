@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T09:05:38.834Z",
+  "updatedAt": "2026-08-19T09:20:39.554Z",
   "providers": [
     {
       "chain": "ICA",
@@ -75,7 +75,7 @@
       "chain": "ICA",
       "ok": true,
       "stores": 22,
-      "offers": 5216,
+      "offers": 5210,
       "errors": []
     },
     {
@@ -637,24 +637,6 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004203078-uppsala",
-      "article": "ICA Doftljus",
-      "brand": "ICA",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 64.9,
-      "currentPrice": 29.5,
-      "dealText": "2 för 59 kr",
-      "unit": "per styck",
-      "discountPercent": 55,
-      "validTo": "2026-08-30",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004205914-orebro",
       "article": "ICA Doftljus",
       "brand": "ICA",
@@ -708,6 +690,24 @@
       "source": "ICA live",
       "storeId": 8900,
       "storeName": "Maxi ICA Stormarknad Linköping"
+    },
+    {
+      "id": "ica-5004183067-uppsala",
+      "article": "ICA Servetter",
+      "brand": "ICA",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 20.9,
+      "currentPrice": 10,
+      "dealText": "2 för 20 kr",
+      "unit": "0:50-0:67/st",
+      "discountPercent": 52,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004132912-stockholm",
@@ -1390,7 +1390,6 @@
         "Lund",
         "Malmö",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -1430,7 +1429,8 @@
       "cities": [
         "Skövde",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 95.9,
       "currentPrice": 50,
@@ -1512,7 +1512,6 @@
         "Lund",
         "Malmö",
         "Umeå",
-        "Uppsala",
         "Örebro"
       ],
       "originalPrice": 28.9,
@@ -1576,7 +1575,6 @@
         "Kalmar",
         "Malmö",
         "Umeå",
-        "Uppsala",
         "Örebro"
       ],
       "originalPrice": 93.9,
@@ -1688,7 +1686,21 @@
       "brand": null,
       "chain": "ICA",
       "cities": [
-        "Hela Sverige"
+        "Borås",
+        "Eskilstuna",
+        "Gävle",
+        "Göteborg",
+        "Helsingborg",
+        "Kalmar",
+        "Linköping",
+        "Luleå",
+        "Lund",
+        "Malmö",
+        "Stockholm",
+        "Sundsvall",
+        "Umeå",
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 149,
       "currentPrice": 79,
@@ -1753,7 +1765,6 @@
         "Malmö",
         "Norrköping",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -2170,6 +2181,7 @@
       "chain": "ICA",
       "cities": [
         "Stockholm",
+        "Uppsala",
         "Västerås"
       ],
       "originalPrice": 21.41,
@@ -2226,7 +2238,8 @@
       "cities": [
         "Luleå",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 34.38,
       "currentPrice": 20,
@@ -2255,24 +2268,6 @@
       "source": "ICA live",
       "storeId": 2748,
       "storeName": "Maxi ICA Stormarknad Malmö"
-    },
-    {
-      "id": "ica-5004080982-uppsala",
-      "article": "ICA Grönkålsblad i påse 400 g",
-      "brand": "ICA",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 34.25,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 42,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080982-skovde",
@@ -2305,6 +2300,7 @@
         "Linköping",
         "Skövde",
         "Stockholm",
+        "Uppsala",
         "Västerås"
       ],
       "originalPrice": 21.71,
@@ -2324,8 +2320,7 @@
       "chain": "ICA",
       "cities": [
         "Malmö",
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 21.7,
       "currentPrice": 12.5,
@@ -2363,24 +2358,6 @@
       "source": "ICA live",
       "storeId": 1093,
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
-    },
-    {
-      "id": "ica-5004080886-uppsala",
-      "article": "ICA. Sydafrika/Peru Mogen avokado 3-pack 330 g",
-      "brand": "ICA. Sydafrika/Peru",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 42.95,
-      "currentPrice": 25,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 42,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004196978-orebro",
@@ -2476,7 +2453,8 @@
         "Halmstad",
         "Linköping",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Uppsala"
       ],
       "originalPrice": 8.47,
       "currentPrice": 5,
@@ -2494,8 +2472,7 @@
       "brand": "ICA",
       "chain": "ICA",
       "cities": [
-        "Malmö",
-        "Uppsala"
+        "Malmö"
       ],
       "originalPrice": 8.45,
       "currentPrice": 5,
@@ -2552,7 +2529,8 @@
       "cities": [
         "Luleå",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 25.5,
       "currentPrice": 15,
@@ -2563,6 +2541,24 @@
       "source": "ICA live",
       "storeId": 13164,
       "storeName": "Maxi ICA Stormarknad Lindhagen"
+    },
+    {
+      "id": "ica-5004080891-uppsala",
+      "article": "Skånemejerier Präst®, Herrgård®, Grevé®, Rike, Ära 670 g",
+      "brand": "Skånemejerier",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 84.58,
+      "currentPrice": 49.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 41,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004110773-norrkoping",
@@ -2600,6 +2596,7 @@
         "Malmö",
         "Sundsvall",
         "Umeå",
+        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -2630,6 +2627,24 @@
       "source": "ICA live",
       "storeId": 12962,
       "storeName": "Maxi ICA Stormarknad Borås"
+    },
+    {
+      "id": "ica-5004080948-uppsala",
+      "article": "Corny Müslibar 40-50 g",
+      "brand": "Corny",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 10.36,
+      "currentPrice": 6.25,
+      "dealText": "4 för 25 kr",
+      "unit": "125:00-156:25/kg",
+      "discountPercent": 40,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004169354-stockholm",
@@ -2873,7 +2888,6 @@
         "Lund",
         "Malmö",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -3181,24 +3195,6 @@
       "storeName": "Maxi ICA Stormarknad Linköping"
     },
     {
-      "id": "ica-5004110773-uppsala",
-      "article": "Apetina Vitost 150 g",
-      "brand": "Apetina",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 20.15,
-      "currentPrice": 12.5,
-      "dealText": "2 för 25 kr",
-      "unit": "83:33/kg",
-      "discountPercent": 38,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004110773-umea",
       "article": "Apetina Vitost 150 g",
       "brand": "Apetina",
@@ -3279,7 +3275,8 @@
       "cities": [
         "Malmö",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Uppsala"
       ],
       "originalPrice": 20,
       "currentPrice": 12.5,
@@ -3290,24 +3287,6 @@
       "source": "ICA live",
       "storeId": 13164,
       "storeName": "Maxi ICA Stormarknad Lindhagen"
-    },
-    {
-      "id": "ica-5004110772-uppsala",
-      "article": "ICA Couscous 500 g",
-      "brand": "ICA",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 20.05,
-      "currentPrice": 12.5,
-      "dealText": "2 för 25 kr",
-      "unit": "25:00/kg",
-      "discountPercent": 38,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004081000-norrkoping",
@@ -3431,7 +3410,6 @@
         "Kalmar",
         "Malmö",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -3463,8 +3441,7 @@
         "Malmö",
         "Skövde",
         "Sundsvall",
-        "Umeå",
-        "Uppsala"
+        "Umeå"
       ],
       "originalPrice": 40,
       "currentPrice": 25,
@@ -3789,8 +3766,7 @@
         "Malmö",
         "Skövde",
         "Stockholm",
-        "Sundsvall",
-        "Uppsala"
+        "Sundsvall"
       ],
       "originalPrice": 13.2,
       "currentPrice": 8.33,
@@ -4057,7 +4033,6 @@
         "Norrköping",
         "Stockholm",
         "Umeå",
-        "Uppsala",
         "Örebro"
       ],
       "originalPrice": 38.9,
@@ -4125,7 +4100,7 @@
       "storeName": "Maxi ICA Stormarknad Gunnesbo, Lund"
     },
     {
-      "id": "ica-5004186407-lund",
+      "id": "ica-5004188803-uppsala",
       "article": "Dulcop Italien Blåsbubblor pistol Unicorn",
       "brand": "Dulcop Italien",
       "chain": "ICA",
@@ -4135,6 +4110,7 @@
         "Luleå",
         "Lund",
         "Sundsvall",
+        "Uppsala",
         "Växjö"
       ],
       "originalPrice": 38.9,
@@ -4144,8 +4120,8 @@
       "discountPercent": 36,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 17883,
-      "storeName": "Maxi ICA Stormarknad Gunnesbo, Lund"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004110772-helsingborg",
@@ -4169,31 +4145,12 @@
       "storeName": "Maxi ICA Stormarknad Helsingborg"
     },
     {
-      "id": "ica-5004080891-uppsala",
-      "article": "Skånemejerier Präst®, Herrgård®, Grevé®, Rike, Ära 670 g",
-      "brand": "Skånemejerier",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 77.9,
-      "currentPrice": 49.9,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 36,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
-      "id": "ica-5004160108-uppsala",
+      "id": "ica-5004160108-kalmar",
       "article": "Vad är klockan?",
       "brand": null,
       "chain": "ICA",
       "cities": [
-        "Kalmar",
-        "Uppsala"
+        "Kalmar"
       ],
       "originalPrice": 139,
       "currentPrice": 89,
@@ -4202,8 +4159,8 @@
       "discountPercent": 36,
       "validTo": "2026-08-30",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 2597,
+      "storeName": "Maxi ICA Stormarknad Kalmar"
     },
     {
       "id": "ica-2004965688-malmo",
@@ -4641,6 +4598,24 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
+      "id": "ica-5004080950-uppsala",
+      "article": "ICA Kardemummaskorpa 225 g",
+      "brand": "ICA",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 18.93,
+      "currentPrice": 12.5,
+      "dealText": "2 för 25 kr",
+      "unit": "55:56/kg",
+      "discountPercent": 34,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004132842-linkoping",
       "article": "ICA Pennfodral",
       "brand": "ICA",
@@ -4696,7 +4671,6 @@
         "Lund",
         "Sundsvall",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -4732,6 +4706,24 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
+      "id": "ica-5004009021-uppsala",
+      "article": "ICA Tomatpuré 200 g",
+      "brand": "ICA",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 18.88,
+      "currentPrice": 12.5,
+      "dealText": "2 för 25 kr",
+      "unit": "62:50/kg",
+      "discountPercent": 34,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004080887-stockholm",
       "article": "Knorr Buljong 12-pack",
       "brand": "Knorr",
@@ -4742,7 +4734,8 @@
         "Jönköping",
         "Linköping",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Uppsala"
       ],
       "originalPrice": 18.88,
       "currentPrice": 12.5,
@@ -4789,8 +4782,7 @@
       "chain": "ICA",
       "cities": [
         "Malmö",
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 18.85,
       "currentPrice": 12.5,
@@ -5291,24 +5283,6 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004080979-uppsala",
-      "article": "ICA I love eco Ekologiska sallater i påse 65 g",
-      "brand": "ICA I love eco",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 21.7,
-      "currentPrice": 14.5,
-      "dealText": "2 för 29 kr",
-      "unit": "223:08/kg",
-      "discountPercent": 33,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004132842-stockholm",
       "article": "ICA Pennfodral",
       "brand": "ICA",
@@ -5404,24 +5378,6 @@
       "storeName": "Maxi ICA Stormarknad Linköping"
     },
     {
-      "id": "ica-5004080978-uppsala",
-      "article": "ICA. Chile Stor grön kiwi 125 g",
-      "brand": "ICA. Chile",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 9.95,
-      "currentPrice": 6.67,
-      "dealText": "3 för 20 kr",
-      "unit": "53:33/kg",
-      "discountPercent": 33,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004132893-stockholm",
       "article": "JBL Gaminghörlurar",
       "brand": "JBL",
@@ -5465,15 +5421,15 @@
       "cities": [
         "Uppsala"
       ],
-      "originalPrice": 162,
+      "originalPrice": 162.23,
       "currentPrice": 109,
       "dealText": null,
       "unit": "per kg",
       "discountPercent": 33,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080923-stockholm",
@@ -5483,7 +5439,8 @@
       "cities": [
         "Halmstad",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 29.29,
       "currentPrice": 19.5,
@@ -5698,6 +5655,25 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
+      "id": "ica-5004080936-uppsala",
+      "article": "Arla Hushållsost Ca 1,1-2,2 kg",
+      "brand": "Arla",
+      "chain": "ICA",
+      "cities": [
+        "Luleå",
+        "Uppsala"
+      ],
+      "originalPrice": 109.9,
+      "currentPrice": 74.9,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 32,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004057827-vasteras",
       "article": "Arla Hushållsost Ca 1,1-2,2 kg",
       "brand": "Arla",
@@ -5714,24 +5690,6 @@
       "source": "ICA live",
       "storeId": 10515,
       "storeName": "ICA Kvantum Västerås"
-    },
-    {
-      "id": "ica-5004080936-lulea",
-      "article": "Arla Hushållsost Ca 1,1-2,2 kg",
-      "brand": "Arla",
-      "chain": "ICA",
-      "cities": [
-        "Luleå"
-      ],
-      "originalPrice": 109.9,
-      "currentPrice": 74.9,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 32,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 11650,
-      "storeName": "Maxi ICA Stormarknad Luleå"
     },
     {
       "id": "ica-5004080936-sundsvall",
@@ -5931,7 +5889,7 @@
       "storeName": "Maxi ICA Stormarknad Göteborg"
     },
     {
-      "id": "ica-5004080947-linkoping",
+      "id": "ica-5004080947-uppsala",
       "article": "ICA I Love Eco Ekologiska bönor, kikärtor, linser 380 g",
       "brand": "ICA I Love Eco",
       "chain": "ICA",
@@ -5939,7 +5897,8 @@
         "Borås",
         "Helsingborg",
         "Jönköping",
-        "Linköping"
+        "Linköping",
+        "Uppsala"
       ],
       "originalPrice": 12.25,
       "currentPrice": 8.33,
@@ -5948,8 +5907,8 @@
       "discountPercent": 32,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 8900,
-      "storeName": "Maxi ICA Stormarknad Linköping"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004163945-boras",
@@ -6100,6 +6059,24 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
+      "id": "ica-5004080890-uppsala",
+      "article": "Rana Färsk fylld pasta 250 g",
+      "brand": "Rana",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 47.99,
+      "currentPrice": 32.5,
+      "dealText": "2 för 65 kr",
+      "unit": "130:00/kg",
+      "discountPercent": 32,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004080891-goteborg",
       "article": "Skånemejerier Präst®, Herrgård®, Grevé®, Rike, Ära 670 g",
       "brand": "Skånemejerier",
@@ -6164,8 +6141,7 @@
       "brand": "Arla",
       "chain": "ICA",
       "cities": [
-        "Stockholm",
-        "Uppsala"
+        "Stockholm"
       ],
       "originalPrice": 109,
       "currentPrice": 74.9,
@@ -6268,7 +6244,8 @@
       "cities": [
         "Luleå",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 36.47,
       "currentPrice": 25,
@@ -6297,24 +6274,6 @@
       "source": "ICA live",
       "storeId": 2748,
       "storeName": "Maxi ICA Stormarknad Malmö"
-    },
-    {
-      "id": "ica-5004080981-uppsala",
-      "article": "ICA Spetskål",
-      "brand": "ICA",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 36.35,
-      "currentPrice": 25,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 31,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080981-skovde",
@@ -6445,24 +6404,6 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004080890-uppsala",
-      "article": "Rana Färsk fylld pasta 250 g",
-      "brand": "Rana",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 47.35,
-      "currentPrice": 32.5,
-      "dealText": "2 för 65 kr",
-      "unit": "130:00/kg",
-      "discountPercent": 31,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080890-helsingborg",
       "article": "Rana Färsk fylld pasta 250 g",
       "brand": "Rana",
@@ -6543,25 +6484,8 @@
       "brand": "Royal Greenland",
       "chain": "ICA",
       "cities": [
+        "Helsingborg",
         "Uppsala"
-      ],
-      "originalPrice": 54.25,
-      "currentPrice": 37.5,
-      "dealText": "2 för 75 kr",
-      "unit": "93:75/kg",
-      "discountPercent": 31,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
-      "id": "ica-5004080995-helsingborg",
-      "article": "Royal Greenland Frysta räkor med skal 90/120 400 g",
-      "brand": "Royal Greenland",
-      "chain": "ICA",
-      "cities": [
-        "Helsingborg"
       ],
       "originalPrice": 54.22,
       "currentPrice": 37.5,
@@ -6570,8 +6494,8 @@
       "discountPercent": 31,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9700,
-      "storeName": "Maxi ICA Stormarknad Helsingborg"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004081001-malmo",
@@ -6592,6 +6516,25 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
+      "id": "ica-5004081001-uppsala",
+      "article": "Skogaholm Original-, fiberrost 1 kg",
+      "brand": "Skogaholm",
+      "chain": "ICA",
+      "cities": [
+        "Skövde",
+        "Uppsala"
+      ],
+      "originalPrice": 28.96,
+      "currentPrice": 20,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 31,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004081001-lulea",
       "article": "Skogaholm Original-, fiberrost 1 kg",
       "brand": "Skogaholm",
@@ -6608,24 +6551,6 @@
       "source": "ICA live",
       "storeId": 11650,
       "storeName": "Maxi ICA Stormarknad Luleå"
-    },
-    {
-      "id": "ica-5004081001-skovde",
-      "article": "Skogaholm Original-, fiberrost 1 kg",
-      "brand": "Skogaholm",
-      "chain": "ICA",
-      "cities": [
-        "Skövde"
-      ],
-      "originalPrice": 28.96,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 31,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9588,
-      "storeName": "Maxi ICA Stormarknad Skövde"
     },
     {
       "id": "ica-2004830308-orebro",
@@ -6906,6 +6831,24 @@
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
     },
     {
+      "id": "ica-2005052920-uppsala",
+      "article": "Carolines kök Paj med Västerbottensost 800g",
+      "brand": "Carolines kök",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 141.01,
+      "currentPrice": 99,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 30,
+      "validTo": "2026-09-11",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004080948-eskilstuna",
       "article": "Corny Müslibar 40-50 g",
       "brand": "Corny",
@@ -6931,7 +6874,8 @@
       "chain": "ICA",
       "cities": [
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 27.66,
       "currentPrice": 19.5,
@@ -7302,6 +7246,24 @@
       "storeName": "Maxi ICA Stormarknad Skövde"
     },
     {
+      "id": "ica-5004081011-uppsala",
+      "article": "L'Oréal Revitalift, Age Perfect Dagcreme, nattcreme, ögoncreme 15-50 ml",
+      "brand": "L'Oréal Revitalift, Age Perfect",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 129,
+      "currentPrice": 89.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 30,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004161695-norrkoping",
       "article": "Peru Grön sparris i bunt 250 g",
       "brand": "Peru",
@@ -7542,6 +7504,24 @@
       "storeName": "Maxi ICA Stormarknad Skövde"
     },
     {
+      "id": "ica-5004080921-uppsala",
+      "article": "Valio Laktosfri vispgrädde 5 dl",
+      "brand": "Valio",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 35.91,
+      "currentPrice": 25,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 30,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004160072-linkoping",
       "article": "Airfryerform silikon",
       "brand": null,
@@ -7612,6 +7592,24 @@
       "source": "ICA live",
       "storeId": 2748,
       "storeName": "Maxi ICA Stormarknad Malmö"
+    },
+    {
+      "id": "ica-5004081014-uppsala",
+      "article": "Doggy Professional Hundmat 3750 g",
+      "brand": "Doggy Professional",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 224,
+      "currentPrice": 159,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 29,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004057791-vasteras",
@@ -7794,8 +7792,7 @@
       "brand": "ICA",
       "chain": "ICA",
       "cities": [
-        "Malmö",
-        "Uppsala"
+        "Malmö"
       ],
       "originalPrice": 17.5,
       "currentPrice": 12.5,
@@ -8111,8 +8108,7 @@
       "brand": "Risenta",
       "chain": "ICA",
       "cities": [
-        "Malmö",
-        "Uppsala"
+        "Malmö"
       ],
       "originalPrice": 24.5,
       "currentPrice": 17.5,
@@ -8573,24 +8569,6 @@
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
     },
     {
-      "id": "ica-5004080923-uppsala",
-      "article": "Lohmanders Kyld sås flaska 250 ml",
-      "brand": "Lohmanders",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 26.95,
-      "currentPrice": 19.5,
-      "dealText": "2 för 39 kr",
-      "unit": "78:00/liter",
-      "discountPercent": 28,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-2005033942-skovde",
       "article": "mywear Tofflor Stl 24-46",
       "brand": "mywear",
@@ -8731,7 +8709,8 @@
         "Norrköping",
         "Skövde",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 51.05,
       "currentPrice": 37.5,
@@ -8750,7 +8729,8 @@
       "chain": "ICA",
       "cities": [
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 68.9,
       "currentPrice": 50,
@@ -8827,7 +8807,8 @@
       "chain": "ICA",
       "cities": [
         "Malmö",
-        "Skövde"
+        "Skövde",
+        "Uppsala"
       ],
       "originalPrice": 24.55,
       "currentPrice": 18,
@@ -8942,14 +8923,15 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004080978-lulea",
+      "id": "ica-5004080978-uppsala",
       "article": "ICA. Chile Stor grön kiwi 125 g",
       "brand": "ICA. Chile",
       "chain": "ICA",
       "cities": [
         "Luleå",
         "Skövde",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 9.12,
       "currentPrice": 6.67,
@@ -8958,8 +8940,26 @@
       "discountPercent": 27,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 11650,
-      "storeName": "Maxi ICA Stormarknad Luleå"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
+      "id": "ica-5004080989-uppsala",
+      "article": "ICA. Ursprung Sverige Kotlett med ben Ca 2000 g",
+      "brand": "ICA. Ursprung Sverige",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 116.32,
+      "currentPrice": 85,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 27,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004169356-sundsvall",
@@ -9025,25 +9025,8 @@
       "brand": "Kitchen Joy",
       "chain": "ICA",
       "cities": [
+        "Halmstad",
         "Uppsala"
-      ],
-      "originalPrice": 39,
-      "currentPrice": 28.33,
-      "dealText": "3 för 85 kr",
-      "unit": "80:95-88:54/kg",
-      "discountPercent": 27,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
-      "id": "ica-5004080907-halmstad",
-      "article": "Kitchen Joy Frysta thaiboxar 320-350 g",
-      "brand": "Kitchen Joy",
-      "chain": "ICA",
-      "cities": [
-        "Halmstad"
       ],
       "originalPrice": 38.99,
       "currentPrice": 28.33,
@@ -9052,8 +9035,8 @@
       "discountPercent": 27,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 2308,
-      "storeName": "Maxi ICA Stormarknad Högskolan"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004057797-vasteras",
@@ -9238,7 +9221,6 @@
         "Malmö",
         "Norrköping",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -9289,13 +9271,12 @@
       "storeName": "Maxi ICA Stormarknad Gunnesbo, Lund"
     },
     {
-      "id": "ica-5004080948-uppsala",
+      "id": "ica-5004080948-norrkoping",
       "article": "Corny Müslibar 40-50 g",
       "brand": "Corny",
       "chain": "ICA",
       "cities": [
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 8.45,
       "currentPrice": 6.25,
@@ -9304,8 +9285,8 @@
       "discountPercent": 26,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 17654,
+      "storeName": "Maxi ICA Stormarknad Norrköping"
     },
     {
       "id": "ica-5004080948-linkoping",
@@ -9461,7 +9442,8 @@
         "Luleå",
         "Malmö",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 19.65,
       "currentPrice": 14.5,
@@ -9490,24 +9472,6 @@
       "source": "ICA live",
       "storeId": 9588,
       "storeName": "Maxi ICA Stormarknad Skövde"
-    },
-    {
-      "id": "ica-5004009024-uppsala",
-      "article": "ICA Sommarpotatis i påse 900 g",
-      "brand": "ICA",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 16.95,
-      "currentPrice": 12.5,
-      "dealText": "2 för 25 kr",
-      "unit": "13:89/kg",
-      "discountPercent": 26,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004057810-vasteras",
@@ -9554,7 +9518,8 @@
         "Luleå",
         "Skövde",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 33.72,
       "currentPrice": 25,
@@ -9583,6 +9548,24 @@
       "source": "ICA live",
       "storeId": 2748,
       "storeName": "Maxi ICA Stormarknad Malmö"
+    },
+    {
+      "id": "ica-5004080990-uppsala",
+      "article": "ICA. Ursprung Sverige Kryddade fläskmedaljonger 300 g",
+      "brand": "ICA. Ursprung Sverige",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 52.48,
+      "currentPrice": 39,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 26,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080907-linkoping",
@@ -9620,6 +9603,24 @@
       "source": "ICA live",
       "storeId": 13164,
       "storeName": "Maxi ICA Stormarknad Lindhagen"
+    },
+    {
+      "id": "ica-5004080902-uppsala",
+      "article": "Lindt Chokladkaka Excellence 100 g",
+      "brand": "Lindt",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 41.96,
+      "currentPrice": 31,
+      "dealText": "2 för 62 kr",
+      "unit": "310:00/kg",
+      "discountPercent": 26,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080923-goteborg",
@@ -9686,8 +9687,7 @@
       "cities": [
         "Jönköping",
         "Malmö",
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 11.25,
       "currentPrice": 8.33,
@@ -9700,22 +9700,22 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-2005019780-uppsala",
-      "article": "Müslibar 40-50 g",
-      "brand": null,
+      "id": "ica-5004009020-uppsala",
+      "article": "Loka Kolsyrat vatten 150 cl",
+      "brand": "Loka",
       "chain": "ICA",
       "cities": [
         "Uppsala"
       ],
-      "originalPrice": 8.45,
-      "currentPrice": 6.25,
-      "dealText": "4 för 25 kr",
-      "unit": "125:00-156:25/kg",
+      "originalPrice": 11.3,
+      "currentPrice": 8.33,
+      "dealText": "3 för 25 kr",
+      "unit": "+pant",
       "discountPercent": 26,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004057830-vasteras",
@@ -9736,13 +9736,14 @@
       "storeName": "ICA Kvantum Västerås"
     },
     {
-      "id": "ica-5004080933-halmstad",
+      "id": "ica-5004080933-uppsala",
       "article": "Risenta Solroskärnor 400 g",
       "brand": "Risenta",
       "chain": "ICA",
       "cities": [
         "Halmstad",
-        "Skövde"
+        "Skövde",
+        "Uppsala"
       ],
       "originalPrice": 23.57,
       "currentPrice": 17.5,
@@ -9751,8 +9752,8 @@
       "discountPercent": 26,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 2308,
-      "storeName": "Maxi ICA Stormarknad Högskolan"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080995-boras",
@@ -9814,7 +9815,8 @@
       "brand": "Scan",
       "chain": "ICA",
       "cities": [
-        "Stockholm"
+        "Stockholm",
+        "Uppsala"
       ],
       "originalPrice": 16.98,
       "currentPrice": 12.5,
@@ -9887,24 +9889,6 @@
       "source": "ICA live",
       "storeId": 8926,
       "storeName": "Maxi ICA Stormarknad Göteborg"
-    },
-    {
-      "id": "ica-5004081001-uppsala",
-      "article": "Skogaholm Original-, fiberrost 1 kg",
-      "brand": "Skogaholm",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 27.05,
-      "currentPrice": 20,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 26,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004146888-jonkoping",
@@ -10088,24 +10072,6 @@
       "storeName": "Maxi ICA Stormarknad Luleå"
     },
     {
-      "id": "ica-5004205985-uppsala",
-      "article": "DAY Klädhängare",
-      "brand": "DAY",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 100,
-      "currentPrice": 75,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 25,
-      "validTo": "2026-08-30",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004081014-norrkoping",
       "article": "Doggy Professional Hundmat 3750 g",
       "brand": "Doggy Professional",
@@ -10253,22 +10219,22 @@
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
     },
     {
-      "id": "ica-5004081017-uppsala",
-      "article": "ICA Frysta hamburgare 720 g",
+      "id": "ica-5004009022-uppsala",
+      "article": "ICA Falukorv 800 g",
       "brand": "ICA",
       "chain": "ICA",
       "cities": [
         "Uppsala"
       ],
-      "originalPrice": 79.95,
-      "currentPrice": 59.9,
+      "originalPrice": 33.21,
+      "currentPrice": 25,
       "dealText": null,
       "unit": "per st",
       "discountPercent": 25,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004132846-stockholm",
@@ -10670,7 +10636,7 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004132816-norrkoping",
+      "id": "ica-5004132816-uppsala",
       "article": "MINI MYMY Klistermärkesbok",
       "brand": "MINI MYMY",
       "chain": "ICA",
@@ -10682,6 +10648,7 @@
         "Norrköping",
         "Sundsvall",
         "Umeå",
+        "Uppsala",
         "Växjö"
       ],
       "originalPrice": 39.9,
@@ -10691,8 +10658,8 @@
       "discountPercent": 25,
       "validTo": "2026-08-30",
       "source": "ICA live",
-      "storeId": 17654,
-      "storeName": "Maxi ICA Stormarknad Norrköping"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-2005049263-kalmar",
@@ -11253,6 +11220,24 @@
       "storeName": "Maxi ICA Stormarknad Helsingborg"
     },
     {
+      "id": "ica-5004080901-uppsala",
+      "article": "Cloetta Chokladpåse 150-200 g",
+      "brand": "Cloetta",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 27.81,
+      "currentPrice": 21,
+      "dealText": "2 för 42 kr",
+      "unit": "105:00-140:00/kg",
+      "discountPercent": 24,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004080901-eskilstuna",
       "article": "Cloetta Chokladpåse 150-200 g",
       "brand": "Cloetta",
@@ -11325,14 +11310,13 @@
       "storeName": "ICA Kvantum Västerås"
     },
     {
-      "id": "ica-5004081014-uppsala",
+      "id": "ica-5004081014-linkoping",
       "article": "Doggy Professional Hundmat 3750 g",
       "brand": "Doggy Professional",
       "chain": "ICA",
       "cities": [
         "Linköping",
-        "Umeå",
-        "Uppsala"
+        "Umeå"
       ],
       "originalPrice": 209,
       "currentPrice": 159,
@@ -11341,8 +11325,8 @@
       "discountPercent": 24,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 8900,
+      "storeName": "Maxi ICA Stormarknad Linköping"
     },
     {
       "id": "ica-5004197023-lund",
@@ -11470,8 +11454,7 @@
       "brand": "ICA",
       "chain": "ICA",
       "cities": [
-        "Malmö",
-        "Uppsala"
+        "Malmö"
       ],
       "originalPrice": 32.8,
       "currentPrice": 25,
@@ -11633,24 +11616,6 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004081005-uppsala",
-      "article": "ICA. Spanien/Marocko Färgmixade småtomater i ask 350 g",
-      "brand": "ICA. Spanien/Marocko",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 32.95,
-      "currentPrice": 25,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 24,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080886-norrkoping",
       "article": "ICA. Sydafrika/Peru Mogen avokado 3-pack 330 g",
       "brand": "ICA. Sydafrika/Peru",
@@ -11715,6 +11680,24 @@
       "source": "ICA live",
       "storeId": 2597,
       "storeName": "Maxi ICA Stormarknad Kalmar"
+    },
+    {
+      "id": "ica-5004081016-uppsala",
+      "article": "L'Oréal Casting Cream Gloss, Excellence, Préférence, Magic Retoucher Hårfärg, Root Concealer 1-pack, 75 ml",
+      "brand": "L'Oréal Casting Cream Gloss, Excellence, Préférence, Magic Retoucher",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 98.95,
+      "currentPrice": 74.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 24,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080902-skovde",
@@ -11844,6 +11827,24 @@
       "storeName": "Maxi ICA Stormarknad Luleå"
     },
     {
+      "id": "ica-5004080993-uppsala",
+      "article": "Schysst käk Kebab 550 g",
+      "brand": "Schysst käk",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 98.42,
+      "currentPrice": 74.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 24,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004136501-stockholm",
       "article": "SmartGames IQ",
       "brand": "SmartGames",
@@ -11934,24 +11935,6 @@
       "storeName": "ICA Kvantum Västerås"
     },
     {
-      "id": "ica-5004080921-uppsala",
-      "article": "Valio Laktosfri vispgrädde 5 dl",
-      "brand": "Valio",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 32.95,
-      "currentPrice": 25,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 24,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080921-halmstad",
       "article": "Valio Laktosfri vispgrädde 5 dl",
       "brand": "Valio",
@@ -11996,7 +11979,8 @@
       "chain": "ICA",
       "cities": [
         "Eskilstuna",
-        "Malmö"
+        "Malmö",
+        "Uppsala"
       ],
       "originalPrice": 27.35,
       "currentPrice": 21,
@@ -12031,24 +12015,6 @@
       "source": "ICA live",
       "storeId": 8926,
       "storeName": "Maxi ICA Stormarknad Göteborg"
-    },
-    {
-      "id": "ica-5004080939-uppsala",
-      "article": "Göl Skivad salami 125-150 g",
-      "brand": "Göl",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 25.3,
-      "currentPrice": 19.5,
-      "dealText": "2 för 39 kr",
-      "unit": "130:00-156:00/kg",
-      "discountPercent": 23,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080939-norrkoping",
@@ -12087,24 +12053,6 @@
       "source": "ICA live",
       "storeId": 8900,
       "storeName": "Maxi ICA Stormarknad Linköping"
-    },
-    {
-      "id": "ica-5004196401-uppsala",
-      "article": "Harman Kardon Högtalare Onyx Studio 9",
-      "brand": "Harman Kardon",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 1299,
-      "currentPrice": 999,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 23,
-      "validTo": "2026-09-13",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004189665-goteborg",
@@ -12250,7 +12198,7 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004160111-uppsala",
+      "id": "ica-5004160111-norrkoping",
       "article": "Mina första böcker: Upptäck ord",
       "brand": null,
       "chain": "ICA",
@@ -12263,7 +12211,6 @@
         "Skövde",
         "Sundsvall",
         "Umeå",
-        "Uppsala",
         "Växjö"
       ],
       "originalPrice": 129,
@@ -12273,8 +12220,8 @@
       "discountPercent": 23,
       "validTo": "2026-08-30",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 17654,
+      "storeName": "Maxi ICA Stormarknad Norrköping"
     },
     {
       "id": "ica-5004196932-orebro",
@@ -12309,6 +12256,7 @@
         "Skövde",
         "Stockholm",
         "Umeå",
+        "Uppsala",
         "Växjö"
       ],
       "originalPrice": 129,
@@ -12410,6 +12358,24 @@
       "source": "ICA live",
       "storeId": 12688,
       "storeName": "Maxi ICA Stormarknad Eskilstuna"
+    },
+    {
+      "id": "ica-5004080910-uppsala",
+      "article": "Profeel, Valio Proteinpudding, -shake, -mousse, -kvarg 150-185 g, 250 ml",
+      "brand": "Profeel, Valio",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 16.98,
+      "currentPrice": 13,
+      "dealText": "3 för 39 kr",
+      "unit": "52:00/liter, 72:22-86:67/kg",
+      "discountPercent": 23,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-2005046531-linkoping",
@@ -12642,24 +12608,6 @@
       "storeName": "Maxi ICA Stormarknad Högskolan"
     },
     {
-      "id": "ica-5004210482-uppsala",
-      "article": "Cloetta Chokladpåse 150-200 g",
-      "brand": "Cloetta",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 26.95,
-      "currentPrice": 21,
-      "dealText": "2 för 42 kr",
-      "unit": "105:00-140:00/kg",
-      "discountPercent": 22,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080901-norrkoping",
       "article": "Cloetta Chokladpåse 150-200 g",
       "brand": "Cloetta",
@@ -12775,24 +12723,6 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004080903-uppsala",
-      "article": "Gille Kondisbitar 180 g",
-      "brand": "Gille",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 22.95,
-      "currentPrice": 18,
-      "dealText": "2 för 36 kr",
-      "unit": "100:00/kg",
-      "discountPercent": 22,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080939-goteborg",
       "article": "Göl Skivad salami 125-150 g",
       "brand": "Göl",
@@ -12815,6 +12745,24 @@
       "source": "ICA live",
       "storeId": 8926,
       "storeName": "Maxi ICA Stormarknad Göteborg"
+    },
+    {
+      "id": "ica-5004161673-uppsala",
+      "article": "Hacksta köttdisk. Ursprung Irland/UK Nötfärs Ca 2000 g",
+      "brand": "Hacksta köttdisk. Ursprung Irland/UK",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 126.99,
+      "currentPrice": 99,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 22,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004132817-stockholm",
@@ -13147,24 +13095,6 @@
       "storeName": "Maxi ICA Stormarknad Gävle"
     },
     {
-      "id": "ica-5004080998-uppsala",
-      "article": "Scan Bacon 140 g",
-      "brand": "Scan",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 16,
-      "currentPrice": 12.5,
-      "dealText": "4 för 50 kr",
-      "unit": "89:29/kg",
-      "discountPercent": 22,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080998-linkoping",
       "article": "Scan Bacon 140 g",
       "brand": "Scan",
@@ -13279,12 +13209,31 @@
       "storeName": "Maxi ICA Stormarknad Umeå"
     },
     {
-      "id": "ica-5004080906-sundsvall",
+      "id": "ica-5004080892-uppsala",
+      "article": "Falcon Öl 3,5% 6 x 50 cl",
+      "brand": "Falcon",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 64.3,
+      "currentPrice": 50.9,
+      "dealText": null,
+      "unit": "+pant",
+      "discountPercent": 21,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
+      "id": "ica-5004080906-uppsala",
       "article": "Felix Fryst paj 210-220 g",
       "brand": "Felix",
       "chain": "ICA",
       "cities": [
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 31.7,
       "currentPrice": 25,
@@ -13293,8 +13242,8 @@
       "discountPercent": 21,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 12678,
-      "storeName": "Maxi ICA Stormarknad Sundsvall"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080903-goteborg",
@@ -13356,6 +13305,24 @@
       "source": "ICA live",
       "storeId": 2748,
       "storeName": "Maxi ICA Stormarknad Malmö"
+    },
+    {
+      "id": "ica-5004081017-uppsala",
+      "article": "ICA Frysta hamburgare 720 g",
+      "brand": "ICA",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 75.99,
+      "currentPrice": 59.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 21,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004081017-lulea",
@@ -13466,24 +13433,6 @@
       "source": "ICA live",
       "storeId": 2308,
       "storeName": "Maxi ICA Stormarknad Högskolan"
-    },
-    {
-      "id": "ica-5004080902-uppsala",
-      "article": "Lindt Chokladkaka Excellence 100 g",
-      "brand": "Lindt",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 39.3,
-      "currentPrice": 31,
-      "dealText": "2 för 62 kr",
-      "unit": "310:00/kg",
-      "discountPercent": 21,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080902-eskilstuna",
@@ -13763,6 +13712,24 @@
       "storeName": "ICA Kvantum Västerås"
     },
     {
+      "id": "ica-5004080991-uppsala",
+      "article": "Ursprung Sverige Skivad rostbiff Ca 600 g",
+      "brand": "Ursprung Sverige",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 314.42,
+      "currentPrice": 249,
+      "dealText": null,
+      "unit": "per kg",
+      "discountPercent": 21,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004081015-stockholm",
       "article": "Vanish Fläckborttagning 470 g",
       "brand": "Vanish",
@@ -13852,6 +13819,24 @@
       "storeName": "ICA Kvantum Västerås"
     },
     {
+      "id": "ica-5004080937-uppsala",
+      "article": "Yoggi Yoghurt 1 kg",
+      "brand": "Yoggi",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 23.99,
+      "currentPrice": 19,
+      "dealText": "2 för 38 kr",
+      "unit": "19:00/kg",
+      "discountPercent": 21,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-2004944390-norrkoping",
       "article": "Allmans Flankstek mörad 1000g",
       "brand": "Allmans",
@@ -13915,24 +13900,6 @@
       "storeName": "Maxi ICA Stormarknad Göteborg"
     },
     {
-      "id": "ica-5004081002-uppsala",
-      "article": "Ben & Jerrys, Magnum Glass 427-465 ml",
-      "brand": "Ben & Jerrys, Magnum",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 46.95,
-      "currentPrice": 37.5,
-      "dealText": "2 för 75 kr",
-      "unit": "80:65-87:82/liter",
-      "discountPercent": 20,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004136500-stockholm",
       "article": "Decoden Cute Kawaii Bag Charms",
       "brand": "Decoden",
@@ -13967,24 +13934,6 @@
       "source": "ICA live",
       "storeId": 1093,
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
-    },
-    {
-      "id": "ica-5004200762-uppsala",
-      "article": "DISNEY Sverige Skriv & torka bort",
-      "brand": "DISNEY Sverige",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 99,
-      "currentPrice": 79,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 20,
-      "validTo": "2026-08-30",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-2004966735-kalmar",
@@ -14208,13 +14157,14 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004009024-lulea",
+      "id": "ica-5004009024-uppsala",
       "article": "ICA Sommarpotatis i påse 900 g",
       "brand": "ICA",
       "chain": "ICA",
       "cities": [
         "Luleå",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 15.57,
       "currentPrice": 12.5,
@@ -14223,8 +14173,8 @@
       "discountPercent": 20,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 11650,
-      "storeName": "Maxi ICA Stormarknad Luleå"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004132844-stockholm",
@@ -14584,7 +14534,8 @@
       "cities": [
         "Halmstad",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 18.83,
       "currentPrice": 15,
@@ -14991,14 +14942,15 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004080935-eskilstuna",
+      "id": "ica-5004080935-uppsala",
       "article": "Innocent Juice, Smoothie 750-900 ml",
       "brand": "Innocent",
       "chain": "ICA",
       "cities": [
         "Eskilstuna",
         "Luleå",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 36.81,
       "currentPrice": 29.9,
@@ -15007,8 +14959,8 @@
       "discountPercent": 19,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 12688,
-      "storeName": "Maxi ICA Stormarknad Eskilstuna"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004146863-vaxjo",
@@ -15174,7 +15126,8 @@
         "Luleå",
         "Skövde",
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 61.9,
       "currentPrice": 49.9,
@@ -15452,25 +15405,6 @@
       "brand": "Severin MW7761",
       "chain": "ICA",
       "cities": [
-        "Kalmar",
-        "Uppsala"
-      ],
-      "originalPrice": 1600,
-      "currentPrice": 1299,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 19,
-      "validTo": "2026-09-13",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
-      "id": "ica-5004196402-norrkoping",
-      "article": "Severin MW7761 Mikrovågsugn",
-      "brand": "Severin MW7761",
-      "chain": "ICA",
-      "cities": [
         "Gävle",
         "Halmstad",
         "Jönköping",
@@ -15479,6 +15413,7 @@
         "Skövde",
         "Sundsvall",
         "Umeå",
+        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -15489,8 +15424,26 @@
       "discountPercent": 19,
       "validTo": "2026-09-13",
       "source": "ICA live",
-      "storeId": 17654,
-      "storeName": "Maxi ICA Stormarknad Norrköping"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
+      "id": "ica-5004196402-kalmar",
+      "article": "Severin MW7761 Mikrovågsugn",
+      "brand": "Severin MW7761",
+      "chain": "ICA",
+      "cities": [
+        "Kalmar"
+      ],
+      "originalPrice": 1600,
+      "currentPrice": 1299,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 19,
+      "validTo": "2026-09-13",
+      "source": "ICA live",
+      "storeId": 2597,
+      "storeName": "Maxi ICA Stormarknad Kalmar"
     },
     {
       "id": "ica-2005078409-norrkoping",
@@ -15547,6 +15500,24 @@
       "storeName": "Maxi ICA Stormarknad Gunnesbo, Lund"
     },
     {
+      "id": "ica-5004080894-uppsala",
+      "article": "YES Maskindiskmedel 65-pack, 83-pack",
+      "brand": "YES",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 134,
+      "currentPrice": 109,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 19,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004080919-goteborg",
       "article": "Aviko Fryst potatis 600-750 g",
       "brand": "Aviko",
@@ -15554,8 +15525,7 @@
       "cities": [
         "Göteborg",
         "Helsingborg",
-        "Jönköping",
-        "Uppsala"
+        "Jönköping"
       ],
       "originalPrice": 25.5,
       "currentPrice": 21,
@@ -15575,7 +15545,8 @@
       "cities": [
         "Halmstad",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Uppsala"
       ],
       "originalPrice": 35.91,
       "currentPrice": 29.5,
@@ -15837,24 +15808,6 @@
       "storeName": "Maxi ICA Stormarknad Gävle"
     },
     {
-      "id": "ica-5004210570-uppsala",
-      "article": "Profeel, Valio Proteinpudding, -shake, -mousse, -kvarg 150-185 g, 250 ml",
-      "brand": "Profeel, Valio",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 15.95,
-      "currentPrice": 13,
-      "dealText": "3 för 39 kr",
-      "unit": "per styck",
-      "discountPercent": 18,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080993-lund",
       "article": "Schysst käk Kebab 550 g",
       "brand": "Schysst käk",
@@ -15978,8 +15931,7 @@
         "Skövde",
         "Stockholm",
         "Sundsvall",
-        "Umeå",
-        "Uppsala"
+        "Umeå"
       ],
       "originalPrice": 180,
       "currentPrice": 150,
@@ -16015,27 +15967,10 @@
       "brand": "Brasilien",
       "chain": "ICA",
       "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 5.05,
-      "currentPrice": 4.17,
-      "dealText": "6 för 25 kr",
-      "unit": "52:08/kg",
-      "discountPercent": 17,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
-      "id": "ica-5004080977-lulea",
-      "article": "Brasilien Lime 80 g",
-      "brand": "Brasilien",
-      "chain": "ICA",
-      "cities": [
         "Luleå",
         "Skövde",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 5.02,
       "currentPrice": 4.17,
@@ -16044,8 +15979,8 @@
       "discountPercent": 17,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 11650,
-      "storeName": "Maxi ICA Stormarknad Luleå"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080901-goteborg",
@@ -16181,8 +16116,8 @@
       "discountPercent": 17,
       "validTo": "2026-08-30",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004196240-orebro",
@@ -16340,7 +16275,8 @@
       "cities": [
         "Luleå",
         "Malmö",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 30.2,
       "currentPrice": 25,
@@ -16500,6 +16436,24 @@
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
     },
     {
+      "id": "ica-5004080920-uppsala",
+      "article": "Kungsörnen Makaroner, Spaghetti 750 g, 1000 g",
+      "brand": "Kungsörnen",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 13.2,
+      "currentPrice": 11,
+      "dealText": "2 för 22 kr",
+      "unit": "11:00-14:67/kg",
+      "discountPercent": 17,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004081016-goteborg",
       "article": "L'Oréal Casting Cream Gloss, Excellence, Préférence, Magic Retoucher Hårfärg, Root Concealer 1-pack, 75 ml",
       "brand": "L'Oréal Casting Cream Gloss, Excellence, Préférence, Magic Retoucher",
@@ -16507,7 +16461,6 @@
       "cities": [
         "Göteborg",
         "Helsingborg",
-        "Uppsala",
         "Örebro"
       ],
       "originalPrice": 89.95,
@@ -16645,7 +16598,21 @@
       "brand": null,
       "chain": "ICA",
       "cities": [
-        "Hela Sverige"
+        "Borås",
+        "Eskilstuna",
+        "Gävle",
+        "Göteborg",
+        "Halmstad",
+        "Helsingborg",
+        "Jönköping",
+        "Kalmar",
+        "Linköping",
+        "Lund",
+        "Malmö",
+        "Norrköping",
+        "Umeå",
+        "Växjö",
+        "Örebro"
       ],
       "originalPrice": 59.9,
       "currentPrice": 49.9,
@@ -16746,6 +16713,24 @@
       "source": "ICA live",
       "storeId": 10515,
       "storeName": "ICA Kvantum Västerås"
+    },
+    {
+      "id": "ica-5004080924-uppsala",
+      "article": "Peka Potatisgratäng 2 kg",
+      "brand": "Peka",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 63.36,
+      "currentPrice": 52.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 17,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004167135-linkoping",
@@ -16928,8 +16913,7 @@
         "Linköping",
         "Malmö",
         "Skövde",
-        "Stockholm",
-        "Uppsala"
+        "Stockholm"
       ],
       "originalPrice": 13.2,
       "currentPrice": 11,
@@ -17007,24 +16991,6 @@
       "storeName": "Maxi ICA Stormarknad Göteborg"
     },
     {
-      "id": "ica-5004080993-uppsala",
-      "article": "Schysst käk Kebab 550 g",
-      "brand": "Schysst käk",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 89.9,
-      "currentPrice": 74.9,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 17,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080993-norrkoping",
       "article": "Schysst käk Kebab 550 g",
       "brand": "Schysst käk",
@@ -17063,14 +17029,15 @@
       "storeName": "Maxi ICA Stormarknad Umeå"
     },
     {
-      "id": "ica-5004203392-norrkoping",
+      "id": "ica-5004196816-uppsala",
       "article": "Sense Kina Ämnesblock A5",
       "brand": "Sense Kina",
       "chain": "ICA",
       "cities": [
         "Eskilstuna",
         "Norrköping",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 59.9,
       "currentPrice": 49.9,
@@ -17079,8 +17046,8 @@
       "discountPercent": 17,
       "validTo": "2026-08-30",
       "source": "ICA live",
-      "storeId": 17654,
-      "storeName": "Maxi ICA Stormarknad Norrköping"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004196314-orebro",
@@ -17195,7 +17162,6 @@
         "Skövde",
         "Stockholm",
         "Umeå",
-        "Uppsala",
         "Växjö"
       ],
       "originalPrice": 59.9,
@@ -17408,24 +17374,6 @@
       "storeName": "Maxi ICA Stormarknad Norrköping"
     },
     {
-      "id": "ica-5004161673-uppsala",
-      "article": "Hacksta köttdisk. Ursprung Irland/UK Nötfärs Ca 2000 g",
-      "brand": "Hacksta köttdisk. Ursprung Irland/UK",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 118,
-      "currentPrice": 99,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 16,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080905-lund",
       "article": "Heinz Ketchup 960-1000 g",
       "brand": "Heinz",
@@ -17564,13 +17512,12 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004080976-uppsala",
+      "id": "ica-5004080976-skovde",
       "article": "ICA. Polen/Spanien/Portugal Blåbär i ask 125 g",
       "brand": "ICA. Polen/Spanien/Portugal",
       "chain": "ICA",
       "cities": [
-        "Skövde",
-        "Uppsala"
+        "Skövde"
       ],
       "originalPrice": 23.95,
       "currentPrice": 20,
@@ -17579,8 +17526,8 @@
       "discountPercent": 16,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 9588,
+      "storeName": "Maxi ICA Stormarknad Skövde"
     },
     {
       "id": "ica-5004057835-vasteras",
@@ -17601,6 +17548,24 @@
       "storeName": "ICA Kvantum Västerås"
     },
     {
+      "id": "ica-5004080893-uppsala",
+      "article": "Nescafé Snabbkaffe refill 200 g",
+      "brand": "Nescafé",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 98.42,
+      "currentPrice": 82.9,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 16,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004080900-stockholm",
       "article": "Nestlé Klämmisar 90 g",
       "brand": "Nestlé",
@@ -17609,7 +17574,8 @@
         "Halmstad",
         "Linköping",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Uppsala"
       ],
       "originalPrice": 10.36,
       "currentPrice": 8.75,
@@ -17682,14 +17648,15 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004080888-lund",
+      "id": "ica-5004080888-uppsala",
       "article": "Santa Maria Chips, Tacosås, Tortilla original 185 g, 200 g, 230 g, 320 g",
       "brand": "Santa Maria",
       "chain": "ICA",
       "cities": [
         "Luleå",
         "Lund",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 13.15,
       "currentPrice": 11,
@@ -17698,8 +17665,8 @@
       "discountPercent": 16,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 17883,
-      "storeName": "Maxi ICA Stormarknad Gunnesbo, Lund"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-2005044247-linkoping",
@@ -17726,7 +17693,6 @@
       "chain": "ICA",
       "cities": [
         "Göteborg",
-        "Uppsala",
         "Örebro"
       ],
       "originalPrice": 129.95,
@@ -17884,13 +17850,12 @@
       "storeName": "Maxi ICA Stormarknad Gunnesbo, Lund"
     },
     {
-      "id": "ica-5004080906-uppsala",
+      "id": "ica-5004080906-norrkoping",
       "article": "Felix Fryst paj 210-220 g",
       "brand": "Felix",
       "chain": "ICA",
       "cities": [
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 29.25,
       "currentPrice": 25,
@@ -17899,8 +17864,8 @@
       "discountPercent": 15,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 17654,
+      "storeName": "Maxi ICA Stormarknad Norrköping"
     },
     {
       "id": "ica-5004080906-linkoping",
@@ -17937,6 +17902,24 @@
       "source": "ICA live",
       "storeId": 17654,
       "storeName": "Maxi ICA Stormarknad Norrköping"
+    },
+    {
+      "id": "ica-5004009025-uppsala",
+      "article": "ICA Asia Äggnudlar 250 g",
+      "brand": "ICA Asia",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 9.81,
+      "currentPrice": 8.33,
+      "dealText": "3 för 25 kr",
+      "unit": "33:33/kg",
+      "discountPercent": 15,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-2004890203-stockholm",
@@ -17998,8 +17981,7 @@
       "brand": "ICA. Ursprung Sverige",
       "chain": "ICA",
       "cities": [
-        "Malmö",
-        "Uppsala"
+        "Malmö"
       ],
       "originalPrice": 45.75,
       "currentPrice": 39,
@@ -18071,8 +18053,7 @@
       "brand": "Nestlé",
       "chain": "ICA",
       "cities": [
-        "Malmö",
-        "Uppsala"
+        "Malmö"
       ],
       "originalPrice": 10.35,
       "currentPrice": 8.75,
@@ -18103,6 +18084,24 @@
       "source": "ICA live",
       "storeId": 17883,
       "storeName": "Maxi ICA Stormarknad Gunnesbo, Lund"
+    },
+    {
+      "id": "ica-5004080938-uppsala",
+      "article": "Philadelphia Färskost 145-200 g",
+      "brand": "Philadelphia",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 20.49,
+      "currentPrice": 17.5,
+      "dealText": "2 för 35 kr",
+      "unit": "87:50-120:69/kg",
+      "discountPercent": 15,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-2005045472-linkoping",
@@ -18287,6 +18286,24 @@
       "storeName": "Maxi ICA Stormarknad Göteborg"
     },
     {
+      "id": "ica-5004080898-uppsala",
+      "article": "Friggs Smaksatta riskakor, majskakor 120-125 g",
+      "brand": "Friggs",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 17.35,
+      "currentPrice": 15,
+      "dealText": "3 för 45 kr",
+      "unit": "120:00-125:00/kg",
+      "discountPercent": 14,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-2004966816-kalmar",
       "article": "Gröna kärnfria druvor i ask 500 g",
       "brand": null,
@@ -18377,13 +18394,14 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004080980-lulea",
+      "id": "ica-5004080980-uppsala",
       "article": "ICA I love eco. Danmark Ekologiska snackmorötter i påse 200 g",
       "brand": "ICA I love eco. Danmark",
       "chain": "ICA",
       "cities": [
         "Luleå",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 14.53,
       "currentPrice": 12.5,
@@ -18392,8 +18410,8 @@
       "discountPercent": 14,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 11650,
-      "storeName": "Maxi ICA Stormarknad Luleå"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080980-skovde",
@@ -18430,24 +18448,6 @@
       "source": "ICA live",
       "storeId": 10515,
       "storeName": "ICA Kvantum Västerås"
-    },
-    {
-      "id": "ica-5004080989-uppsala",
-      "article": "ICA. Ursprung Sverige Kotlett med ben Ca 2000 g",
-      "brand": "ICA. Ursprung Sverige",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 99,
-      "currentPrice": 85,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 14,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080990-lund",
@@ -18488,6 +18488,24 @@
       "source": "ICA live",
       "storeId": 13164,
       "storeName": "Maxi ICA Stormarknad Lindhagen"
+    },
+    {
+      "id": "ica-5004080992-uppsala",
+      "article": "ICA. Ursprung Sverige Umamifärs 500 g",
+      "brand": "ICA. Ursprung Sverige",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 45.16,
+      "currentPrice": 39,
+      "dealText": null,
+      "unit": "per st",
+      "discountPercent": 14,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-2004898578-helsingborg",
@@ -18571,7 +18589,6 @@
         "Göteborg",
         "Helsingborg",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -18793,24 +18810,6 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
-      "id": "ica-5004080937-uppsala",
-      "article": "Yoggi Yoghurt 1 kg",
-      "brand": "Yoggi",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 22.1,
-      "currentPrice": 19,
-      "dealText": "2 för 38 kr",
-      "unit": "19:00/kg",
-      "discountPercent": 14,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080909-malmo",
       "article": "Arla Ko Gräddfil 300 g",
       "brand": "Arla Ko",
@@ -18827,24 +18826,6 @@
       "source": "ICA live",
       "storeId": 2748,
       "storeName": "Maxi ICA Stormarknad Malmö"
-    },
-    {
-      "id": "ica-5004080909-uppsala",
-      "article": "Arla Ko Gräddfil 300 g",
-      "brand": "Arla Ko",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 12.65,
-      "currentPrice": 11,
-      "dealText": "2 för 22 kr",
-      "unit": "36:67/liter",
-      "discountPercent": 13,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004057826-vasteras",
@@ -18937,6 +18918,7 @@
         "Skövde",
         "Sundsvall",
         "Umeå",
+        "Uppsala",
         "Växjö"
       ],
       "originalPrice": 149,
@@ -19102,24 +19084,6 @@
       "storeName": "Maxi ICA Stormarknad Borås"
     },
     {
-      "id": "ica-5004080980-uppsala",
-      "article": "ICA I love eco. Danmark Ekologiska snackmorötter i påse 200 g",
-      "brand": "ICA I love eco. Danmark",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 14.45,
-      "currentPrice": 12.5,
-      "dealText": "2 för 25 kr",
-      "unit": "62:50/kg",
-      "discountPercent": 13,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004081005-goteborg",
       "article": "ICA. Spanien/Marocko Färgmixade småtomater i ask 350 g",
       "brand": "ICA. Spanien/Marocko",
@@ -19252,14 +19216,13 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004080938-uppsala",
+      "id": "ica-5004080938-norrkoping",
       "article": "Philadelphia Färskost 145-200 g",
       "brand": "Philadelphia",
       "chain": "ICA",
       "cities": [
         "Jönköping",
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 20.05,
       "currentPrice": 17.5,
@@ -19268,8 +19231,8 @@
       "discountPercent": 13,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 17654,
+      "storeName": "Maxi ICA Stormarknad Norrköping"
     },
     {
       "id": "ica-5004080889-malmo",
@@ -19416,24 +19379,6 @@
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
     },
     {
-      "id": "ica-5004080991-uppsala",
-      "article": "Ursprung Sverige Skivad rostbiff Ca 600 g",
-      "brand": "Ursprung Sverige",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 285,
-      "currentPrice": 249,
-      "dealText": null,
-      "unit": "per kg",
-      "discountPercent": 13,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080937-norrkoping",
       "article": "Yoggi Yoghurt 1 kg",
       "brand": "Yoggi",
@@ -19509,7 +19454,7 @@
       "storeName": "Maxi ICA Stormarknad Lindhagen"
     },
     {
-      "id": "ica-5004080909-norrkoping",
+      "id": "ica-5004080909-uppsala",
       "article": "Arla Ko Gräddfil 300 g",
       "brand": "Arla Ko",
       "chain": "ICA",
@@ -19520,7 +19465,8 @@
         "Helsingborg",
         "Luleå",
         "Lund",
-        "Norrköping"
+        "Norrköping",
+        "Uppsala"
       ],
       "originalPrice": 12.5,
       "currentPrice": 11,
@@ -19529,8 +19475,8 @@
       "discountPercent": 12,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 17654,
-      "storeName": "Maxi ICA Stormarknad Norrköping"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004057787-vasteras",
@@ -19659,24 +19605,6 @@
       "source": "ICA live",
       "storeId": 2748,
       "storeName": "Maxi ICA Stormarknad Malmö"
-    },
-    {
-      "id": "ica-5004080898-uppsala",
-      "article": "Friggs Smaksatta riskakor, majskakor 120-125 g",
-      "brand": "Friggs",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 16.95,
-      "currentPrice": 15,
-      "dealText": "3 för 45 kr",
-      "unit": "120:00-125:00/kg",
-      "discountPercent": 12,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080898-gavle",
@@ -19955,8 +19883,7 @@
       "brand": "ICA. Ursprung Sverige",
       "chain": "ICA",
       "cities": [
-        "Malmö",
-        "Uppsala"
+        "Malmö"
       ],
       "originalPrice": 44.25,
       "currentPrice": 39,
@@ -20024,24 +19951,6 @@
       "source": "ICA live",
       "storeId": 8926,
       "storeName": "Maxi ICA Stormarknad Göteborg"
-    },
-    {
-      "id": "ica-5004080935-uppsala",
-      "article": "Innocent Juice, Smoothie 750-900 ml",
-      "brand": "Innocent",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 34,
-      "currentPrice": 29.9,
-      "dealText": null,
-      "unit": "+pant",
-      "discountPercent": 12,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080935-orebro",
@@ -20208,15 +20117,15 @@
       "cities": [
         "Uppsala"
       ],
-      "originalPrice": 21.55,
+      "originalPrice": 21.7,
       "currentPrice": 19,
       "dealText": "2 för 38 kr",
       "unit": "38:00/kg",
       "discountPercent": 12,
       "validTo": "2026-08-23",
       "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
     },
     {
       "id": "ica-5004080889-norrkoping",
@@ -20398,6 +20307,24 @@
       "storeName": "Maxi ICA Stormarknad Malmö"
     },
     {
+      "id": "ica-5004080994-uppsala",
+      "article": "Anamma Fryst vego 750-1000 g",
+      "brand": "Anamma",
+      "chain": "ICA",
+      "cities": [
+        "Uppsala"
+      ],
+      "originalPrice": 72.35,
+      "currentPrice": 64.5,
+      "dealText": "2 för 129 kr",
+      "unit": "64:50-86:00/kg",
+      "discountPercent": 11,
+      "validTo": "2026-08-23",
+      "source": "ICA live",
+      "storeId": 15086,
+      "storeName": "Maxi ICA Stormarknad Gnista Uppsala"
+    },
+    {
       "id": "ica-5004080994-skovde",
       "article": "Anamma Fryst vego 750-1000 g",
       "brand": "Anamma",
@@ -20505,24 +20432,6 @@
       "storeName": "Maxi ICA Stormarknad Göteborg"
     },
     {
-      "id": "ica-5004080905-uppsala",
-      "article": "Heinz Ketchup 960-1000 g",
-      "brand": "Heinz",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 33.05,
-      "currentPrice": 29.5,
-      "dealText": "2 för 59 kr",
-      "unit": "29:50-30:73/kg",
-      "discountPercent": 11,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080905-linkoping",
       "article": "Heinz Ketchup 960-1000 g",
       "brand": "Heinz",
@@ -20574,8 +20483,7 @@
       "chain": "ICA",
       "cities": [
         "Malmö",
-        "Norrköping",
-        "Uppsala"
+        "Norrköping"
       ],
       "originalPrice": 9.4,
       "currentPrice": 8.33,
@@ -20670,24 +20578,6 @@
       "source": "ICA live",
       "storeId": 8926,
       "storeName": "Maxi ICA Stormarknad Göteborg"
-    },
-    {
-      "id": "ica-5004080893-uppsala",
-      "article": "Nescafé Snabbkaffe refill 200 g",
-      "brand": "Nescafé",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 93.6,
-      "currentPrice": 82.9,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 11,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080893-orebro",
@@ -20807,24 +20697,6 @@
       "storeName": "Maxi ICA Stormarknad Göteborg"
     },
     {
-      "id": "ica-5004080924-uppsala",
-      "article": "Peka Potatisgratäng 2 kg",
-      "brand": "Peka",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 59.55,
-      "currentPrice": 52.9,
-      "dealText": null,
-      "unit": "per st",
-      "discountPercent": 11,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080924-orebro",
       "article": "Peka Potatisgratäng 2 kg",
       "brand": "Peka",
@@ -20894,7 +20766,8 @@
       "chain": "ICA",
       "cities": [
         "Stockholm",
-        "Sundsvall"
+        "Sundsvall",
+        "Uppsala"
       ],
       "originalPrice": 77.9,
       "currentPrice": 69.5,
@@ -20969,24 +20842,6 @@
       "source": "ICA live",
       "storeId": 8926,
       "storeName": "Maxi ICA Stormarknad Göteborg"
-    },
-    {
-      "id": "ica-5004080994-uppsala",
-      "article": "Anamma Fryst vego 750-1000 g",
-      "brand": "Anamma",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 71.95,
-      "currentPrice": 64.5,
-      "dealText": "2 för 129 kr",
-      "unit": "64:50-86:00/kg",
-      "discountPercent": 10,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-5004080909-goteborg",
@@ -21067,24 +20922,6 @@
       "storeName": "Maxi ICA Stormarknad Göteborg"
     },
     {
-      "id": "ica-5004080892-uppsala",
-      "article": "Falcon Öl 3,5% 6 x 50 cl",
-      "brand": "Falcon",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 56.7,
-      "currentPrice": 50.9,
-      "dealText": null,
-      "unit": "+pant",
-      "discountPercent": 10,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
-    },
-    {
       "id": "ica-5004080892-orebro",
       "article": "Falcon Öl 3,5% 6 x 50 cl",
       "brand": "Falcon",
@@ -21105,24 +20942,6 @@
       "source": "ICA live",
       "storeId": 1093,
       "storeName": "Maxi ICA Stormarknad Örebro Boglundsängen"
-    },
-    {
-      "id": "ica-2004895547-uppsala",
-      "article": "Felix Dressing, Sås 335 ml",
-      "brand": "Felix",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 27.35,
-      "currentPrice": 24.5,
-      "dealText": "2 för 49 kr",
-      "unit": "73:13/l",
-      "discountPercent": 10,
-      "validTo": "2026-08-30",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-2004914334-linkoping",
@@ -21393,7 +21212,8 @@
         "Halmstad",
         "Linköping",
         "Skövde",
-        "Stockholm"
+        "Stockholm",
+        "Uppsala"
       ],
       "originalPrice": 13.92,
       "currentPrice": 12.5,
@@ -21837,8 +21657,7 @@
         "Linköping",
         "Malmö",
         "Stockholm",
-        "Sundsvall",
-        "Uppsala"
+        "Sundsvall"
       ],
       "originalPrice": 19.55,
       "currentPrice": 18,
@@ -21867,6 +21686,7 @@
         "Luleå",
         "Norrköping",
         "Umeå",
+        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -21988,8 +21808,7 @@
         "Halmstad",
         "Linköping",
         "Stockholm",
-        "Sundsvall",
-        "Uppsala"
+        "Sundsvall"
       ],
       "originalPrice": 11.95,
       "currentPrice": 11,
@@ -22179,7 +21998,6 @@
         "Lund",
         "Sundsvall",
         "Umeå",
-        "Uppsala",
         "Växjö",
         "Örebro"
       ],
@@ -22231,7 +22049,6 @@
         "Norrköping",
         "Skövde",
         "Umeå",
-        "Uppsala",
         "Växjö"
       ],
       "originalPrice": 74.9,
@@ -22370,24 +22187,6 @@
       "source": "ICA live",
       "storeId": 12688,
       "storeName": "Maxi ICA Stormarknad Eskilstuna"
-    },
-    {
-      "id": "ica-5004080899-uppsala",
-      "article": "Pepsi, Zingo, 7-up Läsk 150 cl",
-      "brand": "Pepsi, Zingo, 7-up",
-      "chain": "ICA",
-      "cities": [
-        "Uppsala"
-      ],
-      "originalPrice": 15.85,
-      "currentPrice": 15,
-      "dealText": "3 för 45 kr",
-      "unit": "+pant",
-      "discountPercent": 5,
-      "validTo": "2026-08-23",
-      "source": "ICA live",
-      "storeId": 9699,
-      "storeName": "Maxi ICA Stormarknad Stenhagen Uppsala"
     },
     {
       "id": "ica-2004993430-norrkoping",
