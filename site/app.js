@@ -128,6 +128,10 @@ function render() {
       ${state.view === "search" ? searchControl() : ""}
       <section class="offer-list" aria-label="${escapeHtml(heading)}">${renderedOffers.map(renderOffer).join("")}</section>
       ${renderedOffers.length < visibleOffers.length ? `<div class="load-more"><button type="button" data-action="more">Visa fler erbjudanden</button></div>` : ""}
+      <footer class="site-footer">
+        <p>© 2026 Jonathan Gryveken · RabattHund</p>
+        <a href="./villkor/">Villkor &amp; ansvarsfriskrivning</a>
+      </footer>
     </main>
   `;
 
