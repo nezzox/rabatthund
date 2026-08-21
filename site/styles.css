@@ -174,6 +174,30 @@ h1 { font-size: clamp(1.7rem, 4.4vw, 3.1rem); line-height: 1; margin: 0; }
   width: 100%;
 }
 .offer-list { display: grid; gap: 10px; padding-bottom: 28px; }
+.site-footer {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  font-size: 0.82rem;
+  gap: 10px 18px;
+  justify-content: space-between;
+  margin: 20px auto 0;
+  max-width: 1080px;
+  padding: 20px 0 8px;
+}
+.site-footer p { margin: 0; }
+.site-footer a, .legal-content a, .back-link { color: var(--accent-dark); font-weight: 800; text-underline-offset: 3px; }
+.site-footer a:hover, .legal-content a:hover, .back-link:hover { color: var(--accent); }
+.legal-page { padding: 16px; }
+.legal-header, .legal-content { margin-left: auto; margin-right: auto; max-width: 780px; }
+.legal-header { align-items: center; display: flex; justify-content: space-between; padding: 10px 0 26px; }
+.legal-brand { color: var(--foreground); font-size: 1.4rem; font-weight: 900; text-decoration: none; }
+.legal-content { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 24px rgba(23, 33, 29, 0.06); padding: clamp(22px, 5vw, 48px); }
+.legal-content h1 { margin-bottom: 34px; }
+.legal-content h2 { font-size: 1.2rem; line-height: 1.2; margin: 32px 0 12px; }
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p { color: #3f4c45; line-height: 1.65; margin: 0 0 14px; }
 .load-more { display: flex; justify-content: center; margin: 4px auto 28px; max-width: 1080px; }
 .load-more button { background: var(--accent); border: 0; border-radius: 6px; color: #ffffff; font-weight: 800; min-height: 44px; padding: 10px 18px; }
 .load-more button:hover, .load-more button:focus-visible { background: var(--accent-dark); outline: none; }
@@ -195,6 +219,7 @@ h1 { font-size: clamp(1.7rem, 4.4vw, 3.1rem); line-height: 1; margin: 0; }
   .stat-strip { justify-content: start; }
   .chain-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search-band { grid-template-columns: 1fr; }
+  .site-footer { align-items: start; flex-direction: column; }
 }
 @media (max-width: 420px) {
   .menu-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
